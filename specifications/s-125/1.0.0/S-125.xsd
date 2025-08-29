@@ -5537,11 +5537,6 @@
                             <xs:documentation>Indicates whether a pictorial representation of the feature is available.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="AtoNNumber" type="xs:anyURI" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>Identifier from a list of Aids to Navigation publication, such as List of Lights.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
                     <xs:element name="installationDate" type="xs:date" minOccurs="0" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation>The date when an item was installed.</xs:documentation>
@@ -5604,6 +5599,33 @@
                     <xs:element name="parent" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation/>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="ElectronicAton" type="ElectronicAtonType"/>
+    <xs:complexType name="ElectronicAtonType" abstract="true">
+        <xs:annotation>
+            <xs:documentation>TBD</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="AidsToNavigationType">
+                <xs:sequence>
+                    <xs:element name="AtoNNumber" type="xs:anyURI" minOccurs="0" maxOccurs="1">
+                        <xs:annotation>
+                            <xs:documentation>Identifier from a list of Aids to Navigation publication, such as List of Lights.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="mMSICode" type="xs:string" minOccurs="1" maxOccurs="1">
+                        <xs:annotation>
+                            <xs:documentation>The Maritime Mobile Service Identity (MMSI) Code is formed of a series of nine digits which are transmitted over the radio path in order to uniquely identify ship stations, ship earth stations,coast stations, coast earth stations, and group calls. These identities are formed in such a way that the identity or part thereof can be used by telephone and telex subscribers connected to the general telecommunications network principally to call ships automatically.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="status" type="statusType" minOccurs="0" maxOccurs="unbounded">
+                        <xs:annotation>
+                            <xs:documentation>The condition of an object at a given instant in time.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
                 </xs:sequence>
@@ -5767,9 +5789,14 @@
                             <xs:documentation>The total vertical length of a feature.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="candela" type="xs:double" minOccurs="0" maxOccurs="1">
+                    <xs:element name="effectiveIntensity" type="xs:double" minOccurs="0" maxOccurs="1">
                         <xs:annotation>
-                            <xs:documentation>-</xs:documentation>
+                            <xs:documentation>The luminous intensity of a fictitious juxtaposed steady-burning point light source that would appear to exhibit a luminosity equal to that of the rhythmic point light source it describes. The apparent reduction in intensity of the rhythmic light is subjective and is due to the nature of the response of the eye of the observer.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="peakIntensity" type="xs:double" minOccurs="0" maxOccurs="1">
+                        <xs:annotation>
+                            <xs:documentation>The maximum luminous intensity of a light during its flash cycle.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
                 </xs:sequence>
@@ -6459,29 +6486,14 @@
             <xs:documentation>An Automatic Identification System (AIS) message 21 transmitted from an AIS station to simulate on navigation systems an Aid to Navigation which does not physically exist.</xs:documentation>
         </xs:annotation>
         <xs:complexContent>
-            <xs:extension base="AidsToNavigationType">
+            <xs:extension base="ElectronicAtonType">
                 <xs:sequence>
-                    <xs:element name="estimatedRangeOfTransmission" type="xs:double" minOccurs="0" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>The estimated range of a non-optical electromagnetic transmission.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="mMSICode" type="xs:string" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>The Maritime Mobile Service Identity (MMSI) Code is formed of a series of nine digits which are transmitted over the radio path in order to uniquely identify ship stations, ship earth stations,coast stations, coast earth stations, and group calls. These identities are formed in such a way that the identity or part thereof can be used by telephone and telex subscribers connected to the general telecommunications network principally to call ships automatically.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="status" type="statusType" minOccurs="0" maxOccurs="unbounded">
-                        <xs:annotation>
-                            <xs:documentation>The condition of an object at a given instant in time.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
                     <xs:element name="virtualAISAidToNavigationType" type="virtualAISAidToNavigationTypeType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation>A purpose of a virtual AIS Aid to Navigation.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="broadcasts" type="gml:ReferenceType" minOccurs="1" maxOccurs="unbounded">
+                    <xs:element name="virtualAISbroadcasts" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
@@ -6503,34 +6515,14 @@
             <xs:documentation>An Automatic Identification System (AIS) message 21 transmitted from a physical Aid to Navigation, or transmitted from an AIS station for an Aid to Navigation which physically exists.</xs:documentation>
         </xs:annotation>
         <xs:complexContent>
-            <xs:extension base="AidsToNavigationType">
+            <xs:extension base="ElectronicAtonType">
                 <xs:sequence>
-                    <xs:element name="CategoryOfPhysicalAISAidToNavigation" type="CategoryOfPhysicalAISAidToNavigationType" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>-</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="estimatedRangeOfTransmission" type="xs:double" minOccurs="0" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>The estimated range of a non-optical electromagnetic transmission.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="mMSICode" type="xs:string" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>The Maritime Mobile Service Identity (MMSI) Code is formed of a series of nine digits which are transmitted over the radio path in order to uniquely identify ship stations, ship earth stations,coast stations, coast earth stations, and group calls. These identities are formed in such a way that the identity or part thereof can be used by telephone and telex subscribers connected to the general telecommunications network principally to call ships automatically.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="status" type="statusType" minOccurs="0" maxOccurs="unbounded">
-                        <xs:annotation>
-                            <xs:documentation>The condition of an object at a given instant in time.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
                     <xs:element name="virtualAISAidToNavigationType" type="virtualAISAidToNavigationTypeType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation>A purpose of a virtual AIS Aid to Navigation.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="broadcasts" type="gml:ReferenceType" minOccurs="1" maxOccurs="unbounded">
+                    <xs:element name="physicalAISbroadcasts" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
@@ -6554,32 +6546,12 @@
         <xs:complexContent>
             <xs:extension base="AidsToNavigationType">
                 <xs:sequence>
-                    <xs:element name="CategoryOfSyntheticAISAidtoNavigation" type="CategoryOfSyntheticAISAidtoNavigationType" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>-</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="estimatedRangeOfTransmission" type="xs:double" minOccurs="0" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>The estimated range of a non-optical electromagnetic transmission.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="mMSICode" type="xs:string" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>The Maritime Mobile Service Identity (MMSI) Code is formed of a series of nine digits which are transmitted over the radio path in order to uniquely identify ship stations, ship earth stations,coast stations, coast earth stations, and group calls. These identities are formed in such a way that the identity or part thereof can be used by telephone and telex subscribers connected to the general telecommunications network principally to call ships automatically.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="status" type="statusType" minOccurs="0" maxOccurs="unbounded">
-                        <xs:annotation>
-                            <xs:documentation>The condition of an object at a given instant in time.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
                     <xs:element name="virtualAISAidToNavigationType" type="virtualAISAidToNavigationTypeType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation>A purpose of a virtual AIS Aid to Navigation.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="broadcasts" type="gml:ReferenceType" minOccurs="1" maxOccurs="unbounded">
+                    <xs:element name="syntheticAISbroadcasts" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
