@@ -5320,38 +5320,6 @@
             <xs:extension base="S100:AbstractInformationType"/>
         </xs:complexContent>
     </xs:complexType>
-    <xs:element name="AtoNFixingMethod" type="AtoNFixingMethodType"/>
-    <xs:complexType name="AtoNFixingMethodType">
-        <xs:annotation>
-            <xs:documentation>Method used for fixing the position of an aid to navigation.</xs:documentation>
-        </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="InformationTypeType">
-                <xs:sequence>
-                    <xs:element name="referencePoint" type="xs:string" minOccurs="0" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>-</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="horizontalDatum" type="horizontalDatumType" minOccurs="0" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>Horizontal reference surface or the reference coordinate system used for geodetic control in the calculation of coordinates of points on the earth.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="sourceDate" type="xs:date" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>The production date of the source; for example the date of measurement.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="positioningProcedure" type="xs:string" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>-</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
     <xs:element name="AtonStatusInformation" type="AtonStatusInformationType"/>
     <xs:complexType name="AtonStatusInformationType">
         <xs:annotation>
@@ -7317,7 +7285,6 @@
             <xs:documentation>group of informtion, feature and meta objects, all GML members</xs:documentation>
         </xs:annotation>
         <xs:choice>
-            <xs:element name="AtoNFixingMethod"/>
             <xs:element name="AtonStatusInformation"/>
             <xs:element name="PositioningInformation"/>
             <xs:element name="SpatialQuality"/>
