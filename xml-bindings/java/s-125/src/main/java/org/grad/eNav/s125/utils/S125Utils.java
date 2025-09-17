@@ -157,7 +157,6 @@ public class S125Utils {
         // Otherwise combine all member data
         return Stream.of(
                 members.getSpatialQuality(),
-                members.getAtoNFixingMethod(),
                 members.getPositioningInformation(),
                 members.getAtonStatusInformation(),
                 members.getSpecialPurposeGeneralBeacon(),
@@ -241,8 +240,6 @@ public class S125Utils {
             switch (member) {
                 case SpatialQualityImpl spatialUncertainty ->
                         members.getSpatialQuality().add(member);
-                case AtoNFixingMethodImpl atoNFixingMethod ->
-                        members.getAtoNFixingMethod().add(member);
                 case PositioningInformationImpl positioningInformation ->
                         members.getPositioningInformation().add(member);
                 case AtonStatusInformationImpl atoNStatusInformation ->
