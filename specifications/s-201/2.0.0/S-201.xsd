@@ -7795,6 +7795,11 @@
         <xs:complexContent>
             <xs:extension base="S100:AbstractFeatureType">
                 <xs:sequence>
+                    <xs:element name="interoperabilityIdentifier" type="xs:anyURI" minOccurs="0" maxOccurs="1">
+                        <xs:annotation>
+                            <xs:documentation>	A common unique identifier for entities which describe a single real-world feature, and which is used to identify instances of the feature in end-user systems where the feature may be included in multiple data product types.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
                     <xs:element name="information" type="informationType" minOccurs="0" maxOccurs="unbounded">
                         <xs:annotation>
                             <xs:documentation>Textual information about the feature. The information may be provided as a string of text or as a file name of a single external text file that contains the text.</xs:documentation>
