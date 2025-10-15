@@ -4,6 +4,10 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# Python
+**/__pycache__/
+**/.venv/
+
 # ---> Java
 *.class
 
@@ -89,6 +93,9 @@ tmp/
 local.properties
 .settings/
 .loadpath
+
+# ---> VSCode
+*.vscode
 
 # Eclipse Core
 .project
