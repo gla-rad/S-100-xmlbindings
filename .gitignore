@@ -7,6 +7,8 @@ target/
 # Python
 **/__pycache__/
 **/.venv/
+**/.venv-*/
+**/.pypirc
 
 # ---> Java
 *.class
