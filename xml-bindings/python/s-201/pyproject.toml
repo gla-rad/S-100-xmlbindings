@@ -10,14 +10,14 @@ requires = [
     "Pygments == 2.19.2",
     "pytest == 8.4.2",
     "pytz == 2025.2",
-    "PyXB-X == 1.2.6.3",
+    "xsdata == 25.7",
     "zope.interface == 8.0.1"
 ]
 build-backend = "pdm.backend"
 
 [project]
 name = "s201-xml-bindings"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="Nikolaos Vastardis", email="Nikolaos.Vastardis@gla-rad.org" },
 ]
