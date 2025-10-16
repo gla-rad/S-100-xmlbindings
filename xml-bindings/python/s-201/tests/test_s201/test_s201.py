@@ -7,6 +7,7 @@ from iso639 import Lang
 from s201 import s201
 from xml.dom.minidom import parseString
 
+
 @pytest.fixture
 def s201_msg_xml():
     # Get absolute path of this test file
@@ -16,7 +17,7 @@ def s201_msg_xml():
     s201_msg_file = open(test_dir + '/s201-msg.xml', mode="rb")
 
     # And return the contents
-    yield s201_msg_file.read().decode("utf-8").replace("\n","").replace("\t","")
+    yield s201_msg_file.read().decode("utf-8").replace("\r\n","").replace("\n","").replace("\t","")
 
 
 @pytest.fixture
@@ -141,8 +142,14 @@ def test_marshall(s201_dataset, s201_msg_xml):
     # And Marshall to XMl
     s201_dataset_xml = s201_dataset.toxml("utf-8").decode('utf-8')
     
+    # Remove the namespaces from the datasets
+    s201_dataset_xml_without_ns = re.sub("<ns\\d:Dataset[^>]*>","<Dataset>", s201_dataset_xml)
+    s201_msg_xml_without_ns = re.sub("<ns\\d:Dataset[^>]*>","<Dataset>", s201_msg_xml)
+
     # Make sure the XMl seems correct
-    assert re.sub("<ns\d:Dataset[^>]*>","<Dataset>", s201_dataset_xml) == re.sub("<ns\d:Dataset[^>]*>","<Dataset>", s201_msg_xml)
+    assert s201_dataset_xml_without_ns == s201_msg_xml_without_ns
+
+
 def test_unmarshall(s201_msg_xml):
     """
     Test that we can successfully unmarshall a packaged S-201 dataset using the 
