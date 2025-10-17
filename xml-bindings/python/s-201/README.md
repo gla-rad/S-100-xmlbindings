@@ -1,7 +1,7 @@
 # The Python S-201 XML Bindings Package
 
 A python package implementing the XML bindings for the IALA S-201 data product
-specification
+specification.
 
 ## Introduction
 
@@ -29,7 +29,7 @@ To generate the package you can run the **xsdata** generation command using the
 config provided in the repo.
 
 ```bash
-xsdata generate ../../../specifications/s-201/2.0.0/S-201.xsd --package grad.s201 --config .xsdata.xml --debug
+xsdata generate ../../../specifications/s-201/2.0.0/S-201.xsd --package org.grad.eNav.s201 --config .xsdata.xml --debug
 ```
 
 Note that the configuration is fixed so that all the geneted classes are placed

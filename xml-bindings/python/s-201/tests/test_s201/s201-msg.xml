@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ns0:Dataset xmlns:ns0="http://www.iho.int/S-201/gml/cs0/2.0"
-    xmlns:ns1="http://www.opengis.net/gml/3.2" ns1:id="CorkHoleTestDataset">
+<ns0:Dataset xmlns:ns0="http://www.iho.int/S-201/gml/cs0/2.0" xmlns:ns1="http://www.opengis.net/gml/3.2" ns1:id="CorkHoleTestDataset">
     <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:BoundingShapeType">
         <ns1:Envelope srsName="EPSG:4326" srsDimension="1" xsi:type="ns1:EnvelopeType">
             <ns1:lowerCorner>51.8916667 1.4233333</ns1:lowerCorner>
@@ -23,12 +22,12 @@
         <ns2:updateNumber>2</ns2:updateNumber>
     </ns2:DatasetIdentificationInformation>
     <ns0:members owns="false">
-        <ns0:VirtualAISAidToNavigation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ns1:id="ID002" xsi:type="ns0:AtonStatusInformation">
+        <ns0:AtonStatusInformation ns1:id="ID002">
             <ns0:ChangeDetails>
                 <ns0:electronicAtonChange>AIS transmitter operating properly</ns0:electronicAtonChange>
             </ns0:ChangeDetails>
             <ns0:ChangeTypes>Advanced notice of changes</ns0:ChangeTypes>
-        </ns0:VirtualAISAidToNavigation>
+        </ns0:AtonStatusInformation>
         <ns0:VirtualAISAidToNavigation ns1:id="ID001">
             <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:BoundingShapeType">
                 <ns1:Envelope srsName="EPSG:4326" srsDimension="1" xsi:type="ns1:EnvelopeType">

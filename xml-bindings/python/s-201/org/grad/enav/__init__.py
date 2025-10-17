@@ -1,4 +1,4 @@
-from grad.s201 import (
+from org.grad.enav.s201 import (
     AbstractAssociationRole,
     AbstractAttributeType,
     AbstractCurve,
