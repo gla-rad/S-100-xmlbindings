@@ -39,7 +39,39 @@ S-201 XML files.
 
 ## Packaging the Project
 
-You can follow the great tutorial about packaging python projects [here](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+You can follow the great tutorial about packaging python projects
+[here](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+
+The metadata of the project can be found in the ***pyproject.toml*** file.
+This defines the required libraries and corresponding versions, packaging
+information, links to the README and licence files etc.
+
+Then you can install PyPA's
+[build](https://packaging.python.org/en/latest/key_projects/#build):
+
+```bash
+python -m pip install --upgrade build
+```
+
+Then generate the project package using the following command:
+
+```bash
+python -m build
+```
+
+Finally you can upload the package to a repository like PyPI using
+[twine](https://packaging.python.org/en/latest/key_projects/#twine)
+
+```bash
+python -m pip install --upgrade twine
+```
+
+Note that you will also need an API token to upload the package, and you can
+pass it to the following command:
+
+```bash
+python -m twine upload -r pypi dist/*
+```
 
 ## License
 Distributed under the Apache License. See LICENSE.md for more information.
