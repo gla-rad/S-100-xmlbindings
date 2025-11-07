@@ -30,31 +30,14 @@ class CategoryOfAssociationType(Enum):
 
 class CategoryOfPhysicalAisaidToNavigationType(Enum):
     """
-    :cvar PHYSICAL_AIS_TYPE_1: Simple transmission of static, pre-
-        programmed information.
-    :cvar PHYSICAL_AIS_TYPE_2: Transmission of dynamic, real-time
-        updated information via connected sensors.
-    :cvar PHYSICAL_AIS_TYPE_3: Full two-way communication: transmission
-        + remote control / configuration.
+    :cvar PHYSICAL_AIS_TYPE_1: -
+    :cvar PHYSICAL_AIS_TYPE_2: -
+    :cvar PHYSICAL_AIS_TYPE_3: -
     """
 
     PHYSICAL_AIS_TYPE_1 = "Physical AIS Type 1"
     PHYSICAL_AIS_TYPE_2 = "Physical AIS Type 2"
     PHYSICAL_AIS_TYPE_3 = "Physical AIS Type 3"
-
-
-class CategoryOfPowerSourceType(Enum):
-    """
-    :cvar BATTERY: -
-    :cvar GENERATOR: -
-    :cvar SOLAR_PANEL: -
-    :cvar ELECTRICAL_SERVICE: -
-    """
-
-    BATTERY = "battery"
-    GENERATOR = "generator"
-    SOLAR_PANEL = "solar panel"
-    ELECTRICAL_SERVICE = "electrical service"
 
 
 class CategoryOfSyntheticAisaidtoNavigationType(Enum):
@@ -89,14 +72,14 @@ class S100TruncatedDate2:
 
     class Meta:
         name = "S100_TruncatedDate"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     g_day: Optional[XmlPeriod] = field(
         default=None,
         metadata={
             "name": "gDay",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     g_month: Optional[XmlPeriod] = field(
@@ -104,7 +87,7 @@ class S100TruncatedDate2:
         metadata={
             "name": "gMonth",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     g_year: Optional[XmlPeriod] = field(
@@ -112,7 +95,7 @@ class S100TruncatedDate2:
         metadata={
             "name": "gYear",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     g_month_day: Optional[XmlPeriod] = field(
@@ -120,7 +103,7 @@ class S100TruncatedDate2:
         metadata={
             "name": "gMonthDay",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     g_year_month: Optional[XmlPeriod] = field(
@@ -128,52 +111,16 @@ class S100TruncatedDate2:
         metadata={
             "name": "gYearMonth",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     date: Optional[XmlDate] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
-
-
-class ShackleTypeType(Enum):
-    """
-    :cvar FORELOCK_SHACKLES: -
-    :cvar CLENCHING_SHACKLES: -
-    :cvar BOLT_SHACKLES: -
-    :cvar SCREW_PIN_SHACKLES: -
-    :cvar KENTER_SHACKLE: -
-    :cvar QUICK_RELEASE_LINK: -
-    """
-
-    FORELOCK_SHACKLES = "forelock shackles"
-    CLENCHING_SHACKLES = "clenching shackles"
-    BOLT_SHACKLES = "bolt shackles"
-    SCREW_PIN_SHACKLES = "screw pin shackles"
-    KENTER_SHACKLE = "kenter shackle"
-    QUICK_RELEASE_LINK = "quick release link"
-
-
-class AidAvailabilityCategoryType(Enum):
-    """
-    :cvar CATEGORY_1: An AtoN or system of AtoN that is considered by
-        the Competent Authority to be of vital navigational
-        significance.
-    :cvar CATEGORY_2: An AtoN or system of AtoN that is considered by
-        the Competent Authority to be of important navigational
-        significance.
-    :cvar CATEGORY_3: An AtoN or system of AtoN that is considered by
-        the Competent Authority to be of necessary navigational
-        significance.
-    """
-
-    CATEGORY_1 = "Category 1"
-    CATEGORY_2 = "Category 2"
-    CATEGORY_3 = "Category 3"
 
 
 class AtonCommissioningType(Enum):
@@ -411,37 +358,6 @@ class BuoyShapeType(Enum):
     ICE_BUOY = "Ice Buoy"
 
 
-class CategoryOfCableType(Enum):
-    """
-    :cvar POWER_LINE: A cable that transmits or distributes electrical
-        power.
-    :cvar TRANSMISSION_LINE: Multiple un-insulated cables usually
-        supported by steel lattice towers. Such features are generally
-        more prominent than normal power lines.
-    :cvar TELEPHONE: A cable that transmits telephone signals.
-    :cvar TELEGRAPH: An apparatus, system or process for communication
-        at a distance by electric transmission over wire.
-    :cvar MOORING_CABLE: A chain or very strong fibre or wire rope used
-        to anchor or moor vessels or buoys.
-    :cvar FERRY: A vessel for transporting passengers, vehicles, and/or
-        goods across a stretch of water, especially as a regular
-        service.
-    :cvar FIBRE_OPTIC_CABLE: A cable made of glass or plastic fiber
-        designed to guide light along its length, fibre optic cables are
-        widely used in fiber-optic communication, which permits
-        transmission over longer distances and at higher data rates than
-        other forms of communication.
-    """
-
-    POWER_LINE = "Power Line"
-    TRANSMISSION_LINE = "Transmission Line"
-    TELEPHONE = "Telephone"
-    TELEGRAPH = "Telegraph"
-    MOORING_CABLE = "Mooring Cable"
-    FERRY = "Ferry"
-    FIBRE_OPTIC_CABLE = "Fibre Optic Cable"
-
-
 class CategoryOfCardinalMarkType(Enum):
     """
     :cvar NORTH_CARDINAL_MARK: Quadrant bounded by the true bearing NW-
@@ -635,6 +551,52 @@ class CategoryOfLateralMarkType(Enum):
         channel divides, when proceeding in the "conventional direction
         of buoyage", the preferred channel (or primary route) is
         indicated by a modified starboard-hand lateral mark.
+    :cvar RIGHT_HAND_SIDE_OF_THE_WATERWAY: Indicates the right-hand side
+        of the inland waterway.
+    :cvar LEFT_HAND_SIDE_OF_THE_WATERWAY: Indicates the left-hand side
+        of the inland waterway.
+    :cvar RIGHT_HAND_SIDE_OF_THE_CHANNEL: Indicates the right-hand side
+        of a channel of an inland waterway.
+    :cvar LEFT_HAND_SIDE_OF_THE_CHANNEL: Indicates the left-hand side of
+        a channel of an inland waterway.
+    :cvar BIFURCATION_OF_THE_WATERWAY: Indicates a bifurcation of the
+        inland waterway.
+    :cvar BIFURCATION_OF_THE_CHANNEL: Indicates a bifurcation of a
+        channel of an inland waterway.
+    :cvar CHANNEL_NEAR_THE_RIGHT_BANK: Indicates that the channel is
+        near the right bank.
+    :cvar CHANNEL_NEAR_THE_LEFT_BANK: Indicates that the channel is near
+        the left bank.
+    :cvar CHANNEL_CROSS_OVER_TO_THE_RIGHT_BANK: Indicates that the
+        channel crosses from the left to the right bank.
+    :cvar CHANNEL_CROSS_OVER_TO_THE_LEFT_BANK: Indicates that the
+        channel crosses from the right to the left bank.
+    :cvar DANGER_POINT_OR_OBSTACLES_AT_THE_RIGHT_HAND_SIDE: Indicates a
+        danger point or obstacles at the right-hand side.
+    :cvar DANGER_POINT_OR_OBSTACLES_AT_THE_LEFT_HAND_SIDE: Indicates a
+        danger point or obstacles at the left-hand side.
+    :cvar TURN_OFF_AT_THE_RIGHT_HAND_SIDE: Indicates a turn off at the
+        right-hand side.
+    :cvar TURN_OFF_AT_THE_LEFT_HAND_SIDE: Indicates a turn off at the
+        left-hand side.
+    :cvar JUNCTION_AT_THE_RIGHT_HAND_SIDE: Indicates a junction at the
+        right-hand side.
+    :cvar JUNCTION_AT_THE_LEFT_HAND_SIDE: Indicates a junction at the
+        left-hand side.
+    :cvar HARBOUR_ENTRY_AT_THE_RIGHT_HAND_SIDE: Indicates a harbour
+        entry at the right-hand side.
+    :cvar HARBOUR_ENTRY_AT_THE_LEFT_HAND_SIDE: Indicates a harbour entry
+        at the left-hand side.
+    :cvar BRIDGE_PIER_MARK: Indicates a bridge pier in an inland
+        waterway.
+    :cvar ENTRY_FROM_A_LAKE_TO_A_NARROWER_WATERWAY_RIGHT_BANK: Indicates
+        the right bank of the entry from a lake or a lake-like expansion
+        to a section of the waterway which is narrower.
+    :cvar ENTRY_FROM_A_LAKE_TO_A_NARROWER_WATERWAY_LEFT_BANK: Indicates
+        the left bank of the entry from a lake or a lake-like expansion
+        to a section of the waterway which is narrower.
+    :cvar CHANGE_BANK: Change bank.
+    :cvar CONTINUE_ALONG_BANK: Continue along bank.
     """
 
     PORT_HAND_LATERAL_MARK = "Port-Hand Lateral Mark"
@@ -645,6 +607,41 @@ class CategoryOfLateralMarkType(Enum):
     PREFERRED_CHANNEL_TO_PORT_LATERAL_MARK = (
         "Preferred Channel to Port Lateral Mark"
     )
+    RIGHT_HAND_SIDE_OF_THE_WATERWAY = "Right-Hand Side of the Waterway"
+    LEFT_HAND_SIDE_OF_THE_WATERWAY = "Left-Hand Side of the Waterway"
+    RIGHT_HAND_SIDE_OF_THE_CHANNEL = "Right-Hand Side of the Channel"
+    LEFT_HAND_SIDE_OF_THE_CHANNEL = "Left-Hand Side of the Channel"
+    BIFURCATION_OF_THE_WATERWAY = "Bifurcation of the Waterway"
+    BIFURCATION_OF_THE_CHANNEL = "Bifurcation of the Channel"
+    CHANNEL_NEAR_THE_RIGHT_BANK = "Channel Near the Right Bank"
+    CHANNEL_NEAR_THE_LEFT_BANK = "Channel Near the Left Bank"
+    CHANNEL_CROSS_OVER_TO_THE_RIGHT_BANK = (
+        "Channel Cross-Over to the Right Bank"
+    )
+    CHANNEL_CROSS_OVER_TO_THE_LEFT_BANK = "Channel Cross-Over to the Left Bank"
+    DANGER_POINT_OR_OBSTACLES_AT_THE_RIGHT_HAND_SIDE = (
+        "Danger Point or Obstacles at the Right-Hand Side"
+    )
+    DANGER_POINT_OR_OBSTACLES_AT_THE_LEFT_HAND_SIDE = (
+        "Danger Point or Obstacles at the Left-Hand Side"
+    )
+    TURN_OFF_AT_THE_RIGHT_HAND_SIDE = "Turn Off at the Right-Hand Side"
+    TURN_OFF_AT_THE_LEFT_HAND_SIDE = "Turn Off at the Left-Hand Side"
+    JUNCTION_AT_THE_RIGHT_HAND_SIDE = "Junction at the Right-Hand Side"
+    JUNCTION_AT_THE_LEFT_HAND_SIDE = "Junction at the Left-Hand Side"
+    HARBOUR_ENTRY_AT_THE_RIGHT_HAND_SIDE = (
+        "Harbour Entry at the Right-Hand Side"
+    )
+    HARBOUR_ENTRY_AT_THE_LEFT_HAND_SIDE = "Harbour Entry at the Left-Hand Side"
+    BRIDGE_PIER_MARK = "Bridge Pier Mark"
+    ENTRY_FROM_A_LAKE_TO_A_NARROWER_WATERWAY_RIGHT_BANK = (
+        "Entry From a Lake to a Narrower Waterway, Right Bank"
+    )
+    ENTRY_FROM_A_LAKE_TO_A_NARROWER_WATERWAY_LEFT_BANK = (
+        "Entry From a Lake to a Narrower Waterway, Left Bank"
+    )
+    CHANGE_BANK = "Change Bank"
+    CONTINUE_ALONG_BANK = "Continue Along Bank"
 
 
 class CategoryOfLightType(Enum):
@@ -1036,9 +1033,6 @@ class CategoryOfSpecialPurposeMarkType(Enum):
     :cvar WAVE_RECORDER: A surface following buoy used to measure wave
         activity.
     :cvar JETSKI_PROHIBITED: A mark indicating a jetski prohibited area.
-    :cvar FACILITY_PROTECTION_MARK: -
-    :cvar OIL_PIPELINE_PROTECTION_MARK: -
-    :cvar MARINE_CABLE_PROTECTION_MARK: -
     """
 
     FIRING_DANGER_MARK = "Firing Danger Mark"
@@ -1106,43 +1100,6 @@ class CategoryOfSpecialPurposeMarkType(Enum):
     CAUSEWAY_MARK = "Causeway Mark"
     WAVE_RECORDER = "Wave Recorder"
     JETSKI_PROHIBITED = "Jetski Prohibited"
-    FACILITY_PROTECTION_MARK = "Facility Protection Mark"
-    OIL_PIPELINE_PROTECTION_MARK = "Oil Pipeline Protection Mark"
-    MARINE_CABLE_PROTECTION_MARK = "Marine Cable Protection Mark"
-
-
-class CategoryOfTemporalVariationType(Enum):
-    """
-    :cvar EXTREME_EVENT: Indication of the possible impact of a
-        significant event (for example hurricane, earthquake, volcanic
-        eruption, landslide, etc), which is considered likely to have
-        changed the seafloor or landscape significantly.
-    :cvar LIKELY_TO_CHANGE_AND_SIGNIFICANT_SHOALING_EXPECTED: Continuous
-        or frequent change (for example river siltation, sand waves,
-        seasonal storms, icebergs, etc) that is likely to result in new
-        significant shoaling.
-    :cvar LIKELY_TO_CHANGE_BUT_SIGNIFICANT_SHOALING_NOT_EXPECTED:
-        Continuous or frequent change (for example sand wave shift,
-        seasonal storms, icebergs, etc) that is not likely to result in
-        new significant shoaling.
-    :cvar LIKELY_TO_CHANGE: Continuous or frequent change to non-
-        bathymetric features (for example river siltation, glacier
-        creep/recession, sand dunes, buoys, marine farms, etc).
-    :cvar UNLIKELY_TO_CHANGE: Significant change to the seafloor is not
-        expected.
-    :cvar UNASSESSED: Not having been assessed.
-    """
-
-    EXTREME_EVENT = "Extreme Event"
-    LIKELY_TO_CHANGE_AND_SIGNIFICANT_SHOALING_EXPECTED = (
-        "Likely to Change and Significant Shoaling Expected"
-    )
-    LIKELY_TO_CHANGE_BUT_SIGNIFICANT_SHOALING_NOT_EXPECTED = (
-        "Likely to Change But Significant Shoaling Not Expected"
-    )
-    LIKELY_TO_CHANGE = "Likely to Change"
-    UNLIKELY_TO_CHANGE = "Unlikely to Change"
-    UNASSESSED = "Unassessed"
 
 
 class ColourPatternType(Enum):
@@ -1264,72 +1221,6 @@ class ConditionType(Enum):
     PLANNED_CONSTRUCTION = "Planned Construction"
 
 
-@dataclass
-class ContactAddressType:
-    """
-    Direction or superscription of a letter, package, etc., specifying the name of
-    the place to which it is directed, and optionally a contact person or
-    organisation who should receive it.
-
-    :ivar delivery_point: Details of where post can be delivered such as
-        the apartment, name and/or number of a street, building or PO
-        Box.
-    :ivar city_name: The name of a town or city.
-    :ivar administrative_division: A generic term for an administrative
-        region within a country at a level below that of the sovereign
-        state.
-    :ivar country_name: The name of a nation.
-    :ivar postal_code: Known in various countries as a postcode, or ZIP
-        code, the postal code is a series of letters and/or digits that
-        identifies each postal delivery area.
-    """
-
-    class Meta:
-        name = "contactAddressType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-    delivery_point: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "deliveryPoint",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    city_name: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "cityName",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    administrative_division: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "administrativeDivision",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    country_name: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "countryName",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    postal_code: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "postalCode",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-
-
 class ElectronicAtonChangeType(Enum):
     """
     :cvar AIS_TRANSMITTER_OUT_OF_SERVICE: .
@@ -1430,28 +1321,28 @@ class FeatureNameType:
 
     class Meta:
         name = "featureNameType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     display_name: Optional[bool] = field(
         default=None,
         metadata={
             "name": "displayName",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     language: Optional[str] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     name: Optional[str] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -1718,1188 +1609,6 @@ class HeightLengthUnitsType(Enum):
     NAUTICAL_MILES = "Nautical Miles"
 
 
-class HorizontalDatumType(Enum):
-    """
-    :cvar WGS_72: A standard for use in cartography, geodesy, and
-        satellite navigation including GPS. This standard includes the
-        definition of the coordinate system's fundamental and derived
-        constants, the ellipsoidal (normal) Earth Gravitational Model
-        (EGM), a description of the associated World Magnetic Model
-        (WMM), and a current list of local datum transformations. The
-        WGS 72 is based on selected satellite, surface gravity and
-        astrogeodetic data available through 1972.
-    :cvar WGS_84: A standard for use in cartography, geodesy, and
-        satellite navigation including GPS. This standard includes the
-        definition of the coordinate system's fundamental and derived
-        constants, the ellipsoidal (normal) Earth Gravitational Model
-        (EGM), a description of the associated World Magnetic Model
-        (WMM), and a current list of local datum transformations. WGS 84
-        is the reference coordinate system used by the Global
-        Positioning System.
-    :cvar EUROPEAN_1950: A geodetic datum first defined in 1950 suitable
-        for use in Europe - west: Andorra; Cyprus; Denmark - onshore and
-        offshore; Faroe Islands - onshore; France - offshore; Germany -
-        offshore North Sea; Gibraltar; Greece - offshore; Israel -
-        offshore; Italy including San Marino and Vatican City State;
-        Ireland offshore; Malta; Netherlands - offshore; North Sea;
-        Norway including Svalbard - onshore and offshore; Portugal -
-        mainland - offshore; Spain - onshore; Turkey - onshore and
-        offshore; United Kingdom UKCS offshore east of 6W including
-        Channel Islands (Guernsey and Jersey). Egypt - Western Desert;
-        Iraq - onshore; Jordan. European Datum 1950 references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        European Datum 1950 origin is Fundamental point: Potsdam
-        (Helmert Tower). Latitude: 5222'51.4456"N, longitude:
-        1303'58.9283"E (of Greenwich). European Datum 1950 is a geodetic
-        datum for Topographic mapping, geodetic survey.
-    :cvar POTSDAM_DATUM: A geodetic datum first defined in 1990 suitable
-        for use in Germany - Thuringen. Potsdam Datum/83 references the
-        Bessel 1841 ellipsoid and the Greenwich prime meridian. Potsdam
-        Datum/83 origin is Fundamental point: Rauenberg. Latitude:
-        5227'12.021"N, longitude: 1322'04.928"E (of Greenwich). This
-        station was destroyed in 1910 and the station at Potsdam
-        substituted as the fundamental point. Potsdam Datum/83 is a
-        geodetic datum for Geodetic survey, cadastre, topographic
-        mapping, engineering survey. It was defined by information from
-        BKG via EuroGeographics. http://crs.bkg.bund.de PD/83 is the
-        realisation of DHDN in Thuringen. It is the resultant of
-        applying a transformation derived at 13 points on the border
-        between East and West Germany to Pulkovo 1942/83 points in
-        Thuringen.
-    :cvar ADINDAN: A geodetic datum first defined in 1958 suitable for
-        use in Eritrea; Ethiopia; South Sudan; Sudan. Adindan references
-        the Clarke 1880 (RGS) ellipsoid and the Greenwich prime
-        meridian. Adindan origin is Fundamental point: Station 15;
-        Adindan. Latitude: 2210'07.110"N, longitude: 3129'21.608"E (of
-        Greenwich). Adindan is a geodetic datum for Topographic mapping.
-        It was defined by information from US Coast and Geodetic Survey
-        via Geophysical Reasearch vol 67 #11, October 1962. The 12th
-        parallel traverse of 1966-70 (Point 58 datum, code 6620) is
-        connected to the Blue Nile 1958 network in western Sudan. This
-        has given rise to misconceptions that the Blue Nile network is
-        used in west Africa.
-    :cvar AFGOOYE: A geodetic datum first defined in and suitable for
-        use in Somalia - onshore. Afgooye references the Krassowsky 1940
-        ellipsoid and the Greenwich prime meridian. Afgooye is a
-        geodetic datum for Topographic mapping.
-    :cvar AIN_EL_ABD_1970: A geodetic datum first defined in 1970 and
-        suitable for use in Bahrain, Kuwait and Saudi Arabia - onshore.
-        Ain el Abd 1970 references the International 1924 ellipsoid and
-        the Greenwich prime meridian. Ain el Abd 1970 origin is
-        Fundamental point: Ain El Abd. Latitude: 2814'06.171"N,
-        longitude: 4816'20.906"E (of Greenwich). Ain el Abd 1970 is a
-        geodetic datum for Topographic mapping.
-    :cvar ANNA_1_ASTRO_1965: A geodetic datum first defined in 1965
-        suitable for use in Cocos (Keeling) Islands - onshore. Cocos
-        Islands 1965 references the Australian National Spheroid
-        ellipsoid and the Greenwich prime meridian. Cocos Islands 1965
-        origin is Fundamental point: Anna 1. Cocos Islands 1965 is a
-        geodetic datum for Military and topographic mapping It was
-        defined by information from DMA / NIMA / NGA TR8350.2 (3rd
-        edition, Amendment 1, 3 January 2000).
-    :cvar ANTIGUA_ISLAND_ASTRO_1943: A geodetic datum first defined in
-        1943 suitable for use in Antigua island - onshore. Antigua 1943
-        references the Clarke 1880 (RGS) ellipsoid and the Greenwich
-        prime meridian. Antigua 1943 origin is Fundamental point:
-        station A14. Antigua 1943 is a geodetic datum for Topographic
-        mapping. It was defined by information from Ordnance Survey of
-        Great Britain.
-    :cvar ARC_1950: A geodetic datum first defined in 1950 suitable for
-        use in Botswana; Malawi; Zambia; Zimbabwe. Arc 1950 references
-        the Clarke 1880 (Arc) ellipsoid and the Greenwich prime
-        meridian. Arc 1950 origin is Fundamental point: Buffelsfontein.
-        Latitude: 3359'32.000"S, longitude: 2530'44.622"E (of
-        Greenwich). Arc 1950 is a geodetic datum for Topographic
-        mapping, geodetic survey.
-    :cvar ARC_1960: A geodetic datum first defined in 1960 suitable for
-        use in Kenya; Tanzania; Uganda. Arc 1960 references the Clarke
-        1880 (RGS) ellipsoid and the Greenwich prime meridian. Arc 1960
-        origin is Fundamental point: Buffelsfontein. Latitude:
-        3359'32.000"S, longitude: 2530'44.622"E (of Greenwich). Arc 1960
-        is a geodetic datum for Topographic mapping, geodetic survey.
-    :cvar ASCENSION_ISLAND_1958: A geodetic datum first defined in 1958
-        suitable for use in St Helena, Ascension and Tristan da Cunha -
-        Ascension Island - onshore. Ascension Island 1958 references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        Ascension Island 1958 is a geodetic datum for Military and
-        topographic mapping. It was defined by information from DMA /
-        NIMA / NGA TR8350.2 (3rd edition, Amendment 1, 3 January 2000).
-    :cvar ASTRO_BEACON_E_1945: Astro beacon 'E' 1945
-    :cvar ASTRO_DOS_71_4: A geodetic datum first defined in 1971
-        suitable for use in St Helena, Ascension and Tristan da Cunha -
-        St Helena Island - onshore. Astro DOS 71 references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        Astro DOS 71 origin is Fundamental point: DOS 71/4, Ladder Hill
-        Fort, latitude: 1555'30"S, longitude: 543'25"W (of Greenwich).
-        Astro DOS 71 is a geodetic datum for Geodetic control, military
-        and topographic mapping. It was defined by information from DMA
-        / NIMA / NGA TR8350.2 (3rd edition, Amendment 1, 3 January 2000)
-        and St. Helena Government, Environment and Natural Resources
-        Directorate (ENRD).
-    :cvar ASTRO_TERN_ISLAND_FRIG_1961: A geodetic datum first defined in
-        1961 suitable for use in United States (USA) - Hawaii - Tern
-        Island and Sorel Atoll. Tern Island 1961 references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        Tern Island 1961 origin is Fundamental point: station FRIG on
-        tern island, station B4 on Sorol Atoll. Tern Island 1961 is a
-        geodetic datum for Military and topographic mapping It was
-        defined by information from DMA / NIMA / NGA TR8350.2 (original
-        1987 first edition and 3rd edition, Amendment 1, 3 January
-        2000). Two independent astronomic determinations considered to
-        be consistent through adoption of common transformation to WGS
-        84 (see tfm code 15795).
-    :cvar ASTRONOMICAL_STATION_1952: Astronomical station 1952.
-    :cvar AUSTRALIAN_GEODETIC_1966: A geodetic datum first defined in
-        1966 suitable for use in Australia - onshore and offshore. Papua
-        New Guinea - onshore. Australian Geodetic Datum 1966 references
-        the Australian National Spheroid ellipsoid and the Greenwich
-        prime meridian. Australian Geodetic Datum 1966 origin is
-        Fundamental point: Johnson Memorial Cairn. Latitude:
-        2556'54.5515"S, longitude: 13312'30.0771"E (of Greenwich).
-        Australian Geodetic Datum 1966 is a geodetic datum for
-        Topographic mapping. It was defined by information from
-        Australian Map Grid Technical Manual. National Mapping Council
-        of Australia Technical Publication 7; 1972.
-    :cvar AUSTRALIAN_GEODETIC_1984: A geodetic datum first defined in
-        1984 suitable for use in Australia - Queensland, South
-        Australia, Western Australia, federal areas offshore west of
-        129E. Australian Geodetic Datum 1984 references the Australian
-        National Spheroid ellipsoid and the Greenwich prime meridian.
-        Australian Geodetic Datum 1984 origin is Fundamental point:
-        Johnson Memorial Cairn. Latitude: 2556'54.5515"S, longitude:
-        13312'30.0771"E (of Greenwich). Australian Geodetic Datum 1984
-        is a geodetic datum for Topographic mapping. It was defined by
-        information from "GDA technical manual v2_2", Intergovernmental
-        Committee on Surveying and Mapping. www.anzlic.org.au/icsm/gdtm/
-        Uses all data from 1966 adjustment with additional observations,
-        improved software and a geoid model.
-    :cvar AYABELLE_LIGHTHOUSE: A geodetic datum suitable for use in
-        Djibouti - onshore and offshore. Ayabelle Lighthouse references
-        the Clarke 1880 (RGS) ellipsoid and the Greenwich prime
-        meridian. Ayabelle Lighthouse origin is Fundamental point:
-        Ayabelle Lighthouse. Ayabelle Lighthouse is a geodetic datum for
-        Military and topographic mapping. It was defined by information
-        from DMA / NIMA / NGA TR8350.2 (3rd edition, Amendment 1, 3
-        January 2000).
-    :cvar BELLEVUE_IGN: A geodetic datum first defined in 1960 suitable
-        for use in Vanuatu - southern islands - Aneityum, Efate,
-        Erromango and Tanna. Bellevue references the International 1924
-        ellipsoid and the Greenwich prime meridian. Bellevue is a
-        geodetic datum for Military and topographic mapping. It was
-        defined by information from DMA / NIMA / NGA TR8350.2 (3rd
-        edition, Amendment 1, 3 January 2000). Datum covers all the
-        major islands of Vanuatu in two different adjustment blocks, but
-        practical usage is as given in the area of use.
-    :cvar BERMUDA_1957: A geodetic datum first defined in 1957 suitable
-        for use in Bermuda - onshore. Bermuda 1957 references the Clarke
-        1866 ellipsoid and the Greenwich prime meridian. Bermuda 1957
-        origin is Fundamental point: Fort George base. Latitude
-        3222'44.36"N, longitude 6440'58.11"W (of Greenwich). Bermuda
-        1957 is a geodetic datum for Topographic mapping. It was defined
-        by information from Various oil industry sources.
-    :cvar BISSAU: A geodetic datum first defined in and is suitable for
-        use in Guinea-Bissau - onshore. Bissau references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        Bissau origin is Bissau is a geodetic datum for Topographic
-        mapping. It was defined by information from NIMA TR8350.2
-        ftp://164.214.2.65/pub/gig/tr8350.2/changes.pdf.
-    :cvar BOGOTA_OBSERVATORY: A geodetic datum first defined in 1975
-        suitable for use in Colombia - mainland and offshore Caribbean.
-        Bogota 1975 references the International 1924 ellipsoid and the
-        Greenwich prime meridian. Bogota 1975 origin is Fundamental
-        point: Bogota observatory. Latitude: 435'56.570"N, longitude:
-        7404'51.300"W (of Greenwich). Bogota 1975 is a geodetic datum
-        for Topographic mapping. It was defined by information from
-        Instituto Geografico Agustin Codazzi (IGAC) special publication
-        no. 1, 4th edition (1975) "Geodesia: Resultados Definitvos de
-        Parte de las Redes Geodesicas Establecidas en el Pais". Replaces
-        1951 adjustment. Replaced by MAGNA-SIRGAS (datum code 6685).
-    :cvar BUKIT_RIMPAH: A geodetic datum suitable for use in Indonesia -
-        Banga and Belitung Islands. Bukit Rimpah references the Bessel
-        1841 ellipsoid and the Greenwich prime meridian. Bukit Rimpah
-        origin is 200'40.16"S, 10551'39.76"E (of Greenwich). Bukit
-        Rimpah is a geodetic datum for Topographic mapping.
-    :cvar CAMP_AREA_ASTRO: A geodetic datum suitable for use in
-        Antarctica - McMurdo Sound, Camp McMurdo area. Camp Area Astro
-        references the International 1924 ellipsoid and the Greenwich
-        prime meridian. Camp Area Astro is a geodetic datum for Geodetic
-        and topographic survey. It was defined by information from DMA /
-        NIMA / NGA TR8350.2 (3rd edition, Amendment 1, 3 January 2000).
-    :cvar CAMPO_INCHAUSPE_1969: A geodetic datum suitable for use in
-        Argentina - mainland onshore and Atlantic offshore Tierra del
-        Fuego. Campo Inchauspe references the International 1924
-        ellipsoid and the Greenwich prime meridian. Campo Inchauspe
-        origin is Fundamental point: Campo Inchauspe. Latitude:
-        3558'16.56"S, longitude: 6210'12.03"W (of Greenwich). Campo
-        Inchauspe is a geodetic datum for Topographic mapping. It was
-        defined by information from NIMA http://earth-info.nima.mil/
-    :cvar CANTON_ASTRO_1966: A geodetic datum first defined in 1966
-        suitable for use in Kiribati - Phoenix Islands: Kanton, Orona,
-        McKean Atoll, Birnie Atoll, Phoenix Seamounts. Phoenix Islands
-        1966 references the International 1924 ellipsoid and the
-        Greenwich prime meridian. Phoenix Islands 1966 is a geodetic
-        datum for Military and topographic mapping It was defined by
-        information from DMA / NIMA / NGA TR8350.2 (3rd edition,
-        Amendment 1, 3 January 2000).
-    :cvar CAPE_DATUM: A geodetic datum suitable for use in Botswana;
-        Lesotho; South Africa - mainland; Swaziland. Cape references the
-        Clarke 1880 (Arc) ellipsoid and the Greenwich prime meridian.
-        Cape origin is Fundamental point: Buffelsfontein. Latitude:
-        3359'32.000"S, longitude: 2530'44.622"E (of Greenwich). Cape is
-        a geodetic datum for Geodetic survey, cadastre, topographic
-        mapping, engineering survey. It was defined by information from
-        Private Communication, Directorate of Surveys and Land
-        Information, Cape Town.
-    :cvar CAPE_CANAVERAL: A geodetic datum first defined in 1963
-        suitable for use in North America - onshore - Bahamas and USA -
-        Florida (east). Cape Canaveral references the Clarke 1866
-        ellipsoid and the Greenwich prime meridian. Cape Canaveral
-        origin is Fundamental point: Central 1950. Latitude: 28
-        29'32.36555"N, longitude 80 34'38.77362"W (of Greenwich). Cape
-        Canaveral is a geodetic datum for US space and military
-        operations. It was defined by information from US NGS and DMA /
-        NIMA / NGA TR8350.2 (3rd edition, Amendment 1, 3 January 2000).
-    :cvar CARTHAGE: A geodetic datum first defined in 1925 suitable for
-        use in Tunisia - onshore and offshore. Carthage references the
-        Clarke 1880 (IGN) ellipsoid and the Greenwich prime meridian.
-        Carthage origin is Fundamental point: Carthage. Latitude:
-        40.9464506g = 3651'06.50"N, longitude: 8.8724368g E of Paris =
-        1019'20.72"E (of Greenwich). Carthage is a geodetic datum for
-        Topographic mapping. Fundamental point astronomic coordinates
-        determined in 1878.
-    :cvar CHATAM_ISLAND_ASTRO_1971: A geodetic datum first defined in
-        1971 suitable for use in New Zealand - Chatham Islands group -
-        onshore. Chatham Islands Datum 1971 references the International
-        1924 ellipsoid and the Greenwich prime meridian. Chatham Islands
-        Datum 1971 is a geodetic datum for Geodetic survey, topographic
-        mapping, engineering survey. It was defined by information from
-        Office of Surveyor General (OSG) Technical Report 14, June 2001.
-        Replaced by Chatham Islands Datum 1979 (code 6673).
-    :cvar CHUA_ASTRO: A geodetic datum suitable for use in Brazil -
-        south of 18S and west of 54W, plus Distrito Federal. Paraguay -
-        north. Chua references the International 1924 ellipsoid and the
-        Greenwich prime meridian. Chua origin is Fundamental point:
-        Chua. Latitude: 1945'41.160"S, longitude: 4806'07.560"W (of
-        Greenwich). Chua is a geodetic datum for Geodetic survey. It was
-        defined by information from NIMA http://earth-info.nima.mil/.
-        The Chua origin and associated network is in Brazil with a
-        connecting traverse through northern Paraguay. It was used in
-        Brazil only as input into the Corrego Allegre adjustment and for
-        government work in Distrito Federal.
-    :cvar CORREGO_ALEGRE: A geodetic datum first defined in 1972
-        suitable for use in Brazil - onshore - west of 54W and south of
-        18S; also south of 15S between 54W and 42W; also east of 42W.
-        Corrego Alegre 1970-72 references the International 1924
-        ellipsoid and the Greenwich prime meridian. Corrego Alegre
-        1970-72 origin is Fundamental point: Corrego Alegre. Latitude:
-        1950'14.91"S, longitude: 4857'41.98"W (of Greenwich). Corrego
-        Alegre 1970-72 is a geodetic datum for Topographic mapping,
-        geodetic survey. Superseded by SAD69. It was defined by
-        information from IBGE. Replaces 1961 adjustment (datum code
-        1074). NIMA gives coordinates of origin as latitude:
-        1950'15.14"S, longitude: 4857'42.75"W; these may refer to 1961
-        adjustment.
-    :cvar DABOLA: A geodetic datum first defined in 1981 suitable for
-        use in Guinea - onshore. Dabola 1981 references the Clarke 1880
-        (IGN) ellipsoid and the Greenwich prime meridian. Dabola 1981 is
-        a geodetic datum for Topographic mapping. It was defined by
-        information from IGN Paris.
-    :cvar DJAKARTA_BATAVIA: A geodetic datum suitable for use in
-        Indonesia - onshore Java and Bali. Batavia (Jakarta) references
-        the Bessel 1841 ellipsoid and the Jakarta prime meridian.
-        Batavia (Jakarta) origin is Fundamental point: Longitude at
-        Batavia astronomical station. Latitude: 607'39.522"S, longitude:
-        000'00.0"E (of Jakarta). Latitude and azimuth at Genuk. Batavia
-        (Jakarta) is a geodetic datum for Topographic mapping.
-    :cvar DOS_1968: DOS 1968.
-    :cvar EASTER_ISLAND_1967: A geodetic datum first defined in 1967
-        suitable for use in Chile - Easter Island onshore. Easter Island
-        1967 references the International 1924 ellipsoid and the
-        Greenwich prime meridian. Easter Island 1967 is a geodetic datum
-        for Military and topographic mapping, +/- 25 meters in each
-        component. It was defined by information from DMA / NIMA / NGA
-        TR8350.2 (3rd edition, Amendment 1, 3 January 2000).
-    :cvar EUROPEAN_1979: A geodetic datum first defined in 1979 suitable
-        for use in Europe - west. European Datum 1979 references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        European Datum 1979 origin is Fundamental point: Potsdam
-        (Helmert Tower). Latitude: 5222'51.4456"N, longitude:
-        1303'58.9283"E (of Greenwich). European Datum 1979 is a geodetic
-        datum for Scientific network. Replaced by 1987 adjustment.
-    :cvar FORT_THOMAS_1955: Fort Thomas 1955 datum.
-    :cvar GAN_1970: A geodetic datum first defined in 1970 suitable for
-        use in Maldives - onshore. Gan 1970 references the International
-        1924 ellipsoid and the Greenwich prime meridian. Gan 1970 is a
-        geodetic datum for Topographic mapping. It was defined by
-        information from Various industry sources. In some references
-        incorrectly named "Gandajika 1970".
-    :cvar GEODETIC_DATUM_1949: A geodetic datum first defined in 1949
-        suitable for use in New Zealand - North Island, South Island,
-        Stewart Island - onshore and nearshore. New Zealand Geodetic
-        Datum 1949 references the International 1924 ellipsoid and the
-        Greenwich prime meridian. New Zealand Geodetic Datum 1949 origin
-        is Fundamental point: Papatahi. Latitude: 4119' 8.900"S,
-        longitude: 17502'51.000"E (of Greenwich). New Zealand Geodetic
-        Datum 1949 is a geodetic datum for Geodetic survey, cadastre,
-        topographic mapping, engineering survey. It was defined by
-        information from Land Information New Zealand.
-        http://www.linz.govt.nz/rcs/linz/pub/web/root/core/SurveySystem/GeodeticInfo/GeodeticDatums/nzgd2000factsheet/index.jsp.
-        Replaced by New Zealand Geodetic Datum 2000 (code 6167) from
-        March 2000.
-    :cvar GRACIOSA_BASE_SW_1948: Graciosa Base SW 1948 datum.
-    :cvar GUAM_1963: A geodetic datum first defined in 1963 suitable for
-        use in Guam - onshore. Guam 1963 references the Clarke 1866
-        ellipsoid and the Greenwich prime meridian. Guam 1963 origin is
-        Fundamental point: Tagcha. Latitude: 1322'38.49"N, longitude:
-        14445'51.56"E (of Greenwich). Guam 1963 is a geodetic datum for
-        Topographic mapping. It was defined by information from US
-        National Geospatial Intelligence Agency (NGA). http://earth-
-        info.nga.mil/ Replaced by NAD83(HARN)
-    :cvar GUNUNG_SEGARA: A geodetic datum suitable for use in Indonesia
-        - Kalimantan - onshore east coastal area including Mahakam delta
-        coastal and offshore shelf areas. Gunung Segara references the
-        Bessel 1841 ellipsoid and the Greenwich prime meridian. Gunung
-        Segara origin is Station P5 (Gunung Segara). Latitude
-        032'12.83"S, longitude 11708'48.47"E (of Greenwich). Gunung
-        Segara is a geodetic datum for Topographic mapping. It was
-        defined by information from TotalFinaElf.
-    :cvar GUX_1_ASTRO: GUX 1 Astro datum.
-    :cvar HERAT_NORTH: A geodetic datum suitable for use in Afghanistan.
-        Herat North references the International 1924 ellipsoid and the
-        Greenwich prime meridian. Herat North origin is Fundamental
-        point: Herat North. Latitude: 3423'09.08"N, longitude:
-        6410'58.94"E (of Greenwich). Herat North is a geodetic datum for
-        Topographic mapping. It was defined by information from NIMA
-        http://earth-info.nima.mil/.
-    :cvar HJORSEY_1955: A geodetic datum first defined in 1955 suitable
-        for use in Iceland - onshore. Hjorsey 1955 references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        Hjorsey 1955 origin is Fundamental point: Latitude:
-        6431'29.26"N, longitude: 2222'05.84"W (of Greenwich). Hjorsey
-        1955 is a geodetic datum for 1/50,000 scale topographic mapping.
-        It was defined by information from Landmaelingar Islands
-        (National Survey of Iceland).
-    :cvar HONG_KONG_1963: A geodetic datum first defined in 1963
-        suitable for use in China - Hong Kong - onshore and offshore.
-        Hong Kong 1963 references the Clarke 1858 ellipsoid and the
-        Greenwich prime meridian. Hong Kong 1963 origin is Fundamental
-        point: Trig "Zero", 38.4 feet south along the transit circle of
-        the Kowloon Observatory. Latitude 2218'12.82"N, longitude
-        11410'18.75"E (of Greenwich). Hong Kong 1963 is a geodetic datum
-        for Topographic mapping and hydrographic charting. It was
-        defined by information from Survey and Mapping Office, Lands
-        Department. http://www.info.gov.hk/landsd/. Replaced by Hong
-        Kong 1963(67) for military purposes only in 1967. Replaced by
-        Hong Kong 1980.
-    :cvar HU_TZU_SHAN: A geodetic datum first defined in 1950 suitable
-        for use in Taiwan, Republic of China - onshore - Taiwan Island,
-        Penghu (Pescadores) Islands. Hu Tzu Shan 1950 references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        Hu Tzu Shan 1950 origin is Fundamental point: Hu Tzu Shan.
-        Latitude: 2358'32.34"N, longitude: 12058'25.975"E (of
-        Greenwich). Hu Tzu Shan 1950 is a geodetic datum for Topographic
-        mapping. It was defined by information from NIMA US NGA,
-        http://earth-info.nga.mil/GandG/index.html
-    :cvar INDIAN: Indian datum.
-    :cvar INDIAN_1954: A geodetic datum first defined in 1954 suitable
-        for use in Myanmar (Burma) - onshore; Thailand - onshore. Indian
-        1954 references the Everest 1830 (1937 Adjustment) ellipsoid and
-        the Greenwich prime meridian. Indian 1954 origin is Extension of
-        Kalianpur 1937 over Myanmar and Thailand. Indian 1954 is a
-        geodetic datum for Topographic mapping.
-    :cvar INDIAN_1975: A geodetic datum first defined in 1975 suitable
-        for use in Thailand - onshore plus offshore Gulf of Thailand.
-        Indian 1975 references the Everest 1830 (1937 Adjustment)
-        ellipsoid and the Greenwich prime meridian. Indian 1975 origin
-        is Fundamental point: Khau Sakaerang. Indian 1975 is a geodetic
-        datum for Topographic mapping.
-    :cvar IRELAND_1965: A geodetic datum first defined in 1975 suitable
-        for use in Ireland - onshore. United Kingdom (UK) - Northern
-        Ireland (Ulster) - onshore. Ireland 1965 references the Airy
-        Modified 1849 ellipsoid and the Greenwich prime meridian.
-        Ireland 1965 origin is Adjusted to best mean fit 9 stations of
-        the OSNI 1952 primary adjustment in Northern Ireland plus the
-        1965 values of 3 stations in the Republic of Ireland. Ireland
-        1965 is a geodetic datum for Geodetic survey, topographic
-        mapping and engineering survey. It was defined by information
-        from "The Irish Grid - A Description of the Co-ordinate
-        Reference System" published by Ordnance Survey of Ireland,
-        Dublin and Ordnance Survey of Northern Ireland, Belfast.
-        Differences from the 1965 adjustment (datum code 6299) are:
-        average difference in Eastings 0.092m; average difference in
-        Northings 0.108m; maximum vector difference 0.548m.
-    :cvar ISTS_061_ASTRO_1968: A geodetic datum first defined in 1968
-        suitable for use in South Georgia and the South Sandwich Islands
-        - South Georgia onshore. ISTS 061 Astro 1968 references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        ISTS 061 Astro 1968 origin is Fundamental point: ISTS 061. ISTS
-        061 Astro 1968 is a geodetic datum for Military and topographic
-        mapping It was defined by information from DMA / NIMA / NGA
-        TR8350.2 (3rd edition, Amendment 1, 3 January 2000).
-    :cvar ISTS_073_ASTRO_1969: A geodetic datum first defined in 1969
-        suitable for use in British Indian Ocean Territory - Chagos
-        Archipelago - Diego Garcia. ISTS 073 Astro 1969 references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        ISTS 073 Astro 1969 origin is Fundamental point: ISTS 073. ISTS
-        073 Astro 1969 is a geodetic datum for Military and topographic
-        mapping. It was defined by information from DMA / NIMA / NGA
-        TR8350.2 (3rd edition, Amendment 1, 3 January 2000).
-    :cvar JOHNSTON_ISLAND_1961: A geodetic datum first defined in 1961
-        suitable for use in United States Minor Outlying Islands -
-        Johnston Island. Johnston Island 1961 references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        Johnston Island 1961 is a geodetic datum for Military and
-        topographic mapping. It was defined by information from DMA /
-        NIMA / NGA TR8350.2 (3rd edition, Amendment 1, 3 January 2000).
-    :cvar KANDAWALA: A geodetic datum first defined in 1930 suitable for
-        use in Sri Lanka - onshore. Kandawala references the Everest
-        1830 (1937 Adjustment) ellipsoid and the Greenwich prime
-        meridian. Kandawala origin is Fundamental point: Kandawala.
-        Latitude: 714'06.838"N, longitude: 7952'36.670"E. Kandawala is a
-        geodetic datum for Topographic mapping. It was defined by
-        information from Abeyratne, Featherstone and Tantrigoda in
-        Survey Review vol. 42 no. 317 (July 2010).
-    :cvar KERGUELEN_ISLAND_1949: A geodetic datum first defined in 1949
-        suitable for use in French Southern Territories - Kerguelen
-        onshore. References the International 1924 ellipsoid and the
-        Greenwich prime meridian. Origin is K0 1949. Is a geodetic datum
-        for Geodetic survey, cadastre, topographic mapping, engineering
-        survey. It was defined by information from IGN Paris.
-    :cvar KERTAU_1968: A geodetic datum first defined in 1968 suitable
-        for use in Malaysia - West Malaysia onshore and offshore east
-        coast; Singapore - onshore and offshore. Kertau 1968 references
-        the Everest 1830 Modified ellipsoid and the Greenwich prime
-        meridian. Kertau 1968 origin is Fundamental point: Kertau.
-        Latitude: 327'50.710"N, longitude: 10237'24.550"E (of
-        Greenwich). Kertau 1968 is a geodetic datum for Geodetic survey,
-        cadastre. It was defined by information from Defence Geographic
-        Centre. Replaces MRT48 and earlier adjustments. Adopts metric
-        conversion of 39.370113 inches per metre. Not used for 1969
-        metrication of RSO grid - see Kertau (RSO) (code 6751).
-    :cvar KUSAIE_ASTRO_1951: A geodetic datum first defined in 1951
-        suitable for use in Federated States of Micronesia - Kosrae
-        (Kusaie). Kusaie 1951 references the International 1924
-        ellipsoid and the Greenwich prime meridian. Kusaie 1951 is a
-        geodetic datum for Military and topographic mapping. It was
-        defined by information from DMA / NIMA / NGA TR8350.2 (3rd
-        edition, Amendment 1, 3 January 2000).
-    :cvar L_C_5_ASTRO_1961: L. C. 5 Astro 1961 datum.
-    :cvar LEIGON: A geodetic datum suitable for use in Ghana - onshore
-        and offshore. Leigon references the Clarke 1880 (RGS) ellipsoid
-        and the Greenwich prime meridian. Leigon origin is Fundamental
-        point: GCS Station 121, Leigon. Latitude: 538'52.27"N,
-        longitude: 011'46.08"W (of Greenwich). Leigon is a geodetic
-        datum for Topographic mapping. It was defined by information
-        from Ordnance Survey International. Replaced Accra datum (code
-        6168) from 1978. Coordinates at Leigon fundamental point defined
-        as Accra datum values for that point.
-    :cvar LIBERIA_1964: A geodetic datum first defined in 1964 suitable
-        for use in Liberia - onshore. Liberia 1964 references the Clarke
-        1880 (RGS) ellipsoid and the Greenwich prime meridian. Liberia
-        1964 origin is Fundamental point: Robertsfield. Latitude:
-        613'53.02"N, longitude: 1021'35.44"W (of Greenwich). Liberia
-        1964 is a geodetic datum for Topographic mapping. It was defined
-        by information from NIMA http://earth-info.nima.mil/.
-    :cvar LUZON: A geodetic datum first defined in 1911 suitable for use
-        in Philippines - onshore. Luzon references the Clarke 1866
-        ellipsoid and the Greenwich prime meridian. Luzon origin is
-        Fundamental point: Balacan. Latitude: 1333'41.000"N, longitude:
-        12152'03.000"E (of Greenwich). Luzon is a geodetic datum for
-        Topographic mapping. It was defined by information from Coast
-        and Geodetic Survey Replaced by Philippine Reference system of
-        1992 (datum code 6683).
-    :cvar MAHE_1971: A geodetic datum first defined in 1971 suitable for
-        use in Seychelles - Mahe Island. Mahe 1971 references the Clarke
-        1880 (RGS) ellipsoid and the Greenwich prime meridian. Mahe 1971
-        origin is Fundamental point: Station SITE. Latitude:
-        440'14.644"S, longitude: 5528'44.488"E (of Greenwich). Mahe 1971
-        is a geodetic datum for US military survey. It was defined by
-        information from Clifford Mugnier's September 2007 PE&amp;RS
-        "Grids and Datums" article on Seychelles
-        (www.asprs.org/resources/grids/). South East Island 1943 (datum
-        code 1138) used for topographic mapping, cadastral and
-        hydrographic survey.
-    :cvar MASSAWA: A geodetic datum suitable for use in Eritrea -
-        onshore and offshore. Massawa references the Bessel 1841
-        ellipsoid and the Greenwich prime meridian. Massawa is a
-        geodetic datum for Topographic mapping.
-    :cvar MERCHICH: A geodetic datum first defined in 1922 suitable for
-        use in Morocco - onshore. Merchich references the Clarke 1880
-        (IGN) ellipsoid and the Greenwich prime meridian. Merchich
-        origin is Fundamental point: Merchich. Latitude: 3326'59.672"N,
-        longitude: 733'27.295"W (of Greenwich). Merchich is a geodetic
-        datum for Topographic mapping.
-    :cvar MIDWAY_ASTRO_1961: A geodetic datum first defined in 1961
-        suitable for use in United States Minor Outlying Islands -
-        Midway Islands - Sand Island and Eastern Island. Midway 1961
-        references the International 1924 ellipsoid and the Greenwich
-        prime meridian. Midway 1961 is a geodetic datum for Military and
-        topographic mapping. It was defined by information from DMA /
-        NIMA / NGA TR8350.2 (3rd edition, Amendment 1, 3 January 2000).
-    :cvar MINNA: A geodetic datum suitable for use in Nigeria - onshore
-        and offshore. Minna references the Clarke 1880 (RGS) ellipsoid
-        and the Greenwich prime meridian. Minna origin is Fundamental
-        point: Minna base station L40. Latitude: 938'08.87"N, longitude:
-        630'58.76"E (of Greenwich). Minna is a geodetic datum for
-        Topographic mapping. It was defined by information from NIMA
-        http://earth-info.nima.mil/.
-    :cvar MONTSERRAT_ISLAND_ASTRO_1958: A geodetic datum first defined
-        in 1958 suitable for use in Montserrat - onshore. Montserrat
-        1958 references the Clarke 1880 (RGS) ellipsoid and the
-        Greenwich prime meridian. Montserrat 1958 origin is Fundamental
-        point: station M36. Montserrat 1958 is a geodetic datum for
-        Topographic mapping. It was defined by information from Ordnance
-        Survey of Great Britain.
-    :cvar M_PORALOKO: A geodetic datum suitable for use in Gabon -
-        onshore and offshore. M'poraloko references the Clarke 1880
-        (IGN) ellipsoid and the Greenwich prime meridian. M'poraloko is
-        a geodetic datum for Topographic mapping.
-    :cvar NAHRWAN: A geodetic datum first defined in 1934 suitable for
-        use in Iraq - onshore; Iran - onshore northern Gulf coast and
-        west bordering southeast Iraq. Nahrwan 1934 references the
-        Clarke 1880 (RGS) ellipsoid and the Greenwich prime meridian.
-        Nahrwan 1934 origin is Fundamental point: Nahrwan south base.
-        Latitude: 3319'10.87"N, longitude: 4443'25.54"E (of Greenwich).
-        Nahrwan 1934 is a geodetic datum for Oil exploration and
-        production. It was defined by information from Various industry
-        sources. This adjustment later discovered to have a significant
-        orientation error. In Iran replaced by FD58. In Iraq, replaced
-        by Karbala 1979.
-    :cvar NAPARIMA_BWI: A geodetic datum first defined in 1972 suitable
-        for use in Trinidad and Tobago - Tobago - onshore. Naparima 1972
-        references the International 1924 ellipsoid and the Greenwich
-        prime meridian. Naparima 1972 origin is Fundamental point:
-        Naparima. Latitude: 1016'44.860"N, longitude: 6127'34.620"W (of
-        Greenwich). Naparima 1972 is a geodetic datum for Topographic
-        mapping. It was defined by information from Ordnance Survey
-        International. Naparima 1972 is an extension of the Naparima
-        1955 network of Trinidad to include Tobago.
-    :cvar NORTH_AMERICAN_1927: A geodetic datum first defined in 1927
-        suitable for use in North and central America; Antigua and
-        Barbuda; Bahamas; Belize; British Virgin Islandss. Usage shall
-        be onshore only except that onshore and offshore shall apply to
-        Canada east coast (New Brunswick; Newfoundland and Labrador;
-        Prince Edward Island; Quebec). Cuba. Mexico (Gulf of Mexico and
-        Caribbean coasts only). USA Alaska. USA Gulf of Mexico (Alabama;
-        Florida; Louisiana; Mississippi; Texas). USA East Coast. Bahamas
-        onshore plus offshore over internal continental shelf only.
-        North American Datum 1927 references the Clarke 1866 ellipsoid
-        and the Greenwich prime meridian. North American Datum 1927
-        origin is Fundamental point: Meade's Ranch. Latitude:
-        3913'26.686"N, longitude: 9832'30.506"W (of Greenwich). North
-        American Datum 1927 is a geodetic datum for Topographic mapping.
-        In United States (USA) and Canada, replaced by North American
-        Datum 1983 (NAD83) (code 6269) ; in Mexico, replaced by Mexican
-        Datum of 1993 (code 1042).
-    :cvar NORTH_AMERICAN_1983: A geodetic datum first defined in 1986
-        suitable for use in North America - onshore and offshore:
-        Canada; Puerto Rico; United States (USA); US Virgin Islands;
-        British Virgin Islands. North American Datum 1983 references the
-        GRS 1980 ellipsoid and the Greenwich prime meridian. North
-        American Datum 1983 origin is Origin at geocentre. North
-        American Datum 1983 is a geodetic datum for Topographic mapping.
-        Although the 1986 adjustment included connections to Greenland
-        and Mexico, it has not been adopted there. In Canada and US,
-        replaced NAD27.
-    :cvar OBSERVATORIO_METEOROLOGICO_1939: A geodetic datum first
-        defined in 1939 suitable for use in Portugal - western Azores
-        onshore - Flores, Corvo. Azores Occidental Islands 1939
-        references the International 1924 ellipsoid and the Greenwich
-        prime meridian. Azores Occidental Islands 1939 origin is
-        Fundamental point: Observatario Meteorologico Flores. Azores
-        Occidental Islands 1939 is a geodetic datum for Topographic
-        mapping. It was defined by information from Instituto Geografico
-        e Cadastral Lisbon via EuroGeographics;
-        http://crs.bkg.bund.de/crs-eu/.
-    :cvar OLD_EGYPTIAN_1907: A geodetic datum first defined in 1907
-        suitable for use in Egypt - onshore and offshore. Egypt 1907
-        references the Helmert 1906 ellipsoid and the Greenwich prime
-        meridian. Egypt 1907 origin is Fundamental point: Station F1
-        (Venus). Latitude: 3001'42.86"N, longitude: 3116'33.60"E (of
-        Greenwich). Egypt 1907 is a geodetic datum for Geodetic survey,
-        cadastre, topographic mapping, engineering survey.
-    :cvar OLD_HAWAIIAN: A geodetic datum suitable for use in United
-        States (USA) - Hawaii - main islands onshore. Old Hawaiian
-        references the Clarke 1866 ellipsoid and the Greenwich prime
-        meridian. Old Hawaiian origin is Fundamental point: Oahu West
-        Base Astro. Latitude: 2118'13.89"N, longitude 15750'55.79"W (of
-        Greenwich). Old Hawaiian is a geodetic datum for Topographic
-        mapping. It was defined by information from
-        http://www.ngs.noaa.gov/ (NADCON readme file). Hawaiian Islands
-        were never on NAD27 but rather on Old Hawaiian Datum. NADCON
-        conversion program provides transformation from Old Hawaiian
-        Datum to NAD83 (original 1986 realization) but making the
-        transformation appear to user as if from NAD27.
-    :cvar OMAN: A geodetic datum first defined in 2013 suitable for use
-        in Oman - onshore and offshore. Oman National Geodetic Datum
-        2014 references the GRS 1980 ellipsoid and the Greenwich prime
-        meridian. Oman National Geodetic Datum 2014 origin is 20
-        stations of the Oman primary network tied to ITRF2008 at epoch
-        2013.15. Oman National Geodetic Datum 2014 is a geodetic datum
-        for Geodetic Survey. It was defined by information from National
-        Survey Authority, Sultanate of Oman. Replaces WGS 84 (G874).
-    :cvar ORDNANCE_SURVEY_OF_GREAT_BRITAIN_1936: A geodetic datum first
-        defined in 1936 suitable for use in United Kingdom (UK) -
-        offshore to boundary of UKCS within 4946'N to 6101'N and 733'W
-        to 333'E; onshore Great Britain (England, Wales and Scotland).
-        Isle of Man onshore. OSGB 1936 references the Airy 1830
-        ellipsoid and the Greenwich prime meridian. OSGB 1936 origin is
-        Prior to 2002, fundamental point: Herstmonceux, Latitude:
-        5051'55.271"N, longitude: 020'45.882"E (of Greenwich). From
-        April 2002 the datum is defined through the application of the
-        OSTN transformation from ETRS89. OSGB 1936 is a geodetic datum
-        for Topographic mapping. It was defined by information from
-        Ordnance Survey of Great Britain. The average accuracy of OSTN
-        compared to the old triangulation network (down to 3rd order) is
-        0.1m. With the introduction of OSTN15, the area for OSGB 1936
-        has effectively been extended from Britain to cover the adjacent
-        UK Continental Shelf.
-    :cvar PICO_DE_LAS_NIEVES: A geodetic datum suitable for use in Spain
-        - Canary Islands onshore. Pico de las Nieves 1984 references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        Pico de las Nieves 1984 is a geodetic datum for Military and
-        topographic mapping. It was defined by information from DMA /
-        NIMA / NGA TR8350.2 (3rd edition, Amendment 1, 3 January 2000).
-        Replaces Pico de las Nieves 1968 (PN68). Replaced by REGCAN95.
-    :cvar PITCAIRN_ASTRO_1967: A geodetic datum first defined in 1967
-        suitable for use in Pitcairn - Pitcairn Island. Pitcairn 1967
-        references the International 1924 ellipsoid and the Greenwich
-        prime meridian. Pitcairn 1967 origin is Fundamental point:
-        Pitcairn Astro. Latitude: 2504'06.87"S, longitude: 13006'47.83"W
-        (of Greenwich). Pitcairn 1967 is a geodetic datum for Military
-        and topographic mapping. It was defined by information from DMA
-        / NIMA / NGA TR8350.2 (3rd edition, Amendment 1, 3 January
-        2000). Replaced by Pitcairn 2006.
-    :cvar POINT_58: A geodetic datum first defined in 1969 suitable for
-        use in Senegal - central, Mali - southwest, Burkina Faso -
-        central, Niger - southwest, Nigeria - north, Chad - central. All
-        in proximity to the parallel of latitude of 12N. Point 58
-        references the Clarke 1880 (RGS) ellipsoid and the Greenwich
-        prime meridian. Point 58 origin is Fundamental point: Point 58.
-        Latitude: 1252'44.045"N, longitude: 358'37.040"E (of Greenwich).
-        Point 58 is a geodetic datum for Geodetic survey. It was defined
-        by information from IGN Paris. Used as the basis for computation
-        of the 12th Parallel traverse conducted 1966-70 from Senegal to
-        Chad and connecting to the Blue Nile 1958 (Adindan)
-        triangulation in Sudan.
-    :cvar POINTE_NOIRE_1948: Pointe Noire 1948 datum.
-    :cvar PORTO_SANTO_1936: A geodetic datum first defined in 1936
-        suitable for use in Portugal - Madeira, Porto Santo and Desertas
-        islands - onshore. Porto Santo 1936 references the International
-        1924 ellipsoid and the Greenwich prime meridian. Porto Santo
-        1936 origin is SE Base on Porto Santo island. Porto Santo 1936
-        is a geodetic datum for Topographic mapping. It was defined by
-        information from Instituto Geografico e Cadastral Lisbon
-        http://www.igeo.pt Replaced by 1995 adjustment (datum code
-        6663). For Selvagens see Selvagem Grande (code 6616).
-    :cvar PROVISIONAL_SOUTH_AMERICAN_1956: A geodetic datum first
-        defined in 1956 suitable for use in Aruba - onshore; Bolivia;
-        Bonaire - onshore; Brazil - offshore - Amazon Cone shelf; Chile
-        - onshore north of 4330'S; Curacao - onshore; Ecuador - mainland
-        onshore; Guyana - onshore; Peru - onshore; Venezuela - onshore.
-        Provisional South American Datum 1956 references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        Provisional South American Datum 1956 origin is Fundamental
-        point: La Canoa. Latitude: 834'17.170"N, longitude:
-        6351'34.880"W (of Greenwich). Provisional South American Datum
-        1956 is a geodetic datum for Topographic mapping. Same origin as
-        La Canoa datum.
-    :cvar PROVISIONAL_SOUTH_CHILEAN_1963: A geodetic datum first defined
-        in 1963 suitable for use in Argentina and Chile - Tierra del
-        Fuego, onshore. Hito XVIII 1963 references the International
-        1924 ellipsoid and the Greenwich prime meridian. Hito XVIII 1963
-        origin is Chile-Argentina boundary survey. Hito XVIII 1963 is a
-        geodetic datum for Geodetic survey. It was defined by
-        information from Various oil company records. Used in Tierra del
-        Fuego.
-    :cvar PUERTO_RICO: A geodetic datum first defined in 1901 suitable
-        for use in Puerto Rico, US Virgin Islands and British Virgin
-        Islands - onshore. Puerto Rico references the Clarke 1866
-        ellipsoid and the Greenwich prime meridian. Puerto Rico origin
-        is Fundamental point: Cardona Island Lighthouse.
-        Latitude:1757'31.40"N, longitude: 6638'07.53"W (of Greenwich).
-        Puerto Rico is a geodetic datum for Topographic mapping. It was
-        defined by information from Ordnance Survey of Great Britain and
-        http://www.ngs.noaa.gov/ (NADCON readme file). NADCON conversion
-        program provides transformation from Puerto Rico Datum to NAD83
-        (original 1986 realization) but making the transformation appear
-        to user as if from NAD27.
-    :cvar QATAR_NATIONAL: A geodetic datum first defined in 1995
-        suitable for use in Qatar - onshore. Qatar National Datum 1995
-        references the International 1924 ellipsoid and the Greenwich
-        prime meridian. Qatar National Datum 1995 origin is defined by
-        transformation from WGS 84 - see coordinate operation code 1840.
-        Qatar National Datum 1995 is a geodetic datum for Topographic
-        mapping. It was defined by information from Qatar Centre for
-        Geographic Information.
-    :cvar QORNOQ: A geodetic datum first defined in 1927 suitable for
-        use in Greenland - west coast onshore. Qornoq 1927 references
-        the International 1924 ellipsoid and the Greenwich prime
-        meridian. Qornoq 1927 origin is Fundamental point: Station 7008.
-        Latitude: 6431'06.27"N, longitude: 5112'24.86"W (of Greenwich).
-        Qornoq 1927 is a geodetic datum for Topographic mapping. It was
-        defined by information from Kort &amp; Matrikelstyrelsen,
-        Copenhagen. Origin coordinates from NIMA http://earth-
-        info.nima.mil/.
-    :cvar REUNION: A geodetic datum first defined in 1947 suitable for
-        use in Reunion - onshore. Reunion 1947 references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        Reunion 1947 origin is Fundamental point: Piton des Neiges
-        (Borne). Latitude: 2105'13.119"S, longitude: 5529'09.193"E (of
-        Greenwich). Reunion 1947 is a geodetic datum for Geodetic
-        survey, cadastre, topographic mapping, engineering survey. It
-        was defined by information from IGN Paris. Replaced by RGR92
-        (datum code 6627).
-    :cvar ROME_1940: A geodetic datum first defined in and is suitable
-        for use in Italy - onshore and offshore; San Marino, Vatican
-        City State. Monte Mario (Rome) references the International 1924
-        ellipsoid and the Rome prime meridian. Monte Mario (Rome) origin
-        is Fundamental point: Monte Mario. Latitude: 4155'25.51"N,
-        longitude: 000' 00.00"E (of Rome). Monte Mario (Rome) is a
-        geodetic datum for Topographic mapping. Replaced Genova datum,
-        Bessel 1841 ellipsoid, from 1940.
-    :cvar SANTO_DOS_1965: A geodetic datum first defined in 1965
-        suitable for use in Vanuatu - northern islands - Aese, Ambrym,
-        Aoba, Epi, Espiritu Santo, Maewo, Malo, Malkula, Paama,
-        Pentecost, Shepherd and Tutuba. Santo 1965 references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        Santo 1965 is a geodetic datum for Military and topographic
-        mapping. It was defined by information from DMA / NIMA / NGA
-        TR8350.2 (3rd edition, Amendment 1, 3 January 2000). Datum
-        covers all the major islands of Vanuatu in two different
-        adjustment blocks, but practical usage is as given in the area
-        of use.
-    :cvar SAO_BRAZ: A geodetic datum first defined in 1995 suitable for
-        use in Portugal - eastern Azores onshore - Sao Miguel, Santa
-        Maria, Formigas. Azores Oriental Islands 1995 references the
-        International 1924 ellipsoid and the Greenwich prime meridian.
-        Azores Oriental Islands 1995 origin is Fundamental point: Forte
-        de So Bras. Origin and orientation constrained to those of the
-        1940 adjustment. Azores Oriental Islands 1995 is a geodetic
-        datum for Topographic mapping. It was defined by information
-        from Instituto Geografico e Cadastral Lisbon;
-        http://www.igeo.pt/ Classical and GPS observations. Replaces
-        1940 adjustment (datum code 6184).
-    :cvar SAPPER_HILL_1943: A geodetic datum first defined in 1943
-        suitable for use in Falkland Islands (Malvinas) - onshore.
-        Sapper Hill 1943 references the International 1924 ellipsoid and
-        the Greenwich prime meridian. Sapper Hill 1943 is a geodetic
-        datum for Topographic mapping.
-    :cvar SCHWARZECK: A geodetic datum suitable for use in Namibia -
-        onshore and offshore. Schwarzeck references the Bessel Namibia
-        (GLM) ellipsoid and the Greenwich prime meridian. Schwarzeck
-        origin is Fundamental point: Schwarzeck. Latitude:
-        2245'35.820"S, longitude: 1840'34.549"E (of Greenwich). Fixed
-        during German South West Africa-British Bechuanaland boundary
-        survey of 1898-1903. Schwarzeck is a geodetic datum for
-        Topographic mapping. It was defined by information from Private
-        Communication, Directorate of Surveys and Land Information, Cape
-        Town.
-    :cvar SELVAGEM_GRANDE_1938: A geodetic datum suitable for use in
-        Portugal - Selvagens islands (Madeira province) - onshore.
-        Selvagem Grande references the International 1924 ellipsoid and
-        the Greenwich prime meridian. Selvagem Grande is a geodetic
-        datum for Topographic mapping. It was defined by information
-        from Instituto Geografico e Cadastral Lisbon http://www.igeo.pt.
-    :cvar SOUTH_AMERICAN_1969: A geodetic datum first defined in 1969
-        suitable for use in Brazil - onshore and offshore. In rest of
-        South America - onshore north of approximately 45S and Tierra
-        del Fuego. South American Datum 1969 references the GRS 1967
-        Modified ellipsoid and the Greenwich prime meridian. South
-        American Datum 1969 origin is Fundamental point: Chua. Geodetic
-        latitude: 1945'41.6527"S; geodetic longitude: 4806'04.0639"W (of
-        Greenwich). (Astronomic coordinates: Latitude 1945'41.34"S +/-
-        0.05", longitude 4806'07.80"W +/- 0.08"). South American Datum
-        1969 is a geodetic datum for Topographic mapping. It was defined
-        by information from DMA 1974. SAD69 uses GRS 1967 ellipsoid but
-        with 1/f to exactly 2 decimal places. In Brazil only, replaced
-        by SAD69(96) (datum code 1075).
-    :cvar SOUTH_ASIA: South Asia datum.
-    :cvar TANANARIVE_OBSERVATORY_1925: A geodetic datum first defined in
-        1925 suitable for use in Madagascar - onshore and nearshore.
-        Tananarive 1925 references the International 1924 ellipsoid and
-        the Greenwich prime meridian. Tananarive 1925 origin is
-        Fundamental point: Tananarive observatory. Latitude:
-        1855'02.10"S, longitude: 4733'06.75"E (of Greenwich). Tananarive
-        1925 is a geodetic datum for Topographic mapping. It was defined
-        by information from IGN Paris.
-    :cvar TIMBALAI_1948: A geodetic datum first defined in 1948 suitable
-        for use in Brunei - onshore and offshore; Malaysia - East
-        Malaysia (Sabah; Sarawak) - onshore and offshore. Timbalai 1948
-        references the Everest 1830 (1967 Definition) ellipsoid and the
-        Greenwich prime meridian. Timbalai 1948 origin is Fundamental
-        point: Station P85 at Timbalai. Latitude: 517' 3.548"N,
-        longitude: 11510'56.409"E (of Greenwich). Timbalai 1948 is a
-        geodetic datum for Topographic mapping. It was defined by
-        information from Defence Geographic Centre. In 1968, the
-        original adjustment was densified in Sarawak and extended to
-        Sabah.
-    :cvar TOKYO: A geodetic datum first defined in 1918 suitable for use
-        in Japan - onshore; North Korea - onshore; South Korea -
-        onshore. Tokyo references the Bessel 1841 ellipsoid and the
-        Greenwich prime meridian. Tokyo origin is Fundamental point:
-        Nikon-Keido-Genten. Latitude: 3539'17.5148"N, longitude:
-        13944'40.5020"E (of Greenwich). Longitude derived in 1918. Tokyo
-        is a geodetic datum for Geodetic survey, cadastre, topographic
-        mapping, engineering survey. It was defined by information from
-        Geographic Survey Institute; Japan; Bulletin 40 (March 1994).
-        Also http://vldb.gsi.go.jp/sokuchi/datum/tokyodatum.html. In
-        Japan, replaces Tokyo 1892 (code 1048) and replaced by Japanese
-        Geodetic Datum 2000 (code 6611). In Korea used only for geodetic
-        applications before being replaced by Korean 1985 (code 6162).
-    :cvar TRISTAN_ASTRO_1968: A geodetic datum first defined in 1968
-        suitable for use in St Helena, Ascension and Tristan da Cunha -
-        Tristan da Cunha island group including Tristan, Inaccessible,
-        Nightingale, Middle and Stoltenhoff Islands. Tristan 1968
-        references the International 1924 ellipsoid and the Greenwich
-        prime meridian. Tristan 1968 is a geodetic datum for Military
-        and topographic mapping. It was defined by information from DMA
-        / NIMA / NGA TR8350.2 (3rd edition, Amendment 1, 3 January
-        2000).
-    :cvar VITI_LEVU_1916: A geodetic datum first defined in 1912
-        suitable for use in Fiji - Viti Levu island. Viti Levu 1912
-        references the Clarke 1880 (international foot) ellipsoid and
-        the Greenwich prime meridian. Viti Levu 1912 Latitude origin was
-        obtained astronomically at station Monavatu = 1753'28.285"S,
-        longitude origin was obtained astronomically at station Suva =
-        17825'35.835"E. Viti Levu 1912 is a geodetic datum for Geodetic
-        survey, cadastre, topographic mapping, engineering survey. It
-        was defined by information from Clifford J. Mugnier in
-        Photogrammetric Engineering and Remote Sensing, October 2000,
-        www.asprs.org. For topographic mapping, replaced by Fiji 1956.
-        For other purposes, replaced by Fiji 1986.
-    :cvar WAKE_ENIWETOK_1960: A geodetic datum first defined in 1960
-        suitable for use in Marshall Islands - onshore. Wake atoll
-        onshore. Marshall Islands 1960 references the Hough 1960
-        ellipsoid and the Greenwich prime meridian. Marshall Islands
-        1960 is a geodetic datum for Military and topographic mapping.
-        It was defined by information from DMA / NIMA / NGA TR8350.2
-        (3rd edition, Amendment 1, 3 January 2000).
-    :cvar WAKE_ISLAND_ASTRO_1952: A geodetic datum first defined in 1952
-        suitable for use in Wake atoll - onshore. Wake Island 1952
-        references the International 1924 ellipsoid and the Greenwich
-        prime meridian. Wake Island 1952 is a geodetic datum for
-        Military and topographic mapping. It was defined by information
-        from DMA / NIMA / NGA TR8350.2 (3rd edition, Amendment 1, 3
-        January 2000).
-    :cvar YACARE: A geodetic datum suitable for use in Uruguay -
-        onshore. Yacare references the International 1924 ellipsoid and
-        the Greenwich prime meridian. Yacare origin is Fundamental
-        point: Yacare. Latitude: 3035'53.68"S, longitude: 5725'01.30"W
-        (of Greenwich). Yacare is a geodetic datum for Topographic
-        mapping. It was defined by information from NIMA http://earth-
-        info.nima.mil/
-    :cvar ZANDERIJ: A geodetic datum suitable for use in Suriname -
-        onshore and offshore. Zanderij references the International 1924
-        ellipsoid and the Greenwich prime meridian. Zanderij is a
-        geodetic datum for Topographic mapping.
-    :cvar AMERICAN_SAMOA_1962: A geodetic datum first defined in 1962
-        suitable for use in American Samoa - Tutuila, Aunu'u, Ofu,
-        Olesega and Ta'u islands. American Samoa 1962 references the
-        Clarke 1866 ellipsoid and the Greenwich prime meridian. American
-        Samoa 1962 origin is Fundamental point: Betty 13 eccentric.
-        Latitude: 1420'08.34"S, longitude: 17042'52.25"W (of Greenwich).
-        American Samoa 1962 is a geodetic datum for Topographic mapping.
-        It was defined by information from NIMA TR8350.2 revision of
-        January 2000. Oil industry sources for origin description
-        details.
-    :cvar DECEPTION_ISLAND: A geodetic datum suitable for use in
-        Antarctica - South Shetland Islands - Deception Island.
-        Deception Island references the Clarke 1880 (RGS) ellipsoid and
-        the Greenwich prime meridian. Deception Island is a geodetic
-        datum for Military and scientific mapping. It was defined by
-        information from DMA / NIMA / NGA TR8350.2 (3rd edition,
-        Amendment 1, 3 January 2000).
-    :cvar INDIAN_1960: A geodetic datum suitable for use in Cambodia -
-        onshore; Vietnam - onshore and offshore Cuu Long basin. Indian
-        1960 references the Everest 1830 (1937 Adjustment) ellipsoid and
-        the Greenwich prime meridian. Indian 1960 origin is DMA
-        extension over IndoChina of the Indian 1954 network adjusted to
-        better fit local geoid. Indian 1960 is a geodetic datum for
-        Topographic mapping. Also known as Indian (DMA Reduced).
-    :cvar INDONESIAN_1974: A geodetic datum first defined in 1974
-        suitable for use in Indonesia - onshore. Indonesian Datum 1974
-        references the Indonesian National Spheroid ellipsoid and the
-        Greenwich prime meridian. Indonesian Datum 1974 origin is
-        Fundamental point: Padang. Latitude: 056'38.414"S, longitude:
-        10022' 8.804"E (of Greenwich). Ellipsoidal height 3.190m,
-        gravity-related height 14.0m above mean sea level. Indonesian
-        Datum 1974 is a geodetic datum for Topographic mapping. It was
-        defined by information from Bakosurtanal 1979 paper by Jacob
-        Rais. Replaced by DGN95.
-    :cvar NORTH_SAHARA_1959: A geodetic datum first defined in 1959
-        suitable for use in Algeria - onshore and offshore. Nord Sahara
-        1959 references the Clarke 1880 (RGS) ellipsoid and the
-        Greenwich prime meridian. Nord Sahara 1959 origin is Coordinates
-        of primary network readjusted on ED50 datum and then transformed
-        conformally to Clarke 1880 (RGS) ellipsoid. Nord Sahara 1959 is
-        a geodetic datum for Topographic mapping. It was defined by
-        information from "Le System Geodesique Nord-Sahara"; IGN Paris
-        Adjustment includes Morocco and Tunisia but use only in Algeria.
-        Within Algeria the adjustment is north of 32N but use has been
-        extended southwards in many disconnected projects, some based on
-        independent astro stations rather than the geodetic network.
-    :cvar PULKOVO_1942: A geodetic datum first defined in 1942 suitable
-        for use in Armenia; Azerbaijan; Belarus; Estonia - onshore;
-        Georgia - onshore; Kazakhstan; Kyrgyzstan; Latvia - onshore;
-        Lithuania - onshore; Moldova; Russian Federation - onshore;
-        Tajikistan; Turkmenistan; Ukraine - onshore; Uzbekistan. Pulkovo
-        1942 references the Krassowsky 1940 ellipsoid and the Greenwich
-        prime meridian. Pulkovo 1942 origin is Fundamental point:
-        Pulkovo observatory. Latitude: 5946'18.550"N, longitude:
-        3019'42.090"E (of Greenwich). Pulkovo 1942 is a geodetic datum
-        for Topographic mapping.
-    :cvar S_JTSK: A geodetic datum suitable for use in Czech Republic;
-        Slovakia. System Jednotne Trigonometricke Site Katastralni
-        references the Bessel 1841 ellipsoid and the Greenwich prime
-        meridian. System Jednotne Trigonometricke Site Katastralni
-        origin is Modification of Austrian MGI datum, code 6312. System
-        Jednotne Trigonometricke Site Katastralni is a geodetic datum
-        for Geodetic survey, cadastre, topographic mapping, engineering
-        survey. It was defined by information from Research Institute
-        for Geodesy Topography and Cartography (VUGTK); Prague. S-JTSK =
-        System of the Unified Trigonometrical Cadastral Network.
-    :cvar VOIROL_1950: Voirol 1950 datum.
-    :cvar AVERAGE_TERRESTRIAL_SYSTEM_1977: A geodetic datum first
-        defined in 1977 suitable for use in Canada - New Brunswick; Nova
-        Scotia; Prince Edward Island. Average Terrestrial System 1977
-        references the Average Terrestrial System 1977 ellipsoid and the
-        Greenwich prime meridian. Average Terrestrial System 1977 is a
-        geodetic datum for Topographic mapping. It was defined by
-        information from New Brunswick Geographic Information
-        Corporation land and water information standards manual. In use
-        from 1979.
-    :cvar COMPENSATION_GEODESIQUE_DU_QUEBEC_1977: Compensation
-        Geodesique du Quebec 1977.
-    :cvar FINNISH_KKJ: A geodetic datum first defined in 1966 suitable
-        for use in Finland - onshore. Kartastokoordinaattijarjestelma
-        (1966) references the International 1924 ellipsoid and the
-        Greenwich prime meridian. Kartastokoordinaattijarjestelma (1966)
-        origin is Adjustment with fundamental point SF31 based on ED50
-        transformed to best fit the older VVJ adjustment.
-        Kartastokoordinaattijarjestelma (1966) is a geodetic datum for
-        Geodetic survey, cadastre, topographic mapping, engineering
-        survey. It was defined by information from National Land Survey
-        of Finland; http://www.maanmittauslaitos.fi. Adopted in 1970.
-    :cvar ORDNANCE_SURVEY_OF_IRELAND: A geodetic datum first defined in
-        1952 suitable for use in United Kingdom (UK) - Northern Ireland
-        (Ulster) - onshore. OSNI 1952 references the Airy 1830 ellipsoid
-        and the Greenwich prime meridian. OSNI 1952 origin is Position
-        fixed to the coordinates from the 19th century Principle
-        Triangulation of station Divis. Scale and orientation controlled
-        by position of Principle Triangulation stations Knocklayd and
-        Trostan. OSNI 1952 is a geodetic datum for Geodetic survey and
-        topographic mapping. It was defined by information from Ordnance
-        Survey of Northern Ireland. Replaced by Geodetic Datum of 1965
-        alias 1975 Mapping Adjustment or TM75 (datum code 6300).
-    :cvar REVISED_KERTAU: A geodetic datum first defined in 1969
-        suitable for use in Malaysia - West Malaysia; Singapore. Kertau
-        (RSO) references the Everest 1830 (RSO 1969) ellipsoid and the
-        Greenwich prime meridian. Kertau (RSO) is a geodetic datum for
-        Metrication of RSO grid. It was defined by information from
-        Defence Geographic Centre. Adopts metric conversion of 0.914398
-        metres per yard exactly. This is a truncation of the Sears 1922
-        ratio.
-    :cvar REVISED_NAHRWAN: A geodetic datum first defined in 1967
-        suitable for use in Arabian Gulf; Qatar - offshore; United Arab
-        Emirates (UAE) - Abu Dhabi; Dubai; Sharjah; Ajman; Fujairah; Ras
-        Al Kaimah; Umm Al Qaiwain - onshore and offshore. Nahrwan 1967
-        references the Clarke 1880 (RGS) ellipsoid and the Greenwich
-        prime meridian. Nahrwan 1967 origin is Fundamental point:
-        Nahrwan south base. Latitude: 3319'10.87"N, longitude:
-        4443'25.54"E (of Greenwich). Nahrwan 1967 is a geodetic datum
-        for Topographic mapping. In Iraq, replaces Nahrwan 1934.
-    :cvar GGRS_76_GREECE: A geodetic datum first defined in 1987
-        suitable for use in Greece - onshore. Greek Geodetic Reference
-        System 1987 references the GRS 1980 ellipsoid and the Greenwich
-        prime meridian. Greek Geodetic Reference System 1987 origin is
-        Fundamental point: Dionysos. Latitude 3804'33.8"N, longitude
-        2355'51.0"E of Greenwich; geoid height 7.0 m. Greek Geodetic
-        Reference System 1987 is a geodetic datum for Topographic
-        mapping. It was defined by information from L. Portokalakis;
-        Public Petroleum Corporation of Greece. Replaced (old) Greek
-        datum. Oil industry work based on ED50.
-    :cvar NOUVELLE_TRIANGULATION_DE_FRANCE: A geodetic datum first
-        defined in 1895 suitable for use in France - onshore - mainland
-        and Corsica. Nouvelle Triangulation Francaise references the
-        Clarke 1880 (IGN) ellipsoid and the Greenwich prime meridian.
-        Nouvelle Triangulation Francaise origin is Fundamental point:
-        Pantheon. Latitude: 4850'46.522"N, longitude: 220'48.667"E (of
-        Greenwich). Nouvelle Triangulation Francaise is a geodetic datum
-        for Topographic mapping.
-    :cvar RT_90_SWEDEN: A geodetic datum first defined in 1982 suitable
-        for use in Sweden - onshore and offshore. Rikets koordinatsystem
-        1990 references the Bessel 1841 ellipsoid and the Greenwich
-        prime meridian. Rikets koordinatsystem 1990 is a geodetic datum
-        for Geodetic survey, cadastre, topographic mapping, engineering
-        survey. It was defined by information from National Land Survey
-        of Sweden Replaces RT38 adjustment (datum code 6308).
-    :cvar GEOCENTRIC_DATUM_OF_AUSTRALIA: A geodetic datum first defined
-        in 1994 suitable for use in Australia including Lord Howe
-        Island, Macquarie Islands, Ashmore and Cartier Islands,
-        Christmas Island, Cocos (Keeling) Islands, Norfolk Island. All
-        onshore and offshore. Geocentric Datum of Australia 1994
-        references the GRS 1980 ellipsoid and the Greenwich prime
-        meridian. Geocentric Datum of Australia 1994 origin is ITRF92 at
-        epoch 1994.0. Geocentric Datum of Australia 1994 is a geodetic
-        datum for Topographic mapping, geodetic survey. It was defined
-        by information from Australian Surveying and Land Information
-        Group Internet WWW page.
-        http://www.auslig.gov.au/geodesy/datums/gda.htm#specs Coincident
-        with WGS84 to within 1 metre.
-    :cvar BJZ54_A954_BEIJING_COORDINATES: A geodetic datum first defined
-        in 1954 suitable for use in China - onshore. Beijing 1954
-        references the Krassowsky 1940 ellipsoid and the Greenwich prime
-        meridian. Beijing 1954 origin is Pulkovo, transferred through
-        Russian triangulation. Beijing 1954 is a geodetic datum for
-        Topographic mapping. It was defined by information from Chinese
-        Science Bulletin, 2009, 54:2714-2721 Scale determined through
-        three baselines in northeast China. Discontinuities at
-        boundaries of adjustment blocks. From 1982 replaced by Xian 1980
-        and New Beijing.
-    :cvar MODIFIED_BJZ54: Modified BJZ54 datum.
-    :cvar GDZ80: GDZ80 datum.
-    :cvar LOCAL_DATUM: An arbitrary datum defined by a local harbour
-        authority, from which levels and tidal heights are measured by
-        this authority.
-    """
-
-    WGS_72 = "WGS 72"
-    WGS_84 = "WGS 84"
-    EUROPEAN_1950 = "European 1950"
-    POTSDAM_DATUM = "Potsdam Datum"
-    ADINDAN = "Adindan"
-    AFGOOYE = "Afgooye"
-    AIN_EL_ABD_1970 = "Ain el Abd 1970"
-    ANNA_1_ASTRO_1965 = "Anna 1 Astro 1965"
-    ANTIGUA_ISLAND_ASTRO_1943 = "Antigua Island Astro 1943"
-    ARC_1950 = "Arc 1950"
-    ARC_1960 = "Arc 1960"
-    ASCENSION_ISLAND_1958 = "Ascension Island 1958"
-    ASTRO_BEACON_E_1945 = "Astro Beacon 'E' 1945"
-    ASTRO_DOS_71_4 = "Astro DOS 71/4"
-    ASTRO_TERN_ISLAND_FRIG_1961 = "Astro Tern Island (FRIG) 1961"
-    ASTRONOMICAL_STATION_1952 = "Astronomical Station 1952"
-    AUSTRALIAN_GEODETIC_1966 = "Australian Geodetic 1966"
-    AUSTRALIAN_GEODETIC_1984 = "Australian Geodetic 1984"
-    AYABELLE_LIGHTHOUSE = "Ayabelle Lighthouse"
-    BELLEVUE_IGN = "Bellevue (IGN)"
-    BERMUDA_1957 = "Bermuda 1957"
-    BISSAU = "Bissau"
-    BOGOTA_OBSERVATORY = "Bogota Observatory"
-    BUKIT_RIMPAH = "Bukit Rimpah"
-    CAMP_AREA_ASTRO = "Camp Area Astro"
-    CAMPO_INCHAUSPE_1969 = "Campo Inchauspe 1969"
-    CANTON_ASTRO_1966 = "Canton Astro 1966"
-    CAPE_DATUM = "Cape Datum"
-    CAPE_CANAVERAL = "Cape Canaveral"
-    CARTHAGE = "Carthage"
-    CHATAM_ISLAND_ASTRO_1971 = "Chatam Island Astro 1971"
-    CHUA_ASTRO = "Chua Astro"
-    CORREGO_ALEGRE = "Corrego Alegre"
-    DABOLA = "Dabola"
-    DJAKARTA_BATAVIA = "Djakarta (Batavia)"
-    DOS_1968 = "DOS 1968"
-    EASTER_ISLAND_1967 = "Easter Island 1967"
-    EUROPEAN_1979 = "European 1979"
-    FORT_THOMAS_1955 = "Fort Thomas 1955"
-    GAN_1970 = "Gan 1970"
-    GEODETIC_DATUM_1949 = "Geodetic Datum 1949"
-    GRACIOSA_BASE_SW_1948 = "Graciosa Base SW 1948"
-    GUAM_1963 = "Guam 1963"
-    GUNUNG_SEGARA = "Gunung Segara"
-    GUX_1_ASTRO = "GUX 1 Astro"
-    HERAT_NORTH = "Herat North"
-    HJORSEY_1955 = "Hjorsey 1955"
-    HONG_KONG_1963 = "Hong Kong 1963"
-    HU_TZU_SHAN = "Hu-Tzu-Shan"
-    INDIAN = "Indian"
-    INDIAN_1954 = "Indian 1954"
-    INDIAN_1975 = "Indian 1975"
-    IRELAND_1965 = "Ireland 1965"
-    ISTS_061_ASTRO_1968 = "ISTS 061 Astro 1968"
-    ISTS_073_ASTRO_1969 = "ISTS 073 Astro 1969"
-    JOHNSTON_ISLAND_1961 = "Johnston Island 1961"
-    KANDAWALA = "Kandawala"
-    KERGUELEN_ISLAND_1949 = "Kerguelen Island 1949"
-    KERTAU_1968 = "Kertau 1968"
-    KUSAIE_ASTRO_1951 = "Kusaie Astro 1951"
-    L_C_5_ASTRO_1961 = "L. C. 5 Astro 1961"
-    LEIGON = "Leigon"
-    LIBERIA_1964 = "Liberia 1964"
-    LUZON = "Luzon"
-    MAHE_1971 = "Mahe 1971"
-    MASSAWA = "Massawa"
-    MERCHICH = "Merchich"
-    MIDWAY_ASTRO_1961 = "Midway Astro 1961"
-    MINNA = "Minna"
-    MONTSERRAT_ISLAND_ASTRO_1958 = "Montserrat Island Astro 1958"
-    M_PORALOKO = "M'poraloko"
-    NAHRWAN = "Nahrwan"
-    NAPARIMA_BWI = "Naparima, BWI"
-    NORTH_AMERICAN_1927 = "North American 1927"
-    NORTH_AMERICAN_1983 = "North American 1983"
-    OBSERVATORIO_METEOROLOGICO_1939 = "Observatorio Meteorologico 1939"
-    OLD_EGYPTIAN_1907 = "Old Egyptian 1907"
-    OLD_HAWAIIAN = "Old Hawaiian"
-    OMAN = "Oman"
-    ORDNANCE_SURVEY_OF_GREAT_BRITAIN_1936 = (
-        "Ordnance Survey of Great Britain 1936"
-    )
-    PICO_DE_LAS_NIEVES = "Pico de las Nieves"
-    PITCAIRN_ASTRO_1967 = "Pitcairn Astro 1967"
-    POINT_58 = "Point 58"
-    POINTE_NOIRE_1948 = "Pointe Noire 1948"
-    PORTO_SANTO_1936 = "Porto Santo 1936"
-    PROVISIONAL_SOUTH_AMERICAN_1956 = "Provisional South American 1956"
-    PROVISIONAL_SOUTH_CHILEAN_1963 = "Provisional South Chilean 1963"
-    PUERTO_RICO = "Puerto Rico"
-    QATAR_NATIONAL = "Qatar National"
-    QORNOQ = "Qornoq"
-    REUNION = "Reunion"
-    ROME_1940 = "Rome 1940"
-    SANTO_DOS_1965 = "Santo (DOS) 1965"
-    SAO_BRAZ = "Sao Braz"
-    SAPPER_HILL_1943 = "Sapper Hill 1943"
-    SCHWARZECK = "Schwarzeck"
-    SELVAGEM_GRANDE_1938 = "Selvagem Grande 1938"
-    SOUTH_AMERICAN_1969 = "South American 1969"
-    SOUTH_ASIA = "South Asia"
-    TANANARIVE_OBSERVATORY_1925 = "Tananarive Observatory 1925"
-    TIMBALAI_1948 = "Timbalai 1948"
-    TOKYO = "Tokyo"
-    TRISTAN_ASTRO_1968 = "Tristan Astro 1968"
-    VITI_LEVU_1916 = "Viti Levu 1916"
-    WAKE_ENIWETOK_1960 = "Wake-Eniwetok 1960"
-    WAKE_ISLAND_ASTRO_1952 = "Wake Island Astro 1952"
-    YACARE = "Yacare"
-    ZANDERIJ = "Zanderij"
-    AMERICAN_SAMOA_1962 = "American Samoa 1962"
-    DECEPTION_ISLAND = "Deception Island"
-    INDIAN_1960 = "Indian 1960"
-    INDONESIAN_1974 = "Indonesian 1974"
-    NORTH_SAHARA_1959 = "North Sahara 1959"
-    PULKOVO_1942 = "Pulkovo 1942"
-    S_JTSK = "S-JTSK"
-    VOIROL_1950 = "Voirol 1950"
-    AVERAGE_TERRESTRIAL_SYSTEM_1977 = "Average Terrestrial System 1977"
-    COMPENSATION_GEODESIQUE_DU_QUEBEC_1977 = (
-        "Compensation Geodesique du Quebec 1977"
-    )
-    FINNISH_KKJ = "Finnish (KKJ)"
-    ORDNANCE_SURVEY_OF_IRELAND = "Ordnance Survey of Ireland"
-    REVISED_KERTAU = "Revised Kertau"
-    REVISED_NAHRWAN = "Revised Nahrwan"
-    GGRS_76_GREECE = "GGRS 76 (Greece)"
-    NOUVELLE_TRIANGULATION_DE_FRANCE = "Nouvelle Triangulation de France"
-    RT_90_SWEDEN = "RT 90 (Sweden)"
-    GEOCENTRIC_DATUM_OF_AUSTRALIA = "Geocentric Datum of Australia"
-    BJZ54_A954_BEIJING_COORDINATES = "BJZ54 (A954 Beijing Coordinates)"
-    MODIFIED_BJZ54 = "Modified BJZ54"
-    GDZ80 = "GDZ80"
-    LOCAL_DATUM = "Local Datum"
-
-
 @dataclass
 class HorizontalPositionUncertaintyType:
     """
@@ -2917,14 +1626,14 @@ class HorizontalPositionUncertaintyType:
 
     class Meta:
         name = "horizontalPositionUncertaintyType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     uncertainty_fixed: Optional[float] = field(
         default=None,
         metadata={
             "name": "uncertaintyFixed",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -2933,7 +1642,7 @@ class HorizontalPositionUncertaintyType:
         metadata={
             "name": "uncertaintyVariableFactor",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -2959,14 +1668,14 @@ class InformationType:
 
     class Meta:
         name = "informationType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     file_locator: Optional[str] = field(
         default=None,
         metadata={
             "name": "fileLocator",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     file_reference: Optional[str] = field(
@@ -2974,21 +1683,21 @@ class InformationType:
         metadata={
             "name": "fileReference",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     headline: Optional[str] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     language: Optional[str] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -2996,7 +1705,7 @@ class InformationType:
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -3250,16 +1959,14 @@ class LightedAtonChangeType(Enum):
 class MarksNavigationalSystemOfType(Enum):
     """
     :cvar IALA_A: Navigational aids conform to the International
-        Association of Marine Aids to Navigation and Lighthouse
-        Authorities - IALA A system.
+        Association of Lighthouse Authorities - IALA A system.
     :cvar IALA_B: Navigational aids conform to the International
-        Association of Marine Aids to Navigation and Lighthouse
-        Authorities - IALA B system.
+        Association of Lighthouse Authorities - IALA B system.
     :cvar NO_SYSTEM: Navigational aids do not conform to any defined
         system.
     :cvar OTHER_SYSTEM: Navigational aids conform to a defined system
-        other than International Association of Marine Aids to
-        Navigation and Lighthouse Authorities - IALA.
+        other than International Association of Lighthouse Authorities -
+        IALA.
     :cvar CEVNI: CEVNI (European Code for Navigation on Inland
         Waterways) is the European code for rivers, canals land lakes in
         most of Europe.
@@ -3307,14 +2014,14 @@ class MultiplicityOfFeaturesType:
 
     class Meta:
         name = "multiplicityOfFeaturesType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     multiplicity_known: Optional[bool] = field(
         default=None,
         metadata={
             "name": "multiplicityKnown",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -3323,7 +2030,7 @@ class MultiplicityOfFeaturesType:
         metadata={
             "name": "numberOfFeatures",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -3392,14 +2099,14 @@ class OrientationType:
 
     class Meta:
         name = "orientationType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     orientation_uncertainty: Optional[float] = field(
         default=None,
         metadata={
             "name": "orientationUncertainty",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     orientation_value: Optional[float] = field(
@@ -3407,7 +2114,7 @@ class OrientationType:
         metadata={
             "name": "orientationValue",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -3425,79 +2132,6 @@ class PositioningEquipmentType(Enum):
     GLONASS_RECEIVER = "GLONASS Receiver"
     GPS_RECEIVER = "GPS Receiver"
     GPS_WAAS_RECEIVER = "GPS/WAAS Receiver"
-
-
-class ProductType(Enum):
-    """
-    :cvar OIL: A thick, slippery liquid that will not dissolve in water,
-        usually petroleum based in the context of storage tanks.
-    :cvar GAS: A substance with particles that can move freely, usually
-        a fuel substance in the context of storage tanks.
-    :cvar WATER: A colourless, odourless, tasteless liquid that is a
-        compound of hydrogen and oxygen.
-    :cvar STONE: A general term for rock and rock fragments ranging in
-        size from pebbles and gravel to boulders or large rock masses.
-    :cvar COAL: A hard black mineral that is burned as fuel.
-    :cvar ORE: A solid rock or mineral from which metal is obtained.
-    :cvar CHEMICALS: Any substance obtained by or used in a chemical
-        process.
-    :cvar DRINKING_WATER: Water that is suitable for human consumption.
-    :cvar MILK: A white fluid secreted by female mammals as food for
-        their young.
-    :cvar BAUXITE: A mineral from which aluminum is obtained.
-    :cvar COKE: A solid substance obtained after gas and tar have been
-        extracted from coal, used as a fuel.
-    :cvar IRON_INGOTS: An oblong lump of cast iron metal.
-    :cvar SALT: Sodium chloride obtained from mines or by the
-        evaporation of sea water.
-    :cvar SAND: Loose material consisting of small but easily
-        distinguishable, separate grains, between 0.0625 and 2.000
-        millimetres in diameter.
-    :cvar TIMBER: Wood prepared for use in building or carpentry.
-    :cvar SAWDUST_WOOD_CHIPS: Powdery fragments of wood made in sawing
-        timber or coarse chips produced for use in manufacturing pressed
-        board.
-    :cvar SCRAP_METAL: Discarded metal suitable for being reprocessed.
-    :cvar LIQUEFIED_NATURAL_GAS: Natural gas that has been liquefied for
-        ease of transport by cooling the gas to -162 Celsius.
-    :cvar LIQUEFIED_PETROLEUM_GAS: A compressed gas consisting of
-        flammable light hydrocarbons and derived from petroleum.
-    :cvar WINE: The fermented juice of grapes.
-    :cvar CEMENT: A substance made of powdered lime and clay, mixed with
-        water.
-    :cvar GRAIN: A small hard seed, especially that of any cereal plant
-        such as wheat, rice, corn, rye etc.
-    :cvar ELECTRICITY: Electric charge or current.
-    :cvar ICE: The solid form of water.
-    :cvar CLAY: (Particles of less than 0.002mm); stiff, sticky earth
-        that becomes hard when baked.
-    """
-
-    OIL = "Oil"
-    GAS = "Gas"
-    WATER = "Water"
-    STONE = "Stone"
-    COAL = "Coal"
-    ORE = "Ore"
-    CHEMICALS = "Chemicals"
-    DRINKING_WATER = "Drinking Water"
-    MILK = "Milk"
-    BAUXITE = "Bauxite"
-    COKE = "Coke"
-    IRON_INGOTS = "Iron Ingots"
-    SALT = "Salt"
-    SAND = "Sand"
-    TIMBER = "Timber"
-    SAWDUST_WOOD_CHIPS = "Sawdust/Wood Chips"
-    SCRAP_METAL = "Scrap Metal"
-    LIQUEFIED_NATURAL_GAS = "Liquefied Natural Gas"
-    LIQUEFIED_PETROLEUM_GAS = "Liquefied Petroleum Gas"
-    WINE = "Wine"
-    CEMENT = "Cement"
-    GRAIN = "Grain"
-    ELECTRICITY = "Electricity"
-    ICE = "Ice"
-    CLAY = "Clay"
 
 
 class QualityOfHorizontalMeasurementType(Enum):
@@ -3600,14 +2234,14 @@ class RadarWaveLengthType:
 
     class Meta:
         name = "radarWaveLengthType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     radar_band: Optional[str] = field(
         default=None,
         metadata={
             "name": "radarBand",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -3616,7 +2250,7 @@ class RadarWaveLengthType:
         metadata={
             "name": "waveLengthValue",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -3635,20 +2269,20 @@ class SectorInformationType:
 
     class Meta:
         name = "sectorInformationType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     language: Optional[str] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     text: Optional[str] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -3674,14 +2308,14 @@ class SectorLimitOneType:
 
     class Meta:
         name = "sectorLimitOneType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     sector_bearing: Optional[float] = field(
         default=None,
         metadata={
             "name": "sectorBearing",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -3690,7 +2324,7 @@ class SectorLimitOneType:
         metadata={
             "name": "sectorLineLength",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -3715,14 +2349,14 @@ class SectorLimitTwoType:
 
     class Meta:
         name = "sectorLimitTwoType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     sector_bearing: Optional[float] = field(
         default=None,
         metadata={
             "name": "sectorBearing",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -3731,7 +2365,7 @@ class SectorLimitTwoType:
         metadata={
             "name": "sectorLineLength",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -3749,20 +2383,20 @@ class ShapeInformationType:
 
     class Meta:
         name = "shapeInformationType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     language: Optional[str] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     text: Optional[str] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -3992,76 +2626,36 @@ class TechniqueOfVerticalMeasurementType(Enum):
     HYPERSPECTRAL_IMAGERY = "Hyperspectral Imagery"
 
 
-@dataclass
-class TextualDescriptionType:
-    """
-    Encodes the file name of a single external text file that contains the text in
-    a defined language, which provides additional textual information that cannot
-    be provided using other allowable attributes for the feature.
-
-    :ivar file_reference: The file name of an externally referenced text
-        file.
-    :ivar language: The method of human communication, either spoken or
-        written, consisting of the use of words in a structured and
-        conventional way.
-    """
-
-    class Meta:
-        name = "textualDescriptionType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-    file_reference: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "fileReference",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    language: Optional[str] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-
-
 class TopmarkDaymarkShapeType(Enum):
     """
     :cvar CONE_POINT_UP: Is where the vertex points up. A cone is a
         solid figure generated by straight lines drawn from a fixed
         point (the vertex) to a circle in a plane not containing the
         vertex. Cones are commonly used as International Association of
-        Marine Aids to Navigation and Lighthouse Authorities - IALA
-        topmarks, lateral.
+        Lighthouse Authorities - IALA topmarks, lateral.
     :cvar CONE_POINT_DOWN: Is where the vertex points down. A cone is a
         solid figure generated by straight lines drawn from a fixed
         point (the vertex) to a circle in a plane not containing the
         vertex. Cones are commonly used as International Association of
-        Marine Aids to Navigation and Lighthouse Authorities - IALA
-        topmarks, lateral.
+        Lighthouse Authorities - IALA topmarks, lateral.
     :cvar SPHERE: A curved surface all points of which are equidistant
         from a fixed point within, called the centre.
     :cvar VALUE_2_SPHERES: Two spheres, one above the other. Two black
         spheres are commonly used as an International Association of
-        Marine Aids to Navigation and Lighthouse Authorities - IALA
-        topmark (isolated danger).
+        Lighthouse Authorities - IALA topmark (isolated danger).
     :cvar CYLINDER: A solid geometrical figure generated by straight
         lines fixed in direction and describing with one of point a
         closed curve, especially a circle (in which case the figure is
         circular cylinder, it's ends being parallel circles). Cylinders
-        are commonly used as International Association of Marine Aids to
-        Navigation and Lighthouse Authorities - IALA topmarks lateral.
+        are commonly used as International Association of Lighthouse
+        Authorities - IALA topmarks lateral.
     :cvar BOARD: Usually of rectangular shape, made from timber or metal
         and used to provide a contrast with the natural background of a
         daymark. The actual daymark is often painted on to this board.
     :cvar X_SHAPED: Having a shape or a cross-section like the capital
-        letter X. An x-shape as an International Association of Marine
-        Aids to Navigation and Lighthouse Authorities - IALA topmark
-        should be 3 dimensional in shape. It is made of at least three
-        crossed bars.
+        letter X. An x-shape as an International Association of
+        Lighthouse Authorities - IALA topmark should be 3 dimensional in
+        shape. It is made of at least three crossed bars.
     :cvar UPRIGHT_CROSS: A cross with one vertical member and one
         horizontal member; that is, similar in shape to the character
         '+'.
@@ -4287,10 +2881,6 @@ class VerticalDatumType(Enum):
         Normaal Amsterdams Peil (NAP).
     :cvar DUTCH_ESTUARY_LOW_WATER_REFERENCE_LEVEL_OLW: Dutch Estuary Low
         Water Reference Level (OLW)
-    :cvar INTERNATIONAL_GREAT_LAKES_DATUM_2020: -
-    :cvar SEA_FLOOR: -
-    :cvar SEA_SURFACE: -
-    :cvar HYDROGRAPHIC_ZERO: -
     """
 
     MEAN_LOW_WATER_SPRINGS = "Mean Low Water Springs"
@@ -4353,12 +2943,6 @@ class VerticalDatumType(Enum):
     DUTCH_ESTUARY_LOW_WATER_REFERENCE_LEVEL_OLW = (
         "Dutch Estuary Low Water Reference Level (OLW)"
     )
-    INTERNATIONAL_GREAT_LAKES_DATUM_2020 = (
-        "International Great Lakes Datum 2020"
-    )
-    SEA_FLOOR = "Sea Floor"
-    SEA_SURFACE = "Sea Surface"
-    HYDROGRAPHIC_ZERO = "Hydrographic Zero"
 
 
 @dataclass
@@ -4379,14 +2963,14 @@ class VerticalUncertaintyType:
 
     class Meta:
         name = "verticalUncertaintyType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     uncertainty_fixed: Optional[float] = field(
         default=None,
         metadata={
             "name": "uncertaintyFixed",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -4395,7 +2979,7 @@ class VerticalUncertaintyType:
         metadata={
             "name": "uncertaintyVariableFactor",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -5256,48 +3840,6 @@ class LangValue(Enum):
 
 
 @dataclass
-class CableDimensionsType:
-    """
-    The dimensions of a cable to give its length and diameter.
-
-    :ivar cable_length: Total length of a cable.
-    :ivar height_length_units: Units of measure of waterway distances.
-        (IHO Registry)
-    :ivar diameter: -
-    """
-
-    class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-    cable_length: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "cableLength",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    height_length_units: Optional[HeightLengthUnitsType] = field(
-        default=None,
-        metadata={
-            "name": "heightLengthUnits",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    diameter: Optional[float] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-
-
-@dataclass
 class ChangeDetailsType:
     """-
 
@@ -5312,14 +3854,14 @@ class ChangeDetailsType:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     aton_commissioning: Optional[AtonCommissioningType] = field(
         default=None,
         metadata={
             "name": "atonCommissioning",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     aton_removal: Optional[AtonRemovalType] = field(
@@ -5327,7 +3869,7 @@ class ChangeDetailsType:
         metadata={
             "name": "atonRemoval",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     aton_replacement: Optional[AtonReplacementType] = field(
@@ -5335,7 +3877,7 @@ class ChangeDetailsType:
         metadata={
             "name": "atonReplacement",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     fixed_aton_change: Optional[FixedAtonChangeType] = field(
@@ -5343,7 +3885,7 @@ class ChangeDetailsType:
         metadata={
             "name": "fixedAtonChange",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     floating_aton_change: Optional[FloatingAtonChangeType] = field(
@@ -5351,7 +3893,7 @@ class ChangeDetailsType:
         metadata={
             "name": "floatingAtonChange",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     audible_signal_aton_change: Optional[AudibleSignalAtonChangeType] = field(
@@ -5359,7 +3901,7 @@ class ChangeDetailsType:
         metadata={
             "name": "audibleSignalAtonChange",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     lighted_aton_change: Optional[LightedAtonChangeType] = field(
@@ -5367,7 +3909,7 @@ class ChangeDetailsType:
         metadata={
             "name": "lightedAtonChange",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     electronic_aton_change: Optional[ElectronicAtonChangeType] = field(
@@ -5375,7 +3917,40 @@ class ChangeDetailsType:
         metadata={
             "name": "electronicAtonChange",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
+        },
+    )
+
+
+@dataclass
+class PositioningMethodType:
+    """
+    A description of the method used to obtain a position.(proposed by CCG)
+
+    :ivar positioning_equipment: .
+    :ivar nmeastring: NMEA string captured from the positioning
+        device.(proposed by CCG)
+    """
+
+    class Meta:
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
+
+    positioning_equipment: Optional[PositioningEquipmentType] = field(
+        default=None,
+        metadata={
+            "name": "positioningEquipment",
+            "type": "Element",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
+            "required": True,
+        },
+    )
+    nmeastring: Optional[str] = field(
+        default=None,
+        metadata={
+            "name": "NMEAString",
+            "type": "Element",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
+            "required": True,
         },
     )
 
@@ -5401,21 +3976,21 @@ class DirectionalCharacterType:
 
     class Meta:
         name = "directionalCharacterType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     moire_effect: Optional[bool] = field(
         default=None,
         metadata={
             "name": "moireEffect",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     orientation: Optional[OrientationType] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -5435,14 +4010,14 @@ class FixedDateRangeType:
 
     class Meta:
         name = "fixedDateRangeType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     date_end: Optional[S100TruncatedDate2] = field(
         default=None,
         metadata={
             "name": "dateEnd",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     date_start: Optional[S100TruncatedDate2] = field(
@@ -5450,7 +4025,7 @@ class FixedDateRangeType:
         metadata={
             "name": "dateStart",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -5468,14 +4043,14 @@ class PeriodicDateRangeType:
 
     class Meta:
         name = "periodicDateRangeType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     date_end: Optional[S100TruncatedDate2] = field(
         default=None,
         metadata={
             "name": "dateEnd",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -5484,41 +4059,7 @@ class PeriodicDateRangeType:
         metadata={
             "name": "dateStart",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-
-
-@dataclass
-class PositioningMethodType:
-    """
-    A description of the method used to obtain a position.(proposed by CCG)
-
-    :ivar positioning_equipment: .
-    :ivar nmeastring: NMEA string captured from the positioning
-        device.(proposed by CCG)
-    """
-
-    class Meta:
-        name = "positioningMethodType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-    positioning_equipment: Optional[PositioningEquipmentType] = field(
-        default=None,
-        metadata={
-            "name": "positioningEquipment",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    nmeastring: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "NMEAString",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -5546,14 +4087,14 @@ class SectorLimitType:
 
     class Meta:
         name = "sectorLimitType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     sector_limit_one: Optional[SectorLimitOneType] = field(
         default=None,
         metadata={
             "name": "sectorLimitOne",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -5562,7 +4103,7 @@ class SectorLimitType:
         metadata={
             "name": "sectorLimitTwo",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -5582,14 +4123,14 @@ class SignalSequenceType:
 
     class Meta:
         name = "signalSequenceType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     signal_duration: Optional[float] = field(
         default=None,
         metadata={
             "name": "signalDuration",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -5598,7 +4139,7 @@ class SignalSequenceType:
         metadata={
             "name": "signalStatus",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -5621,14 +4162,14 @@ class SinkerDimensionsType:
 
     class Meta:
         name = "sinkerDimensionsType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     height_length_units: Optional[HeightLengthUnitsType] = field(
         default=None,
         metadata={
             "name": "heightLengthUnits",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -5637,7 +4178,7 @@ class SinkerDimensionsType:
         metadata={
             "name": "horizontalLength",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     horizontal_width: Optional[float] = field(
@@ -5645,7 +4186,7 @@ class SinkerDimensionsType:
         metadata={
             "name": "horizontalWidth",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     vertical_length: Optional[float] = field(
@@ -5653,7 +4194,7 @@ class SinkerDimensionsType:
         metadata={
             "name": "verticalLength",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -6691,7 +5232,7 @@ class InformationTypeType(AbstractInformationType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -6707,14 +5248,14 @@ class ObscuredSectorType:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     sector_limit: Optional[SectorLimitType] = field(
         default=None,
         metadata={
             "name": "sectorLimit",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -6723,7 +5264,7 @@ class ObscuredSectorType:
         metadata={
             "name": "sectorInformation",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -6751,19 +5292,19 @@ class LightSectorType:
         10 sea miles.
     :ivar sector_information: Additional textual information about a
         light sector.
-    :ivar sector_arc_extension: Distance in screen millimetres (mm) by
-        which a sector arc is extended beyond the default.
+    :ivar sector_extension: Distance in screen millimetres (mm) by which
+        a sector arc is extended beyond the default.
     """
 
     class Meta:
         name = "lightSectorType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     colour: list[ColourType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -6772,7 +5313,7 @@ class LightSectorType:
         metadata={
             "name": "directionalCharacter",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     light_visibility: list[LightVisibilityType] = field(
@@ -6780,7 +5321,7 @@ class LightSectorType:
         metadata={
             "name": "lightVisibility",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     sector_limit: Optional[SectorLimitType] = field(
@@ -6788,7 +5329,7 @@ class LightSectorType:
         metadata={
             "name": "sectorLimit",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     value_of_nominal_range: Optional[float] = field(
@@ -6796,7 +5337,7 @@ class LightSectorType:
         metadata={
             "name": "valueOfNominalRange",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     sector_information: list[SectorInformationType] = field(
@@ -6804,74 +5345,15 @@ class LightSectorType:
         metadata={
             "name": "sectorInformation",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
-    sector_arc_extension: Optional[bool] = field(
+    sector_extension: Optional[bool] = field(
         default=None,
         metadata={
-            "name": "sectorArcExtension",
+            "name": "sectorExtension",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-
-
-@dataclass
-class RhythmOfLightType:
-    """
-    The sequence of times occupied by intervals of light/sound and eclipse/silence
-    for all light characteristics or sound signals.
-
-    :ivar light_characteristic: The distinct character, such as fixed,
-        flashing, or occulting, which is given to each light to avoid
-        confusion with neighbouring ones.
-    :ivar signal_group: The number of signals, the combination of
-        signals or the morse character(s) within one period of full
-        sequence.
-    :ivar signal_period: The time occupied by an entire cycle of
-        intervals of light and eclipse.
-    :ivar signal_sequence: The sequence of times occupied by intervals
-        of light and eclipse for all light characteristics.
-    """
-
-    class Meta:
-        name = "rhythmOfLightType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-    light_characteristic: Optional[LightCharacteristicType] = field(
-        default=None,
-        metadata={
-            "name": "lightCharacteristic",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    signal_group: list[str] = field(
-        default_factory=list,
-        metadata={
-            "name": "signalGroup",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "max_occurs": 10,
-        },
-    )
-    signal_period: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "signalPeriod",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    signal_sequence: list[SignalSequenceType] = field(
-        default_factory=list,
-        metadata={
-            "name": "signalSequence",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "max_occurs": 10,
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -6894,14 +5376,14 @@ class SpatialAccuracyType:
 
     class Meta:
         name = "spatialAccuracyType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     fixed_date_range: Optional[FixedDateRangeType] = field(
         default=None,
         metadata={
             "name": "fixedDateRange",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     horizontal_position_uncertainty: Optional[
@@ -6911,7 +5393,7 @@ class SpatialAccuracyType:
         metadata={
             "name": "horizontalPositionUncertainty",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     vertical_uncertainty: Optional[VerticalUncertaintyType] = field(
@@ -6919,7 +5401,7 @@ class SpatialAccuracyType:
         metadata={
             "name": "verticalUncertainty",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -7159,60 +5641,6 @@ class Title(TitleEltType):
 
 
 @dataclass
-class AtoNfixingMethodType(InformationTypeType):
-    """
-    Method used for fixing the position of an aid to navigation.
-
-    :ivar reference_point: -
-    :ivar horizontal_datum: Horizontal reference surface or the
-        reference coordinate system used for geodetic control in the
-        calculation of coordinates of points on the earth.
-    :ivar source_date: The production date of the source; for example
-        the date of measurement.
-    :ivar positioning_procedure: -
-    """
-
-    class Meta:
-        name = "AtoNFixingMethodType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-    reference_point: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "referencePoint",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    horizontal_datum: Optional[HorizontalDatumType] = field(
-        default=None,
-        metadata={
-            "name": "horizontalDatum",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    source_date: Optional[XmlDate] = field(
-        default=None,
-        metadata={
-            "name": "sourceDate",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    positioning_procedure: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "positioningProcedure",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-
-
-@dataclass
 class AtonStatusInformationType(InformationTypeType):
     """-
 
@@ -7221,14 +5649,14 @@ class AtonStatusInformationType(InformationTypeType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     change_details: Optional[ChangeDetailsType] = field(
         default=None,
         metadata={
             "name": "ChangeDetails",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -7237,7 +5665,7 @@ class AtonStatusInformationType(InformationTypeType):
         metadata={
             "name": "ChangeTypes",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -7246,7 +5674,7 @@ class AtonStatusInformationType(InformationTypeType):
 class InformationTypeAbstract(InformationTypeType):
     class Meta:
         name = "InformationType"
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -7261,23 +5689,23 @@ class PositioningInformationType(InformationTypeType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     positioning_device: Optional[str] = field(
         default=None,
         metadata={
             "name": "positioningDevice",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
     positioning_method: Optional[PositioningMethodType] = field(
         default=None,
         metadata={
-            "name": "positioningMethod",
+            "name": "PositioningMethod",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -7296,7 +5724,7 @@ class SpatialQualityType(InformationTypeType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     quality_of_horizontal_measurement: Optional[
         QualityOfHorizontalMeasurementType
@@ -7305,7 +5733,7 @@ class SpatialQualityType(InformationTypeType):
         metadata={
             "name": "qualityOfHorizontalMeasurement",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     spatial_accuracy: Optional[SpatialAccuracyType] = field(
@@ -7313,7 +5741,7 @@ class SpatialQualityType(InformationTypeType):
         metadata={
             "name": "spatialAccuracy",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -7339,34 +5767,32 @@ class SectorCharacteristicsType:
 
     class Meta:
         name = "sectorCharacteristicsType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     light_characteristic: Optional[LightCharacteristicType] = field(
         default=None,
         metadata={
             "name": "lightCharacteristic",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
-    light_sector: list[LightSectorType] = field(
-        default_factory=list,
+    light_sector: Optional[LightSectorType] = field(
+        default=None,
         metadata={
             "name": "lightSector",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "min_occurs": 1,
-            "max_occurs": 10,
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
+            "required": True,
         },
     )
-    signal_group: list[str] = field(
-        default_factory=list,
+    signal_group: Optional[str] = field(
+        default=None,
         metadata={
             "name": "signalGroup",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "max_occurs": 10,
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     signal_period: Optional[float] = field(
@@ -7374,16 +5800,15 @@ class SectorCharacteristicsType:
         metadata={
             "name": "signalPeriod",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
-    signal_sequence: list[SignalSequenceType] = field(
-        default_factory=list,
+    signal_sequence: Optional[SignalSequenceType] = field(
+        default=None,
         metadata={
             "name": "signalSequence",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "max_occurs": 10,
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -7482,28 +5907,21 @@ class PointType1(AbstractGeometricPrimitiveType):
 
 
 @dataclass
-class AtoNfixingMethod(AtoNfixingMethodType):
-    class Meta:
-        name = "AtoNFixingMethod"
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-
-@dataclass
 class AtonStatusInformation(AtonStatusInformationType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class PositioningInformation(PositioningInformationType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class SpatialQuality(SpatialQualityType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -7793,6 +6211,11 @@ class AidsToNavigationType(AbstractFeatureType):
 
     :ivar i_dcode: Identification code as specified in predefined
         system. Also called identification number.
+    :ivar interoperability_identifier: A common unique identifier for
+        entities which describe a single real-world feature, and which
+        is used to identify instances of the feature in end-user systems
+        where the feature may be included in multiple data product
+        types.
     :ivar information: Textual information about the feature. The
         information may be provided as a string of text or as a file
         name of a single external text file that contains the text.
@@ -7807,12 +6230,6 @@ class AidsToNavigationType(AbstractFeatureType):
         which information comes or is acquired.
     :ivar pictorial_representation: Indicates whether a pictorial
         representation of the feature is available.
-    :ivar inspection_frequency: A statement of how frequently an item is
-        inspected.
-    :ivar inspection_requirements: A statement of what requirements are
-        in place for how inspection of an item is carried out.
-    :ivar a_to_nmaintenance_record: A reference following the Uniform
-        Resource Identifier (URI) principles to a record of maintenance.
     :ivar installation_date: The date when an item was installed.
     :ivar fixed_date_range: An active period of a single fixed event or
         occurrence, as the date range between discrete start and end
@@ -7821,26 +6238,33 @@ class AidsToNavigationType(AbstractFeatureType):
         occurrence.
     :ivar seasonal_action_required: -
     :ivar statuspart:
-    :ivar peer_aton_aggregation:
-    :ivar peer_aton_association:
+    :ivar peer:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     i_dcode: Optional[str] = field(
         default=None,
         metadata={
             "name": "iDCode",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
+        },
+    )
+    interoperability_identifier: Optional[str] = field(
+        default=None,
+        metadata={
+            "name": "interoperabilityIdentifier",
+            "type": "Element",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     information: list[InformationType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     feature_name: list[FeatureNameType] = field(
@@ -7848,7 +6272,7 @@ class AidsToNavigationType(AbstractFeatureType):
         metadata={
             "name": "featureName",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     scale_minimum: Optional[int] = field(
@@ -7856,7 +6280,7 @@ class AidsToNavigationType(AbstractFeatureType):
         metadata={
             "name": "scaleMinimum",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     source_date: Optional[XmlDate] = field(
@@ -7864,14 +6288,14 @@ class AidsToNavigationType(AbstractFeatureType):
         metadata={
             "name": "sourceDate",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     source: Optional[str] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     pictorial_representation: Optional[str] = field(
@@ -7879,31 +6303,7 @@ class AidsToNavigationType(AbstractFeatureType):
         metadata={
             "name": "pictorialRepresentation",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    inspection_frequency: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "inspectionFrequency",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    inspection_requirements: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "inspectionRequirements",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    a_to_nmaintenance_record: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "aToNMaintenanceRecord",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     installation_date: Optional[XmlDate] = field(
@@ -7911,7 +6311,7 @@ class AidsToNavigationType(AbstractFeatureType):
         metadata={
             "name": "installationDate",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     fixed_date_range: Optional[FixedDateRangeType] = field(
@@ -7919,7 +6319,7 @@ class AidsToNavigationType(AbstractFeatureType):
         metadata={
             "name": "fixedDateRange",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     periodic_date_range: Optional[PeriodicDateRangeType] = field(
@@ -7927,7 +6327,7 @@ class AidsToNavigationType(AbstractFeatureType):
         metadata={
             "name": "periodicDateRange",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     seasonal_action_required: list[str] = field(
@@ -7935,7 +6335,7 @@ class AidsToNavigationType(AbstractFeatureType):
         metadata={
             "name": "SeasonalActionRequired",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     statuspart: Optional[ReferenceType] = field(
@@ -7943,23 +6343,14 @@ class AidsToNavigationType(AbstractFeatureType):
         metadata={
             "name": "Statuspart",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
-    peer_aton_aggregation: list[ReferenceType] = field(
+    peer: list[ReferenceType] = field(
         default_factory=list,
         metadata={
-            "name": "peerAtonAggregation",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    peer_aton_association: list[ReferenceType] = field(
-        default_factory=list,
-        metadata={
-            "name": "peerAtonAssociation",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -7973,27 +6364,26 @@ class AtonAggregationType(AbstractFeatureType):
 
     :ivar category_of_aggregation: named aggregations between two or
         more aids to navigation and/or navigationally relevant features
-    :ivar aton_aggregation_by:
+    :ivar peer:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_aggregation: Optional[CategoryOfAggregationType] = field(
         default=None,
         metadata={
             "name": "CategoryOfAggregation",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
-    aton_aggregation_by: list[ReferenceType] = field(
+    peer: list[ReferenceType] = field(
         default_factory=list,
         metadata={
-            "name": "atonAggregationBy",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -8008,18 +6398,18 @@ class AtonAssociationType(AbstractFeatureType):
     :ivar category_of_association: named associations between two or
         more aids to navigation and/or navigationally relevant features
     :ivar danger:
-    :ivar aton_association_by:
+    :ivar peer:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_association: Optional[CategoryOfAssociationType] = field(
         default=None,
         metadata={
             "name": "CategoryOfAssociation",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -8027,15 +6417,14 @@ class AtonAssociationType(AbstractFeatureType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
-    aton_association_by: list[ReferenceType] = field(
+    peer: list[ReferenceType] = field(
         default_factory=list,
         metadata={
-            "name": "atonAssociationBy",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -8459,297 +6848,53 @@ class MultiPointType1(AbstractGeometricAggregateType):
 @dataclass
 class AidsToNavigation(AidsToNavigationType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class AtonAggregation(AtonAggregationType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class AtonAssociation(AtonAssociationType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-
-@dataclass
-class BridleType(AidsToNavigationType):
-    """Two lengths of chain connected by a central ring and used for lifting wide
-    loads.
-
-    (IALA Dictionary,8-3-195)
-
-    :ivar bridle_link_type: -
-    :ivar legs_details: -
-    :ivar bridle_holds:
-    :ivar bridle_hangs:
-    :ivar shackle_to_bridle_connected:
-    :ivar bridle_attached:
-    :ivar geometry:
-    """
-
-    class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-    bridle_link_type: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "bridleLinkType",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    legs_details: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "legsDetails",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    bridle_holds: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "bridleHolds",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    bridle_hangs: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "bridleHangs",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    shackle_to_bridle_connected: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "shackleToBridleConnected",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    bridle_attached: list[ReferenceType] = field(
-        default_factory=list,
-        metadata={
-            "name": "bridleAttached",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    geometry: list["BridleType.Geometry"] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "min_occurs": 1,
-        },
-    )
-
-    @dataclass
-    class Geometry:
-        point_property: Optional[PointProperty2] = field(
-            default=None,
-            metadata={
-                "name": "pointProperty",
-                "type": "Element",
-                "namespace": "http://www.iho.int/s100gml/5.0",
-                "required": True,
-            },
-        )
-
-
-@dataclass
-class CableSubmarineType(AidsToNavigationType):
-    """
-    An assembly of wires or fibres, or a wire rope or chain, which has been laid
-    underwater or buried beneath the sea floor.
-
-    :ivar cable_dimensions: The dimensions of a cable to give its length
-        and diameter.
-    :ivar category_of_cable: Classification of the cable based on the
-        services provided.
-    :ivar status: The condition of an object at a given instant in time.
-    :ivar cableholds:
-    :ivar shackle_to_cable_connected:
-    :ivar geometry:
-    """
-
-    class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-    cable_dimensions: Optional[CableDimensionsType] = field(
-        default=None,
-        metadata={
-            "name": "CableDimensions",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    category_of_cable: Optional[CategoryOfCableType] = field(
-        default=None,
-        metadata={
-            "name": "categoryOfCable",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    status: list[StatusType] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    cableholds: list[ReferenceType] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "min_occurs": 1,
-            "max_occurs": 2,
-        },
-    )
-    shackle_to_cable_connected: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "shackleToCableConnected",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    geometry: list["CableSubmarineType.Geometry"] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "min_occurs": 1,
-        },
-    )
-
-    @dataclass
-    class Geometry:
-        point_property: Optional[PointProperty2] = field(
-            default=None,
-            metadata={
-                "name": "pointProperty",
-                "type": "Element",
-                "namespace": "http://www.iho.int/s100gml/5.0",
-                "required": True,
-            },
-        )
-
-
-@dataclass
-class CounterWeightType(AidsToNavigationType):
-    """-
-
-    :ivar nature_of_construction: The building's primary construction
-        material.
-    :ivar weight: -
-    :ivar counter_weight_type: -
-    :ivar counter_weightholds:
-    :ivar geometry:
-    """
-
-    class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-    nature_of_construction: Optional[NatureOfConstructionType] = field(
-        default=None,
-        metadata={
-            "name": "natureOfConstruction",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    weight: Optional[float] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    counter_weight_type: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "counterWeightType",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    counter_weightholds: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "counterWeightholds",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    geometry: list["CounterWeightType.Geometry"] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "min_occurs": 1,
-        },
-    )
-
-    @dataclass
-    class Geometry:
-        point_property: Optional[PointProperty2] = field(
-            default=None,
-            metadata={
-                "name": "pointProperty",
-                "type": "Element",
-                "namespace": "http://www.iho.int/s100gml/5.0",
-                "required": True,
-            },
-        )
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class DangerousFeatureType(AbstractFeatureType):
     """-
 
+    :ivar information: Textual information about the feature. The
+        information may be provided as a string of text or as a file
+        name of a single external text file that contains the text.
     :ivar interoperability_identifier: A common unique identifier for
         entities which describe a single real-world feature, and which
         is used to identify instances of the feature in end-user systems
         where the feature may be included in multiple data product
         types.
-    :ivar information: Textual information about the feature. The
-        information may be provided as a string of text or as a file
-        name of a single external text file that contains the text.
     :ivar marking_aton:
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
+    information: list[InformationType] = field(
+        default_factory=list,
+        metadata={
+            "type": "Element",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
+        },
+    )
     interoperability_identifier: Optional[str] = field(
         default=None,
         metadata={
             "name": "interoperabilityIdentifier",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    information: list[InformationType] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     marking_aton: list[ReferenceType] = field(
@@ -8757,7 +6902,7 @@ class DangerousFeatureType(AbstractFeatureType):
         metadata={
             "name": "markingAton",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -8765,7 +6910,7 @@ class DangerousFeatureType(AbstractFeatureType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -8802,14 +6947,14 @@ class ElectronicAtonType(AidsToNavigationType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     ato_nnumber: Optional[str] = field(
         default=None,
         metadata={
             "name": "AtoNNumber",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     m_msicode: Optional[str] = field(
@@ -8817,7 +6962,7 @@ class ElectronicAtonType(AidsToNavigationType):
         metadata={
             "name": "mMSICode",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -8825,7 +6970,7 @@ class ElectronicAtonType(AidsToNavigationType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -8834,221 +6979,19 @@ class ElectronicAtonType(AidsToNavigationType):
 class EquipmentType(AidsToNavigationType):
     """
     The implements used in an operation or activity.
-
-    :ivar remote_monitoring_system: Classification or name of system
-        used to remotely monitor a feature.
-    :ivar parent:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
-    remote_monitoring_system: list[str] = field(
-        default_factory=list,
-        metadata={
-            "name": "remoteMonitoringSystem",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
     parent: Optional[ReferenceType] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
-
-
-@dataclass
-class MooringShackleType(AidsToNavigationType):
-    """A shackle at the lower end of a mooring chain, for attachment to an anchor
-    or sinker.
-
-    (IALA Dictionary, 8-5-150)
-
-    :ivar nature_of_construction: The building's primary construction
-        material.
-    :ivar shackle_type: Types of shackle.
-    :ivar weight: -
-    :ivar shackle_to_buoyconnected_to:
-    :ivar shackle_to_bridleconnected_to:
-    :ivar shackle_to_cable_connected_to:
-    :ivar shackle_to_swivelconnected_to:
-    :ivar shackle_to_anchorconnected_to:
-    :ivar geometry:
-    """
-
-    class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-    nature_of_construction: Optional[NatureOfConstructionType] = field(
-        default=None,
-        metadata={
-            "name": "natureOfConstruction",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    shackle_type: Optional[ShackleTypeType] = field(
-        default=None,
-        metadata={
-            "name": "ShackleType",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    weight: Optional[float] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    shackle_to_buoyconnected_to: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "shackleToBuoyconnectedTo",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    shackle_to_bridleconnected_to: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "shackleToBridleconnectedTo",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    shackle_to_cable_connected_to: list[ReferenceType] = field(
-        default_factory=list,
-        metadata={
-            "name": "shackleToCableConnectedTo",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    shackle_to_swivelconnected_to: list[ReferenceType] = field(
-        default_factory=list,
-        metadata={
-            "name": "shackleToSwivelconnectedTo",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    shackle_to_anchorconnected_to: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "shackleToAnchorconnectedTo",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    geometry: list["MooringShackleType.Geometry"] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "min_occurs": 1,
-        },
-    )
-
-    @dataclass
-    class Geometry:
-        point_property: Optional[PointProperty2] = field(
-            default=None,
-            metadata={
-                "name": "pointProperty",
-                "type": "Element",
-                "namespace": "http://www.iho.int/s100gml/5.0",
-                "required": True,
-            },
-        )
-
-
-@dataclass
-class SinkerAnchorType(AidsToNavigationType):
-    """A heavy weight (of concrete, cast-iron, etc..) that rests on the sea bed and
-    to which a mooring line can be attached.
-
-    (IALA Dictionary, 8-5-025)
-
-    :ivar nature_of_construction: The building's primary construction
-        material.
-    :ivar sinker_dimensions: The dimensions of a sinker/anchor to give
-        its three dimensional shape measurements.
-    :ivar weight: -
-    :ivar sinker_type: -
-    :ivar shackle_to_anchor_connected:
-    :ivar geometry:
-    """
-
-    class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-    nature_of_construction: Optional[NatureOfConstructionType] = field(
-        default=None,
-        metadata={
-            "name": "natureOfConstruction",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    sinker_dimensions: Optional[SinkerDimensionsType] = field(
-        default=None,
-        metadata={
-            "name": "sinkerDimensions",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    weight: Optional[float] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    sinker_type: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "sinkerType",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    shackle_to_anchor_connected: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "shackleToAnchorConnected",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    geometry: list["SinkerAnchorType.Geometry"] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "min_occurs": 1,
-        },
-    )
-
-    @dataclass
-    class Geometry:
-        point_property: Optional[PointProperty2] = field(
-            default=None,
-            metadata={
-                "name": "pointProperty",
-                "type": "Element",
-                "namespace": "http://www.iho.int/s100gml/5.0",
-                "required": True,
-            },
-        )
 
 
 @dataclass
@@ -9056,176 +6999,18 @@ class StructureObjectType(AidsToNavigationType):
     """
     Something (such as a house, tower, bridge, etc.) that is built by putting parts
     together and that usually stands on its own.
-
-    :ivar ato_nnumber: Identifier from a list of Aids to Navigation
-        publication, such as List of Lights.
-    :ivar aid_availability_category: A Category denoting the
-        significance of an Aid to Navigation, expressed in terms of the
-        probability that an AtoN or system of AtoN, as defined by the
-        Competent Authority, is performing its specified function at any
-        randomly chosen time. This is expressed as a percentage of total
-        time that an AtoN or system of AtoN should be performing their
-        specified function.
-    :ivar condition: The various conditions of buildings and other
-        constructions.
-    :ivar contact_address: Direction or superscription of a letter,
-        package, etc., specifying the name of the place to which it is
-        directed, and optionally a contact person or organisation who
-        should receive it.
-    :ivar positioning_method:
-    :ivar fixing_method:
-    :ivar child:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
-    ato_nnumber: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "AtoNNumber",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    aid_availability_category: Optional[AidAvailabilityCategoryType] = field(
-        default=None,
-        metadata={
-            "name": "aidAvailabilityCategory",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    condition: Optional[ConditionType] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    contact_address: Optional[ContactAddressType] = field(
-        default=None,
-        metadata={
-            "name": "contactAddress",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    positioning_method: list[ReferenceType] = field(
-        default_factory=list,
-        metadata={
-            "name": "positioningMethod",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    fixing_method: list[ReferenceType] = field(
-        default_factory=list,
-        metadata={
-            "name": "fixingMethod",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
     child: list[ReferenceType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
-
-
-@dataclass
-class SwivelType(AidsToNavigationType):
-    """A chain link that provides for rotary motion between the lengths of chain
-    that it connects.
-
-    (IALA Dictionary, 8-5-165)
-
-    :ivar nature_of_construction: The building's primary construction
-        material.
-    :ivar weight: -
-    :ivar swivel_type: -
-    :ivar swivel_holds:
-    :ivar swivel_attached:
-    :ivar shackle_to_swivel_connected:
-    :ivar geometry:
-    """
-
-    class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-    nature_of_construction: Optional[NatureOfConstructionType] = field(
-        default=None,
-        metadata={
-            "name": "natureOfConstruction",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    weight: Optional[float] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    swivel_type: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "swivelType",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    swivel_holds: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "swivelHolds",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    swivel_attached: list[ReferenceType] = field(
-        default_factory=list,
-        metadata={
-            "name": "swivelAttached",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    shackle_to_swivel_connected: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "shackleToSwivelConnected",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    geometry: list["SwivelType.Geometry"] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "min_occurs": 1,
-        },
-    )
-
-    @dataclass
-    class Geometry:
-        point_property: Optional[PointProperty2] = field(
-            default=None,
-            metadata={
-                "name": "pointProperty",
-                "type": "Element",
-                "namespace": "http://www.iho.int/s100gml/5.0",
-                "required": True,
-            },
-        )
 
 
 @dataclass
@@ -9243,19 +7028,18 @@ class TopmarkType(AidsToNavigationType):
     :ivar status: The condition of an object at a given instant in time.
     :ivar topmark_daymark_shape: The shape a topmark or daymark
         exhibits.
-    :ivar vertical_length: The total vertical length of a feature.
-    :ivar buoy_part:
+    :ivar structure:
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     colour: list[ColourType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     colour_pattern: list[ColourPatternType] = field(
@@ -9263,14 +7047,14 @@ class TopmarkType(AidsToNavigationType):
         metadata={
             "name": "colourPattern",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     status: list[StatusType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     topmark_daymark_shape: Optional[TopmarkDaymarkShapeType] = field(
@@ -9278,24 +7062,15 @@ class TopmarkType(AidsToNavigationType):
         metadata={
             "name": "topmarkDaymarkShape",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
-    vertical_length: Optional[float] = field(
+    structure: Optional[ReferenceType] = field(
         default=None,
         metadata={
-            "name": "verticalLength",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    buoy_part: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "buoyPart",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -9303,7 +7078,7 @@ class TopmarkType(AidsToNavigationType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -9535,13 +7310,13 @@ class BridgeType(StructureObjectType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     geometry: list["BridgeType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -9557,12 +7332,6 @@ class BridgeType(StructureObjectType):
                 "required": True,
             },
         )
-
-
-@dataclass
-class Bridle(BridleType):
-    class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
 
 
 @dataclass
@@ -9574,13 +7343,13 @@ class BuildingType(StructureObjectType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     geometry: list["BuildingType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -9599,21 +7368,9 @@ class BuildingType(StructureObjectType):
 
 
 @dataclass
-class CableSubmarine(CableSubmarineType):
-    class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-
-@dataclass
-class CounterWeight(CounterWeightType):
-    class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-
-@dataclass
 class DangerousFeature(DangerousFeatureType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -9634,8 +7391,6 @@ class DaymarkType(EquipmentType):
         reflects or emits light.
     :ivar colour_pattern: A regular repeated design containing more than
         one colour.
-    :ivar elevation: The altitude of the ground level of an object,
-        measured from a specified vertical datum.
     :ivar height: The value of the vertical distance to the highest
         point of the object, measured from a specified vertical datum.
     :ivar nature_of_construction: The building's primary construction
@@ -9645,19 +7400,12 @@ class DaymarkType(EquipmentType):
     :ivar status: The condition of an object at a given instant in time.
     :ivar topmark_daymark_shape: The shape a topmark or daymark
         exhibits.
-    :ivar vertical_datum: The reference level used for expressing the
-        vertical measurements of points on the earth's surface. Also
-        called datum level, reference plane, levelling datum, datum for
-        sounding reduction, datum for heights.
-    :ivar vertical_length: The total vertical length of a feature.
-    :ivar shape_information: Textual information about the shape of a
-        non-standard topmark.
     :ivar is_slatted: -
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_special_purpose_mark: Optional[
         CategoryOfSpecialPurposeMarkType
@@ -9666,14 +7414,14 @@ class DaymarkType(EquipmentType):
         metadata={
             "name": "categoryOfSpecialPurposeMark",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     colour: list[ColourType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -9682,21 +7430,14 @@ class DaymarkType(EquipmentType):
         metadata={
             "name": "colourPattern",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    elevation: Optional[float] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     height: Optional[float] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     nature_of_construction: list[NatureOfConstructionType] = field(
@@ -9704,7 +7445,7 @@ class DaymarkType(EquipmentType):
         metadata={
             "name": "natureOfConstruction",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     orientation_value: Optional[float] = field(
@@ -9712,14 +7453,14 @@ class DaymarkType(EquipmentType):
         metadata={
             "name": "orientationValue",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     status: list[StatusType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     topmark_daymark_shape: Optional[TopmarkDaymarkShapeType] = field(
@@ -9727,32 +7468,8 @@ class DaymarkType(EquipmentType):
         metadata={
             "name": "topmarkDaymarkShape",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
-        },
-    )
-    vertical_datum: Optional[VerticalDatumType] = field(
-        default=None,
-        metadata={
-            "name": "verticalDatum",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_length: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalLength",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    shape_information: Optional[ShapeInformationType] = field(
-        default=None,
-        metadata={
-            "name": "shapeInformation",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
         },
     )
     is_slatted: Optional[bool] = field(
@@ -9760,7 +7477,7 @@ class DaymarkType(EquipmentType):
         metadata={
             "name": "isSlatted",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -9768,7 +7485,7 @@ class DaymarkType(EquipmentType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -9789,75 +7506,13 @@ class DaymarkType(EquipmentType):
 @dataclass
 class ElectronicAton(ElectronicAtonType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-
-@dataclass
-class EnvironmentObservationEquipmentType(EquipmentType):
-    """
-    A sensor used to observe the environment.
-
-    :ivar height: The value of the vertical distance to the highest
-        point of the object, measured from a specified vertical datum.
-    :ivar status: The condition of an object at a given instant in time.
-    :ivar type_of_environmental_observation_equipment: Type of sensor
-        used to observe the environment. For example Anemometer, fog
-        monitor, etc.
-    :ivar geometry:
-    """
-
-    class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-    height: Optional[float] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    status: list[StatusType] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    type_of_environmental_observation_equipment: list[str] = field(
-        default_factory=list,
-        metadata={
-            "name": "typeOfEnvironmentalObservationEquipment",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "min_occurs": 1,
-        },
-    )
-    geometry: list["EnvironmentObservationEquipmentType.Geometry"] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "min_occurs": 1,
-        },
-    )
-
-    @dataclass
-    class Geometry:
-        point_property: Optional[PointProperty2] = field(
-            default=None,
-            metadata={
-                "name": "pointProperty",
-                "type": "Element",
-                "namespace": "http://www.iho.int/s100gml/5.0",
-                "required": True,
-            },
-        )
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class Equipment(EquipmentType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -9867,105 +7522,46 @@ class FogSignalType(EquipmentType):
 
     Also, the device producing such a signal.
 
-    :ivar category_of_fog_signal: Classification of the various means of
-        generating the fog signal.
-    :ivar signal_frequency: The frequency of a signal.
-    :ivar signal_generation: The mechanism used to generate a fog or
-        light signal.
-    :ivar signal_group: The number of signals, the combination of
-        signals or the morse character(s) within one period of full
-        sequence.
-    :ivar signal_output: Strength of signal output.
-    :ivar signal_period: The time occupied by an entire cycle of
-        intervals of light and eclipse.
-    :ivar status: The condition of an object at a given instant in time.
-    :ivar value_of_maximum_range: The extreme distance at which an
-        feature can be seen or a signal detected.
     :ivar signal_sequence: The sequence of times occupied by intervals
         of light and eclipse for all light characteristics.
+    :ivar category_of_fog_signal: Classification of the various means of
+        generating the fog signal.
+    :ivar status: The condition of an object at a given instant in time.
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
+    signal_sequence: Optional[SignalSequenceType] = field(
+        default=None,
+        metadata={
+            "name": "signalSequence",
+            "type": "Element",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
+        },
+    )
     category_of_fog_signal: Optional[CategoryOfFogSignalType] = field(
         default=None,
         metadata={
             "name": "categoryOfFogSignal",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
-        },
-    )
-    signal_frequency: Optional[int] = field(
-        default=None,
-        metadata={
-            "name": "signalFrequency",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    signal_generation: Optional[SignalGenerationType] = field(
-        default=None,
-        metadata={
-            "name": "signalGeneration",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    signal_group: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "signalGroup",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    signal_output: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "signalOutput",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    signal_period: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "signalPeriod",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
         },
     )
     status: list[StatusType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    value_of_maximum_range: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "valueOfMaximumRange",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    signal_sequence: Optional[SignalSequenceType] = field(
-        default=None,
-        metadata={
-            "name": "signalSequence",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["FogSignalType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -9997,8 +7593,6 @@ class GenericBeaconType(StructureObjectType):
         reflects or emits light.
     :ivar colour_pattern: A regular repeated design containing more than
         one colour.
-    :ivar elevation: The altitude of the ground level of an object,
-        measured from a specified vertical datum.
     :ivar height: The value of the vertical distance to the highest
         point of the object, measured from a specified vertical datum.
     :ivar marks_navigational_system_of: The system of navigational
@@ -10015,14 +7609,14 @@ class GenericBeaconType(StructureObjectType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     beacon_shape: Optional[BeaconShapeType] = field(
         default=None,
         metadata={
             "name": "beaconShape",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -10030,7 +7624,7 @@ class GenericBeaconType(StructureObjectType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -10039,21 +7633,14 @@ class GenericBeaconType(StructureObjectType):
         metadata={
             "name": "colourPattern",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    elevation: Optional[float] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     height: Optional[float] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     marks_navigational_system_of: Optional[MarksNavigationalSystemOfType] = (
@@ -10062,7 +7649,7 @@ class GenericBeaconType(StructureObjectType):
             metadata={
                 "name": "marksNavigationalSystemOf",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
     )
@@ -10071,7 +7658,7 @@ class GenericBeaconType(StructureObjectType):
         metadata={
             "name": "natureOfConstruction",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     radar_conspicuous: Optional[bool] = field(
@@ -10079,14 +7666,14 @@ class GenericBeaconType(StructureObjectType):
         metadata={
             "name": "radarConspicuous",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     status: list[StatusType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     vertical_length: Optional[float] = field(
@@ -10094,7 +7681,7 @@ class GenericBeaconType(StructureObjectType):
         metadata={
             "name": "verticalLength",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     visual_prominence: Optional[VisualProminenceType] = field(
@@ -10102,7 +7689,7 @@ class GenericBeaconType(StructureObjectType):
         metadata={
             "name": "visualProminence",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     vertical_accuracy: Optional[float] = field(
@@ -10110,7 +7697,7 @@ class GenericBeaconType(StructureObjectType):
         metadata={
             "name": "verticalAccuracy",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -10136,23 +7723,18 @@ class GenericBuoyType(StructureObjectType):
     :ivar status: The condition of an object at a given instant in time.
     :ivar type_of_buoy: Type equipment used as a buoy in a particular
         installation.
-    :ivar vertical_length: The total vertical length of a feature.
-    :ivar vertical_accuracy: -
-    :ivar topmark_part:
-    :ivar shackle_to_buoy_connected:
-    :ivar buoy_hangs:
-    :ivar buoya_attached:
+    :ivar equipment:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     buoy_shape: Optional[BuoyShapeType] = field(
         default=None,
         metadata={
             "name": "buoyShape",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -10160,7 +7742,7 @@ class GenericBuoyType(StructureObjectType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -10169,7 +7751,7 @@ class GenericBuoyType(StructureObjectType):
         metadata={
             "name": "colourPattern",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     marks_navigational_system_of: Optional[MarksNavigationalSystemOfType] = (
@@ -10178,7 +7760,7 @@ class GenericBuoyType(StructureObjectType):
             metadata={
                 "name": "marksNavigationalSystemOf",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
     )
@@ -10187,7 +7769,7 @@ class GenericBuoyType(StructureObjectType):
         metadata={
             "name": "natureOfConstruction",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     radar_conspicuous: Optional[bool] = field(
@@ -10195,14 +7777,14 @@ class GenericBuoyType(StructureObjectType):
         metadata={
             "name": "radarConspicuous",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     status: list[StatusType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     type_of_buoy: Optional[str] = field(
@@ -10210,56 +7792,14 @@ class GenericBuoyType(StructureObjectType):
         metadata={
             "name": "typeOfBuoy",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
-    vertical_length: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalLength",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_accuracy: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalAccuracy",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    topmark_part: list[ReferenceType] = field(
+    equipment: list[ReferenceType] = field(
         default_factory=list,
         metadata={
-            "name": "topmarkPart",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    shackle_to_buoy_connected: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "shackleToBuoyConnected",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    buoy_hangs: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "buoyHangs",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    buoya_attached: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "buoyaAttached",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
 
@@ -10268,13 +7808,16 @@ class GenericBuoyType(StructureObjectType):
 class GenericLightType(EquipmentType):
     """-
 
+    :ivar colour: The property possessed by an object of producing
+        different sensations on the eye as a result of the way it
+        reflects or emits light.
     :ivar height: The value of the vertical distance to the highest
         point of the object, measured from a specified vertical datum.
-    :ivar status: The condition of an object at a given instant in time.
     :ivar vertical_datum: The reference level used for expressing the
         vertical measurements of points on the earth's surface. Also
         called datum level, reference plane, levelling datum, datum for
         sounding reduction, datum for heights.
+    :ivar status: The condition of an object at a given instant in time.
     :ivar effective_intensity: The luminous intensity of a fictitious
         juxtaposed steady-burning point light source that would appear
         to exhibit a luminosity equal to that of the rhythmic point
@@ -10283,23 +7826,27 @@ class GenericLightType(EquipmentType):
         the response of the eye of the observer.
     :ivar peak_intensity: The maximum luminous intensity of a light
         during its flash cycle.
+    :ivar rhythm_of_light: The sequence of times occupied by intervals
+        of light/sound and eclipse/silence for all light characteristics
+        or sound signals.
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
+    colour: list[ColourType] = field(
+        default_factory=list,
+        metadata={
+            "type": "Element",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
+            "min_occurs": 1,
+        },
+    )
     height: Optional[float] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    status: list[StatusType] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     vertical_datum: Optional[VerticalDatumType] = field(
@@ -10307,7 +7854,14 @@ class GenericLightType(EquipmentType):
         metadata={
             "name": "verticalDatum",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
+        },
+    )
+    status: list[StatusType] = field(
+        default_factory=list,
+        metadata={
+            "type": "Element",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     effective_intensity: Optional[float] = field(
@@ -10315,7 +7869,7 @@ class GenericLightType(EquipmentType):
         metadata={
             "name": "effectiveIntensity",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     peak_intensity: Optional[float] = field(
@@ -10323,7 +7877,16 @@ class GenericLightType(EquipmentType):
         metadata={
             "name": "peakIntensity",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
+        },
+    )
+    rhythm_of_light: Optional[str] = field(
+        default=None,
+        metadata={
+            "name": "rhythmOfLight",
+            "type": "Element",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
+            "required": True,
         },
     )
 
@@ -10340,33 +7903,24 @@ class LightFloatType(StructureObjectType):
         reflects or emits light.
     :ivar colour_pattern: A regular repeated design containing more than
         one colour.
-    :ivar horizontal_length: A measurement of the longer of two linear
-        axis.
-    :ivar horizontal_width: A measurement of the shorter of two linear
-        axis.
-    :ivar manned_structure: An expression of the feature being
-        permanently manned or not.
     :ivar nature_of_construction: The building's primary construction
         material.
     :ivar radar_conspicuous: A feature which returns a strong radar
         echo.
     :ivar status: The condition of an object at a given instant in time.
-    :ivar vertical_length: The total vertical length of a feature.
     :ivar visual_prominence: The extent to which a feature, either
         natural or artificial, is visible from seaward.
-    :ivar vertical_accuracy: -
-    :ivar horizontal_accuracy: -
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     colour: list[ColourType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -10375,31 +7929,7 @@ class LightFloatType(StructureObjectType):
         metadata={
             "name": "colourPattern",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    horizontal_length: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "horizontalLength",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    horizontal_width: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "horizontalWidth",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    manned_structure: Optional[bool] = field(
-        default=None,
-        metadata={
-            "name": "mannedStructure",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     nature_of_construction: list[NatureOfConstructionType] = field(
@@ -10407,7 +7937,7 @@ class LightFloatType(StructureObjectType):
         metadata={
             "name": "natureOfConstruction",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     radar_conspicuous: Optional[bool] = field(
@@ -10415,22 +7945,14 @@ class LightFloatType(StructureObjectType):
         metadata={
             "name": "radarConspicuous",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     status: list[StatusType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_length: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalLength",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     visual_prominence: Optional[VisualProminenceType] = field(
@@ -10438,30 +7960,14 @@ class LightFloatType(StructureObjectType):
         metadata={
             "name": "visualProminence",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_accuracy: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalAccuracy",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    horizontal_accuracy: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "horizontalAccuracy",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["LightFloatType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -10493,33 +7999,24 @@ class LightVesselType(StructureObjectType):
         reflects or emits light.
     :ivar colour_pattern: A regular repeated design containing more than
         one colour.
-    :ivar horizontal_length: A measurement of the longer of two linear
-        axis.
-    :ivar horizontal_width: A measurement of the shorter of two linear
-        axis.
-    :ivar manned_structure: An expression of the feature being
-        permanently manned or not.
     :ivar nature_of_construction: The building's primary construction
         material.
     :ivar radar_conspicuous: A feature which returns a strong radar
         echo.
     :ivar status: The condition of an object at a given instant in time.
-    :ivar vertical_length: The total vertical length of a feature.
     :ivar visual_prominence: The extent to which a feature, either
         natural or artificial, is visible from seaward.
-    :ivar vertical_accuracy: -
-    :ivar horizontal_accuracy: -
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     colour: list[ColourType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -10528,31 +8025,7 @@ class LightVesselType(StructureObjectType):
         metadata={
             "name": "colourPattern",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    horizontal_length: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "horizontalLength",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    horizontal_width: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "horizontalWidth",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    manned_structure: Optional[bool] = field(
-        default=None,
-        metadata={
-            "name": "mannedStructure",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     nature_of_construction: list[NatureOfConstructionType] = field(
@@ -10560,7 +8033,7 @@ class LightVesselType(StructureObjectType):
         metadata={
             "name": "natureOfConstruction",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     radar_conspicuous: Optional[bool] = field(
@@ -10568,22 +8041,14 @@ class LightVesselType(StructureObjectType):
         metadata={
             "name": "radarConspicuous",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     status: list[StatusType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_length: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalLength",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     visual_prominence: Optional[VisualProminenceType] = field(
@@ -10591,30 +8056,14 @@ class LightVesselType(StructureObjectType):
         metadata={
             "name": "visualProminence",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_accuracy: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalAccuracy",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    horizontal_accuracy: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "horizontalAccuracy",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["LightVesselType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -10633,12 +8082,6 @@ class LightVesselType(StructureObjectType):
 
 
 @dataclass
-class MooringShackle(MooringShackleType):
-    class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-
-@dataclass
 class PhysicalAisaidToNavigationType(ElectronicAtonType):
     """
     An Automatic Identification System (AIS) message 21 transmitted from a physical
@@ -10654,16 +8097,16 @@ class PhysicalAisaidToNavigationType(ElectronicAtonType):
 
     class Meta:
         name = "PhysicalAISAidToNavigationType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_physical_aisaid_to_navigation: Optional[
         CategoryOfPhysicalAisaidToNavigationType
     ] = field(
         default=None,
         metadata={
-            "name": "CategoryOfPhysicalAISAidToNavigation",
+            "name": "categoryOfPhysicalAISAidToNavigation",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -10672,14 +8115,14 @@ class PhysicalAisaidToNavigationType(ElectronicAtonType):
         metadata={
             "name": "physicalAISbroadcasts",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["PhysicalAisaidToNavigationType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -10713,33 +8156,27 @@ class PileType(StructureObjectType):
         one colour.
     :ivar height: The value of the vertical distance to the highest
         point of the object, measured from a specified vertical datum.
-    :ivar vertical_datum: The reference level used for expressing the
-        vertical measurements of points on the earth's surface. Also
-        called datum level, reference plane, levelling datum, datum for
-        sounding reduction, datum for heights.
-    :ivar vertical_length: The total vertical length of a feature.
     :ivar visual_prominence: The extent to which a feature, either
         natural or artificial, is visible from seaward.
-    :ivar vertical_accuracy: -
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_pile: Optional[CategoryOfPileType] = field(
         default=None,
         metadata={
             "name": "categoryOfPile",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     colour: list[ColourType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     colour_pattern: list[ColourPatternType] = field(
@@ -10747,30 +8184,14 @@ class PileType(StructureObjectType):
         metadata={
             "name": "colourPattern",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     height: Optional[float] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_datum: Optional[VerticalDatumType] = field(
-        default=None,
-        metadata={
-            "name": "verticalDatum",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_length: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalLength",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     visual_prominence: Optional[VisualProminenceType] = field(
@@ -10778,80 +8199,14 @@ class PileType(StructureObjectType):
         metadata={
             "name": "visualProminence",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_accuracy: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalAccuracy",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["PileType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "min_occurs": 1,
-        },
-    )
-
-    @dataclass
-    class Geometry:
-        point_property: Optional[PointProperty2] = field(
-            default=None,
-            metadata={
-                "name": "pointProperty",
-                "type": "Element",
-                "namespace": "http://www.iho.int/s100gml/5.0",
-                "required": True,
-            },
-        )
-
-
-@dataclass
-class PowerSourceType(EquipmentType):
-    """-
-
-    :ivar category_of_power_source: -
-    :ivar status: The condition of an object at a given instant in time.
-    :ivar manufacturer: -
-    :ivar geometry:
-    """
-
-    class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-    category_of_power_source: Optional[CategoryOfPowerSourceType] = field(
-        default=None,
-        metadata={
-            "name": "CategoryOfPowerSource",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    status: list[StatusType] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    manufacturer: Optional[str] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    geometry: list["PowerSourceType.Geometry"] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -10877,52 +8232,31 @@ class RadarReflectorType(EquipmentType):
     :ivar height: The value of the vertical distance to the highest
         point of the object, measured from a specified vertical datum.
     :ivar status: The condition of an object at a given instant in time.
-    :ivar vertical_datum: The reference level used for expressing the
-        vertical measurements of points on the earth's surface. Also
-        called datum level, reference plane, levelling datum, datum for
-        sounding reduction, datum for heights.
-    :ivar vertical_accuracy: -
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     height: Optional[float] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     status: list[StatusType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_datum: Optional[VerticalDatumType] = field(
-        default=None,
-        metadata={
-            "name": "verticalDatum",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_accuracy: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalAccuracy",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["RadarReflectorType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -10958,7 +8292,6 @@ class RadarTransponderBeaconType(EquipmentType):
     :ivar value_of_nominal_range: The luminous range of a light in a
         homogenous atmosphere in which the meteorological visibility is
         10 sea miles.
-    :ivar manufacturer: -
     :ivar sector_limit_one: A sector is the part of a circle between two
         straight lines drawn from the centre to the circumference.
         Sector limit one specifies the first limit of the sector. The
@@ -10975,7 +8308,7 @@ class RadarTransponderBeaconType(EquipmentType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_radar_transponder_beacon: Optional[
         CategoryOfRadarTransponderBeaconType
@@ -10984,7 +8317,7 @@ class RadarTransponderBeaconType(EquipmentType):
         metadata={
             "name": "categoryOfRadarTransponderBeacon",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -10993,7 +8326,7 @@ class RadarTransponderBeaconType(EquipmentType):
         metadata={
             "name": "radarWaveLength",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     signal_group: Optional[str] = field(
@@ -11001,14 +8334,14 @@ class RadarTransponderBeaconType(EquipmentType):
         metadata={
             "name": "signalGroup",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     status: list[StatusType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     value_of_nominal_range: Optional[float] = field(
@@ -11016,14 +8349,7 @@ class RadarTransponderBeaconType(EquipmentType):
         metadata={
             "name": "valueOfNominalRange",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    manufacturer: Optional[str] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     sector_limit_one: Optional[SectorLimitOneType] = field(
@@ -11031,7 +8357,7 @@ class RadarTransponderBeaconType(EquipmentType):
         metadata={
             "name": "sectorLimitOne",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     sector_limit_two: Optional[SectorLimitTwoType] = field(
@@ -11039,7 +8365,7 @@ class RadarTransponderBeaconType(EquipmentType):
         metadata={
             "name": "sectorLimitTwo",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     signal_sequence: Optional[SignalSequenceType] = field(
@@ -11047,14 +8373,14 @@ class RadarTransponderBeaconType(EquipmentType):
         metadata={
             "name": "signalSequence",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["RadarTransponderBeaconType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -11081,71 +8407,43 @@ class RadioStationType(EquipmentType):
 
     :ivar category_of_radio_station: Classification of radio services
         offered by a radio station.
-    :ivar estimated_range_of_transmission: The estimated range of a non-
-        optical electromagnetic transmission.
     :ivar status: The condition of an object at a given instant in time.
-    :ivar physical_aisbroadcast_by:
-    :ivar synthetic_aisbroadcast_by:
-    :ivar virtual_aisbroadcast_by:
+    :ivar broadcast_by:
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_radio_station: Optional[CategoryOfRadioStationType] = field(
         default=None,
         metadata={
             "name": "categoryOfRadioStation",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
-        },
-    )
-    estimated_range_of_transmission: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "estimatedRangeOfTransmission",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
         },
     )
     status: Optional[StatusType] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
-    physical_aisbroadcast_by: Optional[ReferenceType] = field(
-        default=None,
+    broadcast_by: list[ReferenceType] = field(
+        default_factory=list,
         metadata={
-            "name": "physicalAISbroadcastBy",
+            "name": "broadcastBy",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    synthetic_aisbroadcast_by: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "syntheticAISbroadcastBy",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    virtual_aisbroadcast_by: Optional[ReferenceType] = field(
-        default=None,
-        metadata={
-            "name": "virtualAISbroadcastBy",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["RadioStationType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -11178,24 +8476,17 @@ class RetroreflectorType(EquipmentType):
     :ivar marks_navigational_system_of: The system of navigational
         buoyage a region complies with.
     :ivar status: The condition of an object at a given instant in time.
-    :ivar vertical_datum: The reference level used for expressing the
-        vertical measurements of points on the earth's surface. Also
-        called datum level, reference plane, levelling datum, datum for
-        sounding reduction, datum for heights.
-    :ivar height: The value of the vertical distance to the highest
-        point of the object, measured from a specified vertical datum.
-    :ivar vertical_accuracy: -
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     colour: list[ColourType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     colour_pattern: list[ColourPatternType] = field(
@@ -11203,7 +8494,7 @@ class RetroreflectorType(EquipmentType):
         metadata={
             "name": "colourPattern",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     marks_navigational_system_of: Optional[MarksNavigationalSystemOfType] = (
@@ -11212,7 +8503,7 @@ class RetroreflectorType(EquipmentType):
             metadata={
                 "name": "marksNavigationalSystemOf",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
     )
@@ -11220,37 +8511,14 @@ class RetroreflectorType(EquipmentType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_datum: Optional[VerticalDatumType] = field(
-        default=None,
-        metadata={
-            "name": "verticalDatum",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    height: Optional[float] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_accuracy: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalAccuracy",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["RetroreflectorType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -11269,21 +8537,9 @@ class RetroreflectorType(EquipmentType):
 
 
 @dataclass
-class SinkerAnchor(SinkerAnchorType):
-    class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-
-@dataclass
 class StructureObject(StructureObjectType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-
-@dataclass
-class Swivel(SwivelType):
-    class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -11299,7 +8555,7 @@ class SyntheticAisaidToNavigationType(ElectronicAtonType):
 
     class Meta:
         name = "SyntheticAISAidToNavigationType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_synthetic_aisaidto_navigation: Optional[
         CategoryOfSyntheticAisaidtoNavigationType
@@ -11308,7 +8564,7 @@ class SyntheticAisaidToNavigationType(ElectronicAtonType):
         metadata={
             "name": "categoryOfSyntheticAISAidtoNavigation",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -11319,7 +8575,7 @@ class SyntheticAisaidToNavigationType(ElectronicAtonType):
         metadata={
             "name": "virtualAISAidToNavigationType",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -11328,14 +8584,14 @@ class SyntheticAisaidToNavigationType(ElectronicAtonType):
         metadata={
             "name": "syntheticAISbroadcasts",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["SyntheticAisaidToNavigationType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -11356,7 +8612,7 @@ class SyntheticAisaidToNavigationType(ElectronicAtonType):
 @dataclass
 class Topmark(TopmarkType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -11374,7 +8630,7 @@ class VirtualAisaidToNavigationType(ElectronicAtonType):
 
     class Meta:
         name = "VirtualAISAidToNavigationType"
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     virtual_aisaid_to_navigation_type: Optional[
         VirtualAisaidToNavigationTypeType
@@ -11383,7 +8639,7 @@ class VirtualAisaidToNavigationType(ElectronicAtonType):
         metadata={
             "name": "virtualAISAidToNavigationType",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -11392,14 +8648,14 @@ class VirtualAisaidToNavigationType(ElectronicAtonType):
         metadata={
             "name": "virtualAISbroadcasts",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["VirtualAisaidToNavigationType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -11476,13 +8732,13 @@ class LinearRingPropertyType:
 @dataclass
 class Bridge(BridgeType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class Building(BuildingType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -11503,14 +8759,14 @@ class CardinalBeaconType(GenericBeaconType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_cardinal_mark: Optional[CategoryOfCardinalMarkType] = field(
         default=None,
         metadata={
             "name": "categoryOfCardinalMark",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -11518,7 +8774,7 @@ class CardinalBeaconType(GenericBeaconType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -11554,14 +8810,14 @@ class CardinalBuoyType(GenericBuoyType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_cardinal_mark: Optional[CategoryOfCardinalMarkType] = field(
         default=None,
         metadata={
             "name": "categoryOfCardinalMark",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -11569,7 +8825,7 @@ class CardinalBuoyType(GenericBuoyType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -11590,7 +8846,7 @@ class CardinalBuoyType(GenericBuoyType):
 @dataclass
 class Daymark(DaymarkType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -11603,13 +8859,13 @@ class EmergencyWreckMarkingBuoyType(GenericBuoyType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     geometry: list["EmergencyWreckMarkingBuoyType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -11628,33 +8884,27 @@ class EmergencyWreckMarkingBuoyType(GenericBuoyType):
 
 
 @dataclass
-class EnvironmentObservationEquipment(EnvironmentObservationEquipmentType):
-    class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-
-@dataclass
 class FogSignal(FogSignalType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class GenericBeacon(GenericBeaconType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class GenericBuoy(GenericBuoyType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class GenericLight(GenericLightType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -11667,12 +8917,12 @@ class InstallationBuoyType(GenericBuoyType):
     Specifications, M-4)
 
     :ivar category_of_installation_buoy: Classification of fixed
-        installation buoy.
+        installation buoy
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_installation_buoy: Optional[CategoryOfInstallationBuoyType] = (
         field(
@@ -11680,7 +8930,7 @@ class InstallationBuoyType(GenericBuoyType):
             metadata={
                 "name": "categoryOfInstallationBuoy",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
                 "required": True,
             },
         )
@@ -11689,7 +8939,7 @@ class InstallationBuoyType(GenericBuoyType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -11709,19 +8959,23 @@ class InstallationBuoyType(GenericBuoyType):
 
 @dataclass
 class IsolatedDangerBeaconType(GenericBeaconType):
-    """
-    An isolated danger beacon is a beacon erected on an isolated danger of limited
-    extent, which has navigable water all around it.
+    """A beacon is a prominent specially constructed object forming a conspicuous
+    mark as a fixed aid to navigation or for use in hydrographic survey (IHO
+    Dictionary, S-32, 5th Edition, 420).
+
+    An isolated danger beacon is a beacon erected on an isolated danger
+    of limited extent, which has navigable water all around it. (UKHO
+    NP735, 5th Edition)
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     geometry: list["IsolatedDangerBeaconType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -11741,19 +8995,22 @@ class IsolatedDangerBeaconType(GenericBeaconType):
 
 @dataclass
 class IsolatedDangerBuoyType(GenericBuoyType):
-    """
-    An isolated danger buoy is a buoy moored on or above an isolated danger of
-    limited extent, which has navigable water all around it.
+    """A buoy is a floating object moored to the bottom in a particular place, as
+    an aid to navigation or for other specific purposes.
+
+    (IHO Dictionary, S-32, 5th Edition, 565). A isolated danger buoy is
+    a buoy moored on or above an isolated danger of limited extent,
+    which has navigable water all around it. (UKHO NP735, 5th Edition)
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     geometry: list["IsolatedDangerBuoyType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -11773,11 +9030,14 @@ class IsolatedDangerBuoyType(GenericBuoyType):
 
 @dataclass
 class LateralBeaconType(GenericBeaconType):
-    """A lateral beacon is used to indicate the port or starboard hand side of the
-    route to be followed.
+    """A beacon is a prominent specially constructed object forming a conspicuous
+    mark as a fixed aid to navigation or for use in hydrographic survey (IHO
+    Dictionary, S-32, 5th Edition, 420).
 
-    They are generally used for well defined channels and are used in
-    conjunction with a conventional direction of buoyage.
+    A lateral beacon is used to indicate the port or starboard hand side
+    of the route to be followed. They are generally used for well
+    defined channels and are used in conjunction with a conventional
+    direction of buoyage. (UKHO NP 735, 5th Edition)
 
     :ivar category_of_lateral_mark: Classification of lateral marks in
         the IALA Buoyage System.
@@ -11785,14 +9045,14 @@ class LateralBeaconType(GenericBeaconType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_lateral_mark: Optional[CategoryOfLateralMarkType] = field(
         default=None,
         metadata={
             "name": "categoryOfLateralMark",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -11800,7 +9060,7 @@ class LateralBeaconType(GenericBeaconType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -11820,11 +9080,14 @@ class LateralBeaconType(GenericBeaconType):
 
 @dataclass
 class LateralBuoyType(GenericBuoyType):
-    """A lateral buoy is used to indicate the port or starboard hand side of the
-    route to be followed.
+    """A buoy is a floating object moored to the bottom in a particular place, as
+    an aid to navigation or for other specific purposes.
 
-    They are generally used for well-defined channels and are used in
-    conjunction with a conventional direction of buoyage.
+    (IHO Dictionary, S-32, 5th Edition, 565). A lateral buoy is used to
+    indicate the port or starboard hand side of the route to be
+    followed. They are generally used for well defined channels and are
+    used in conjunction with a conventional direction of buoyage. (UKHO
+    NP 735, 5th Edition)
 
     :ivar category_of_lateral_mark: Classification of lateral marks in
         the IALA Buoyage System.
@@ -11832,14 +9095,14 @@ class LateralBuoyType(GenericBuoyType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_lateral_mark: Optional[CategoryOfLateralMarkType] = field(
         default=None,
         metadata={
             "name": "categoryOfLateralMark",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -11847,7 +9110,7 @@ class LateralBuoyType(GenericBuoyType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -11875,29 +9138,31 @@ class LightAirObstructionType(GenericLightType):
         light.
     :ivar light_visibility: The specific visibility of a light, with
         respect to the light's intensity and ease of recognition.
+    :ivar value_of_geographic_range: The greatest distance at which a
+        light can be seen as a function of the curvature of the earth
+        and the heights of the light source and the observer.
+    :ivar value_of_luminous_range: The greatest distance at which a
+        light can be seen merely as a function of its luminous
+        intensity, the meteorological visibility, and the sensitivity of
+        the observer's eye.
     :ivar value_of_nominal_range: The luminous range of a light in a
         homogenous atmosphere in which the meteorological visibility is
         10 sea miles.
     :ivar multiplicity_of_features: The number of features of identical
         character that exist as a colocated group.
-    :ivar rhythm_of_light: The sequence of times occupied by intervals
-        of light/sound and eclipse/silence for all light characteristics
-        or sound signals.
-    :ivar flare_bearing: The bearing about which the light flare symbol
-        is rotated to be displayed in ECDIS.
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
-    exhibition_condition_of_light: list[ExhibitionConditionOfLightType] = (
+    exhibition_condition_of_light: Optional[ExhibitionConditionOfLightType] = (
         field(
-            default_factory=list,
+            default=None,
             metadata={
                 "name": "exhibitionConditionOfLight",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
     )
@@ -11906,7 +9171,23 @@ class LightAirObstructionType(GenericLightType):
         metadata={
             "name": "lightVisibility",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
+        },
+    )
+    value_of_geographic_range: Optional[float] = field(
+        default=None,
+        metadata={
+            "name": "valueOfGeographicRange",
+            "type": "Element",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
+        },
+    )
+    value_of_luminous_range: Optional[float] = field(
+        default=None,
+        metadata={
+            "name": "valueOfLuminousRange",
+            "type": "Element",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     value_of_nominal_range: Optional[float] = field(
@@ -11914,7 +9195,7 @@ class LightAirObstructionType(GenericLightType):
         metadata={
             "name": "valueOfNominalRange",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     multiplicity_of_features: Optional[MultiplicityOfFeaturesType] = field(
@@ -11922,31 +9203,14 @@ class LightAirObstructionType(GenericLightType):
         metadata={
             "name": "multiplicityOfFeatures",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    rhythm_of_light: Optional[RhythmOfLightType] = field(
-        default=None,
-        metadata={
-            "name": "rhythmOfLight",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    flare_bearing: Optional[int] = field(
-        default=None,
-        metadata={
-            "name": "flareBearing",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["LightAirObstructionType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -11971,9 +9235,6 @@ class LightAllAroundType(GenericLightType):
     interest to marine navigation and having no change in the characteristics of
     the light.
 
-    :ivar colour: The property possessed by an object of producing
-        different sensations on the eye as a result of the way it
-        reflects or emits light.
     :ivar category_of_light: Classification of different light types.
     :ivar exhibition_condition_of_light: The outward display of the
         light.
@@ -11986,36 +9247,30 @@ class LightAllAroundType(GenericLightType):
         buoyage a region complies with.
     :ivar signal_generation: The mechanism used to generate a fog or
         light signal.
+    :ivar value_of_geographic_range: The greatest distance at which a
+        light can be seen as a function of the curvature of the earth
+        and the heights of the light source and the observer.
+    :ivar value_of_luminous_range: The greatest distance at which a
+        light can be seen merely as a function of its luminous
+        intensity, the meteorological visibility, and the sensitivity of
+        the observer's eye.
     :ivar value_of_nominal_range: The luminous range of a light in a
         homogenous atmosphere in which the meteorological visibility is
         10 sea miles.
     :ivar multiplicity_of_features: The number of features of identical
         character that exist as a colocated group.
-    :ivar rhythm_of_light: The sequence of times occupied by intervals
-        of light/sound and eclipse/silence for all light characteristics
-        or sound signals.
-    :ivar flare_bearing: The bearing about which the light flare symbol
-        is rotated to be displayed in ECDIS.
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
-    colour: list[ColourType] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "min_occurs": 1,
-        },
-    )
     category_of_light: list[CategoryOfLightType] = field(
         default_factory=list,
         metadata={
             "name": "categoryOfLight",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     exhibition_condition_of_light: Optional[ExhibitionConditionOfLightType] = (
@@ -12024,7 +9279,7 @@ class LightAllAroundType(GenericLightType):
             metadata={
                 "name": "exhibitionConditionOfLight",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
     )
@@ -12033,7 +9288,7 @@ class LightAllAroundType(GenericLightType):
         metadata={
             "name": "lightVisibility",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     major_light: Optional[bool] = field(
@@ -12041,7 +9296,7 @@ class LightAllAroundType(GenericLightType):
         metadata={
             "name": "majorLight",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     marks_navigational_system_of: Optional[MarksNavigationalSystemOfType] = (
@@ -12050,7 +9305,7 @@ class LightAllAroundType(GenericLightType):
             metadata={
                 "name": "marksNavigationalSystemOf",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
     )
@@ -12059,7 +9314,23 @@ class LightAllAroundType(GenericLightType):
         metadata={
             "name": "signalGeneration",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
+        },
+    )
+    value_of_geographic_range: Optional[float] = field(
+        default=None,
+        metadata={
+            "name": "valueOfGeographicRange",
+            "type": "Element",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
+        },
+    )
+    value_of_luminous_range: Optional[float] = field(
+        default=None,
+        metadata={
+            "name": "valueOfLuminousRange",
+            "type": "Element",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     value_of_nominal_range: Optional[float] = field(
@@ -12067,7 +9338,7 @@ class LightAllAroundType(GenericLightType):
         metadata={
             "name": "valueOfNominalRange",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     multiplicity_of_features: Optional[MultiplicityOfFeaturesType] = field(
@@ -12075,31 +9346,14 @@ class LightAllAroundType(GenericLightType):
         metadata={
             "name": "multiplicityOfFeatures",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    rhythm_of_light: Optional[RhythmOfLightType] = field(
-        default=None,
-        metadata={
-            "name": "rhythmOfLight",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    flare_bearing: Optional[int] = field(
-        default=None,
-        metadata={
-            "name": "flareBearing",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["LightAllAroundType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -12120,7 +9374,7 @@ class LightAllAroundType(GenericLightType):
 @dataclass
 class LightFloat(LightFloatType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -12131,37 +9385,25 @@ class LightFogDetectorType(GenericLightType):
 
     :ivar signal_generation: The mechanism used to generate a fog or
         light signal.
-    :ivar rhythm_of_light: The sequence of times occupied by intervals
-        of light/sound and eclipse/silence for all light characteristics
-        or sound signals.
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     signal_generation: Optional[SignalGenerationType] = field(
         default=None,
         metadata={
             "name": "signalGeneration",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    rhythm_of_light: Optional[RhythmOfLightType] = field(
-        default=None,
-        metadata={
-            "name": "rhythmOfLight",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["LightFogDetectorType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -12185,9 +9427,6 @@ class LightSectoredType(GenericLightType):
     A light presenting different appearances (in particular, different colours)
     over various parts of the horizon of interest to maritime navigation.
 
-    :ivar colour: The property possessed by an object of producing
-        different sensations on the eye as a result of the way it
-        reflects or emits light.
     :ivar category_of_light: Classification of different light types.
     :ivar exhibition_condition_of_light: The outward display of the
         light.
@@ -12198,28 +9437,18 @@ class LightSectoredType(GenericLightType):
     :ivar obscured_sector: -
     :ivar sector_characteristics: Describes the characteristics of a
         light sector.
-    :ivar multiplicity_of_features: The number of features of identical
-        character that exist as a colocated group.
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
-    colour: list[ColourType] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "min_occurs": 1,
-        },
-    )
     category_of_light: list[CategoryOfLightType] = field(
         default_factory=list,
         metadata={
             "name": "categoryOfLight",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     exhibition_condition_of_light: Optional[ExhibitionConditionOfLightType] = (
@@ -12228,7 +9457,7 @@ class LightSectoredType(GenericLightType):
             metadata={
                 "name": "exhibitionConditionOfLight",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
     )
@@ -12238,7 +9467,7 @@ class LightSectoredType(GenericLightType):
             metadata={
                 "name": "marksNavigationalSystemOf",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
     )
@@ -12247,7 +9476,7 @@ class LightSectoredType(GenericLightType):
         metadata={
             "name": "signalGeneration",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     obscured_sector: list[ObscuredSectorType] = field(
@@ -12255,7 +9484,7 @@ class LightSectoredType(GenericLightType):
         metadata={
             "name": "ObscuredSector",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     sector_characteristics: list[SectorCharacteristicsType] = field(
@@ -12263,23 +9492,15 @@ class LightSectoredType(GenericLightType):
         metadata={
             "name": "sectorCharacteristics",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
-        },
-    )
-    multiplicity_of_features: Optional[MultiplicityOfFeaturesType] = field(
-        default=None,
-        metadata={
-            "name": "multiplicityOfFeatures",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
         },
     )
     geometry: list["LightSectoredType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -12300,7 +9521,7 @@ class LightSectoredType(GenericLightType):
 @dataclass
 class LightVessel(LightVesselType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -12311,13 +9532,13 @@ class MooringBuoyType(GenericBuoyType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     geometry: list["MooringBuoyType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -12339,60 +9560,57 @@ class MooringBuoyType(GenericBuoyType):
 class PhysicalAisaidToNavigation(PhysicalAisaidToNavigationType):
     class Meta:
         name = "PhysicalAISAidToNavigation"
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class Pile(PileType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-
-@dataclass
-class PowerSource(PowerSourceType):
-    class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class RadarReflector(RadarReflectorType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class RadarTransponderBeacon(RadarTransponderBeaconType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class RadioStation(RadioStationType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class Retroreflector(RetroreflectorType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class SafeWaterBeaconType(GenericBeaconType):
-    """
-    A safe water beacon is used to indicate that there is navigable water around
-    the mark.
+    """A safe water beacon is a prominent specially constructed object forming a
+    conspicuous mark as a fixed aid to navigation or for use in hydrographic survey
+    (IHO Dictionary, S-32, 5th Edition, 420).
+
+    A safe water beacon may be used to indicate that there is navigable
+    water around the mark. (UKHO NP735, 5th Edition)
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     geometry: list["SafeWaterBeaconType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -12412,19 +9630,22 @@ class SafeWaterBeaconType(GenericBeaconType):
 
 @dataclass
 class SafeWaterBuoyType(GenericBuoyType):
-    """
-    A safe water buoy is used to indicate that there is navigable water around the
-    mark.
+    """A buoy is a floating object moored to the bottom in a particular place, as
+    an aid to navigation or for other specific purposes.
+
+    (IHO Dictionary, S-32, 5th Edition, 565). A safe water buoy is used
+    to indicate that there is navigable water around the mark. (UKHO
+    NP735, 5th Edition)
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     geometry: list["SafeWaterBuoyType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -12444,10 +9665,15 @@ class SafeWaterBuoyType(GenericBuoyType):
 
 @dataclass
 class SpecialPurposeGeneralBeaconType(GenericBeaconType):
-    """
-    A special purpose beacon is primarily used to indicate an area or feature, the
-    nature of which is apparent from reference to a chart, Sailing Directions or
-    Notices to Mariners.
+    """A beacon is a prominent specially constructed object forming a conspicuous
+    mark as a fixed aid to navigation or for use in hydrographic survey (IHO
+    Dictionary, S-32, 5th Edition, 420).
+
+    A special purpose beacon is primarily used to indicate an area or
+    feature, the nature of which is apparent from reference to a chart,
+    Sailing Directions or Notices to Mariners. (UKHO NP 735, 5th
+    Edition) Beacon in general: A beacon whose appearance or purpose is
+    not adequately known.
 
     :ivar category_of_special_purpose_mark: Classification of an aid to
         navigation which signifies some special purpose.
@@ -12455,7 +9681,7 @@ class SpecialPurposeGeneralBeaconType(GenericBeaconType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_special_purpose_mark: list[
         CategoryOfSpecialPurposeMarkType
@@ -12464,7 +9690,7 @@ class SpecialPurposeGeneralBeaconType(GenericBeaconType):
         metadata={
             "name": "categoryOfSpecialPurposeMark",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -12472,7 +9698,7 @@ class SpecialPurposeGeneralBeaconType(GenericBeaconType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -12492,10 +9718,14 @@ class SpecialPurposeGeneralBeaconType(GenericBeaconType):
 
 @dataclass
 class SpecialPurposeGeneralBuoyType(GenericBuoyType):
-    """
-    A special purpose buoy is primarily used to indicate an area or feature, the
-    nature of which is apparent from reference to a chart, Sailing Directions or
-    Notices to Mariners.
+    """A buoy is a floating object moored to the bottom in a particular place, as
+    an aid to navigation or for other specific purposes.
+
+    (IHO Dictionary, S-32, 5th Edition, 565). A special purpose buoy is
+    primarily used to indicate an area or feature, the nature of which
+    is apparent from reference to a chart, Sailing Directions or Notices
+    to Mariners. (UKHO NP 735, 5th Edition) Buoy in general: A buoy
+    whose appearance or purpose is not adequately known.
 
     :ivar category_of_special_purpose_mark: Classification of an aid to
         navigation which signifies some special purpose.
@@ -12503,7 +9733,7 @@ class SpecialPurposeGeneralBuoyType(GenericBuoyType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_special_purpose_mark: list[
         CategoryOfSpecialPurposeMarkType
@@ -12512,7 +9742,7 @@ class SpecialPurposeGeneralBuoyType(GenericBuoyType):
         metadata={
             "name": "categoryOfSpecialPurposeMark",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -12520,7 +9750,7 @@ class SpecialPurposeGeneralBuoyType(GenericBuoyType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -12542,14 +9772,14 @@ class SpecialPurposeGeneralBuoyType(GenericBuoyType):
 class SyntheticAisaidToNavigation(SyntheticAisaidToNavigationType):
     class Meta:
         name = "SyntheticAISAidToNavigation"
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class VirtualAisaidToNavigation(VirtualAisaidToNavigationType):
     class Meta:
         name = "VirtualAISAidToNavigation"
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -12658,103 +9888,103 @@ class CurveSegmentArrayPropertyType:
 @dataclass
 class CardinalBeacon(CardinalBeaconType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class CardinalBuoy(CardinalBuoyType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class EmergencyWreckMarkingBuoy(EmergencyWreckMarkingBuoyType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class InstallationBuoy(InstallationBuoyType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class IsolatedDangerBeacon(IsolatedDangerBeaconType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class IsolatedDangerBuoy(IsolatedDangerBuoyType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class LateralBeacon(LateralBeaconType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class LateralBuoy(LateralBuoyType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class LightAirObstruction(LightAirObstructionType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class LightAllAround(LightAllAroundType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class LightFogDetector(LightFogDetectorType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class LightSectored(LightSectoredType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class MooringBuoy(MooringBuoyType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class SafeWaterBeacon(SafeWaterBeaconType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class SafeWaterBuoy(SafeWaterBuoyType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class SpecialPurposeGeneralBeacon(SpecialPurposeGeneralBeaconType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class SpecialPurposeGeneralBuoy(SpecialPurposeGeneralBuoyType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -13330,7 +10560,7 @@ class NavigationLineType(AidsToNavigationType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_navigation_line: Optional[CategoryOfNavigationLineType] = (
         field(
@@ -13338,7 +10568,7 @@ class NavigationLineType(AidsToNavigationType):
             metadata={
                 "name": "categoryOfNavigationLine",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
                 "required": True,
             },
         )
@@ -13347,14 +10577,14 @@ class NavigationLineType(AidsToNavigationType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     orientation: Optional[OrientationType] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -13363,14 +10593,14 @@ class NavigationLineType(AidsToNavigationType):
         metadata={
             "name": "navigableTrack",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["NavigationLineType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -13400,12 +10630,12 @@ class RecommendedTrackType(AidsToNavigationType):
         features, which may carry lights and/or top-marks. The
         structures/features are positioned so that when observed to be
         in line, a vessel can follow a known bearing with safety.
-        (Adapted from International Association of Marine Aids to
-        Navigation and Lighthouse Authorities - IALA Aids to Navigation
-        Guide, 1990); or b. a single structure or natural feature, which
-        may carry lights and/or a topmark, and a specified bearing which
-        can be followed with safety. (S-57 Edition 3.1, Appendix A
-        Chapter 2, Page 2.72, November 2000, as amended).
+        (Adapted from International Association of Lighthouse
+        Authorities - IALA Aids to Navigation Guide, 1990); or b. a
+        single structure or natural feature, which may carry lights
+        and/or a topmark, and a specified bearing which can be followed
+        with safety. (S-57 Edition 3.1, Appendix A Chapter 2, Page 2.72,
+        November 2000, as amended).
     :ivar depth_range_minimum_value: The minimum (shoalest) value of a
         depth range.
     :ivar maximal_permitted_draught: The maximal permitted draught of a
@@ -13436,14 +10666,14 @@ class RecommendedTrackType(AidsToNavigationType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     based_on_fixed_marks: Optional[bool] = field(
         default=None,
         metadata={
             "name": "basedOnFixedMarks",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -13452,7 +10682,7 @@ class RecommendedTrackType(AidsToNavigationType):
         metadata={
             "name": "depthRangeMinimumValue",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     maximal_permitted_draught: Optional[float] = field(
@@ -13460,14 +10690,14 @@ class RecommendedTrackType(AidsToNavigationType):
         metadata={
             "name": "maximalPermittedDraught",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     status: list[StatusType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     vertical_datum: Optional[VerticalDatumType] = field(
@@ -13475,14 +10705,14 @@ class RecommendedTrackType(AidsToNavigationType):
         metadata={
             "name": "verticalDatum",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     orientation: Optional[OrientationType] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -13491,7 +10721,7 @@ class RecommendedTrackType(AidsToNavigationType):
         metadata={
             "name": "verticalUncertainty",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     quality_of_vertical_measurement: list[QualityOfVerticalMeasurementType] = (
@@ -13500,7 +10730,7 @@ class RecommendedTrackType(AidsToNavigationType):
             metadata={
                 "name": "qualityOfVerticalMeasurement",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
     )
@@ -13511,7 +10741,7 @@ class RecommendedTrackType(AidsToNavigationType):
         metadata={
             "name": "techniqueOfVerticalMeasurement",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     traffic_flow: Optional[TrafficFlowType] = field(
@@ -13519,7 +10749,7 @@ class RecommendedTrackType(AidsToNavigationType):
         metadata={
             "name": "trafficFlow",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -13528,7 +10758,7 @@ class RecommendedTrackType(AidsToNavigationType):
         metadata={
             "name": "navigationLine",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -13536,7 +10766,7 @@ class RecommendedTrackType(AidsToNavigationType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -13608,13 +10838,13 @@ class Polygon1(PolygonType1):
 @dataclass
 class NavigationLine(NavigationLineType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class RecommendedTrack(RecommendedTrackType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -14239,14 +11469,14 @@ class DataCoverageType(AbstractFeatureType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     maximum_display_scale: Optional[int] = field(
         default=None,
         metadata={
             "name": "maximumDisplayScale",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -14255,7 +11485,7 @@ class DataCoverageType(AbstractFeatureType):
         metadata={
             "name": "minimumDisplayScale",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -14263,7 +11493,7 @@ class DataCoverageType(AbstractFeatureType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -14300,32 +11530,22 @@ class LandmarkType(StructureObjectType):
     :ivar radar_conspicuous: A feature which returns a strong radar
         echo.
     :ivar status: The condition of an object at a given instant in time.
-    :ivar vertical_datum: The reference level used for expressing the
-        vertical measurements of points on the earth's surface. Also
-        called datum level, reference plane, levelling datum, datum for
-        sounding reduction, datum for heights.
     :ivar visual_prominence: The extent to which a feature, either
         natural or artificial, is visible from seaward.
-    :ivar elevation: The altitude of the ground level of an object,
-        measured from a specified vertical datum.
     :ivar height: The value of the vertical distance to the highest
         point of the object, measured from a specified vertical datum.
-    :ivar manned_structure: An expression of the feature being
-        permanently manned or not.
-    :ivar vertical_length: The total vertical length of a feature.
-    :ivar vertical_accuracy: -
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_landmark: list[CategoryOfLandmarkType] = field(
         default_factory=list,
         metadata={
             "name": "categoryOfLandmark",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -14333,7 +11553,7 @@ class LandmarkType(StructureObjectType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     colour_pattern: list[ColourPatternType] = field(
@@ -14341,14 +11561,14 @@ class LandmarkType(StructureObjectType):
         metadata={
             "name": "colourPattern",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     function: list[FunctionType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     nature_of_construction: list[NatureOfConstructionType] = field(
@@ -14356,7 +11576,7 @@ class LandmarkType(StructureObjectType):
         metadata={
             "name": "natureOfConstruction",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     radar_conspicuous: Optional[bool] = field(
@@ -14364,22 +11584,14 @@ class LandmarkType(StructureObjectType):
         metadata={
             "name": "radarConspicuous",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     status: list[StatusType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_datum: Optional[VerticalDatumType] = field(
-        default=None,
-        metadata={
-            "name": "verticalDatum",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     visual_prominence: Optional[VisualProminenceType] = field(
@@ -14387,53 +11599,22 @@ class LandmarkType(StructureObjectType):
         metadata={
             "name": "visualProminence",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
-        },
-    )
-    elevation: Optional[float] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
         },
     )
     height: Optional[float] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    manned_structure: Optional[bool] = field(
-        default=None,
-        metadata={
-            "name": "mannedStructure",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_length: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalLength",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_accuracy: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalAccuracy",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["LandmarkType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -14483,13 +11664,13 @@ class LocalDirectionOfBuoyageType(AbstractFeatureType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     orientation: Optional[OrientationType] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -14497,7 +11678,7 @@ class LocalDirectionOfBuoyageType(AbstractFeatureType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -14527,7 +11708,7 @@ class NavigationalSystemOfMarksType(AbstractFeatureType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     marks_navigational_system_of: Optional[MarksNavigationalSystemOfType] = (
         field(
@@ -14535,7 +11716,7 @@ class NavigationalSystemOfMarksType(AbstractFeatureType):
             metadata={
                 "name": "marksNavigationalSystemOf",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
                 "required": True,
             },
         )
@@ -14544,7 +11725,7 @@ class NavigationalSystemOfMarksType(AbstractFeatureType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -14574,30 +11755,20 @@ class OffshorePlatformType(StructureObjectType):
         reflects or emits light.
     :ivar colour_pattern: A regular repeated design containing more than
         one colour.
-    :ivar height: The value of the vertical distance to the highest
-        point of the object, measured from a specified vertical datum.
-    :ivar manned_structure: An expression of the feature being
-        permanently manned or not.
+    :ivar condition: The various conditions of buildings and other
+        constructions.
     :ivar nature_of_construction: The building's primary construction
         material.
-    :ivar product: The various substances which are transported, stored
-        or exploited.
     :ivar radar_conspicuous: A feature which returns a strong radar
         echo.
     :ivar status: The condition of an object at a given instant in time.
-    :ivar vertical_datum: The reference level used for expressing the
-        vertical measurements of points on the earth's surface. Also
-        called datum level, reference plane, levelling datum, datum for
-        sounding reduction, datum for heights.
-    :ivar vertical_length: The total vertical length of a feature.
     :ivar visual_prominence: The extent to which a feature, either
         natural or artificial, is visible from seaward.
-    :ivar vertical_accuracy: -
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     category_of_offshore_platform: list[CategoryOfOffshorePlatformType] = (
         field(
@@ -14605,7 +11776,7 @@ class OffshorePlatformType(StructureObjectType):
             metadata={
                 "name": "categoryOfOffshorePlatform",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
     )
@@ -14613,7 +11784,7 @@ class OffshorePlatformType(StructureObjectType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     colour_pattern: list[ColourPatternType] = field(
@@ -14621,22 +11792,14 @@ class OffshorePlatformType(StructureObjectType):
         metadata={
             "name": "colourPattern",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
-    height: Optional[float] = field(
+    condition: Optional[ConditionType] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    manned_structure: Optional[bool] = field(
-        default=None,
-        metadata={
-            "name": "mannedStructure",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     nature_of_construction: list[NatureOfConstructionType] = field(
@@ -14644,14 +11807,7 @@ class OffshorePlatformType(StructureObjectType):
         metadata={
             "name": "natureOfConstruction",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    product: list[ProductType] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     radar_conspicuous: Optional[bool] = field(
@@ -14659,30 +11815,14 @@ class OffshorePlatformType(StructureObjectType):
         metadata={
             "name": "radarConspicuous",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     status: list[StatusType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_datum: Optional[VerticalDatumType] = field(
-        default=None,
-        metadata={
-            "name": "verticalDatum",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_length: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalLength",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     visual_prominence: Optional[VisualProminenceType] = field(
@@ -14690,22 +11830,14 @@ class OffshorePlatformType(StructureObjectType):
         metadata={
             "name": "visualProminence",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_accuracy: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalAccuracy",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["OffshorePlatformType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -14731,129 +11863,6 @@ class OffshorePlatformType(StructureObjectType):
 
 
 @dataclass
-class QualityOfNonBathymetricDataType(AbstractFeatureType):
-    """
-    An area within which a uniform assessment of the quality of the non-bathymetric
-    data exists.
-
-    :ivar category_of_temporal_variation: An assessment of the
-        likelihood of change over time.
-    :ivar orientation_uncertainty: The best estimate of the accuracy of
-        a bearing.
-    :ivar horizontal_distance_uncertainty: The best estimate of the
-        horizontal accuracy of horizontal clearances and distances.
-    :ivar horizontal_position_uncertainty: The best estimate of the
-        accuracy of a position.
-    :ivar information: Textual information about the feature. The
-        information may be provided as a string of text or as a file
-        name of a single external text file that contains the text.
-    :ivar information_in_national_language: Textual information in
-        national language characters.
-    :ivar textual_description: Encodes the file name of a single
-        external text file that contains the text in a defined language,
-        which provides additional textual information that cannot be
-        provided using other allowable attributes for the feature.
-    :ivar vertical_uncertainty: The best estimate of the vertical
-        accuracy of depths, heights, vertical distances and vertical
-        clearances.
-    :ivar geometry:
-    """
-
-    class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-    category_of_temporal_variation: Optional[
-        CategoryOfTemporalVariationType
-    ] = field(
-        default=None,
-        metadata={
-            "name": "categoryOfTemporalVariation",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    orientation_uncertainty: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "orientationUncertainty",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    horizontal_distance_uncertainty: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "horizontalDistanceUncertainty",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    horizontal_position_uncertainty: Optional[
-        HorizontalPositionUncertaintyType
-    ] = field(
-        default=None,
-        metadata={
-            "name": "horizontalPositionUncertainty",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "required": True,
-        },
-    )
-    information: Optional[InformationType] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    information_in_national_language: Optional[str] = field(
-        default=None,
-        metadata={
-            "name": "informationInNationalLanguage",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    textual_description: Optional[TextualDescriptionType] = field(
-        default=None,
-        metadata={
-            "name": "textualDescription",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_uncertainty: Optional[VerticalUncertaintyType] = field(
-        default=None,
-        metadata={
-            "name": "verticalUncertainty",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    geometry: list["QualityOfNonBathymetricDataType.Geometry"] = field(
-        default_factory=list,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            "min_occurs": 1,
-        },
-    )
-
-    @dataclass
-    class Geometry:
-        surface_property: Optional[SurfaceProperty] = field(
-            default=None,
-            metadata={
-                "name": "surfaceProperty",
-                "type": "Element",
-                "namespace": "http://www.iho.int/s100gml/5.0",
-                "required": True,
-            },
-        )
-
-
-@dataclass
 class SiloTankType(StructureObjectType):
     """
     A large storage structure used for storing loose materials, liquids and/or
@@ -14867,8 +11876,6 @@ class SiloTankType(StructureObjectType):
         reflects or emits light.
     :ivar colour_pattern: A regular repeated design containing more than
         one colour.
-    :ivar elevation: The altitude of the ground level of an object,
-        measured from a specified vertical datum.
     :ivar height: The value of the vertical distance to the highest
         point of the object, measured from a specified vertical datum.
     :ivar nature_of_construction: The building's primary construction
@@ -14876,26 +11883,20 @@ class SiloTankType(StructureObjectType):
     :ivar radar_conspicuous: A feature which returns a strong radar
         echo.
     :ivar status: The condition of an object at a given instant in time.
-    :ivar vertical_datum: The reference level used for expressing the
-        vertical measurements of points on the earth's surface. Also
-        called datum level, reference plane, levelling datum, datum for
-        sounding reduction, datum for heights.
-    :ivar vertical_length: The total vertical length of a feature.
     :ivar visual_prominence: The extent to which a feature, either
         natural or artificial, is visible from seaward.
-    :ivar vertical_accuracy: -
     :ivar geometry:
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     building_shape: Optional[BuildingShapeType] = field(
         default=None,
         metadata={
             "name": "buildingShape",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     category_of_silo_tank: Optional[CategoryOfSiloTankType] = field(
@@ -14903,14 +11904,14 @@ class SiloTankType(StructureObjectType):
         metadata={
             "name": "categoryOfSiloTank",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     colour: list[ColourType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     colour_pattern: list[ColourPatternType] = field(
@@ -14918,21 +11919,14 @@ class SiloTankType(StructureObjectType):
         metadata={
             "name": "colourPattern",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    elevation: Optional[float] = field(
-        default=None,
-        metadata={
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     height: Optional[float] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     nature_of_construction: list[NatureOfConstructionType] = field(
@@ -14940,7 +11934,7 @@ class SiloTankType(StructureObjectType):
         metadata={
             "name": "natureOfConstruction",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     radar_conspicuous: Optional[bool] = field(
@@ -14948,30 +11942,14 @@ class SiloTankType(StructureObjectType):
         metadata={
             "name": "radarConspicuous",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     status: list[StatusType] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_datum: Optional[VerticalDatumType] = field(
-        default=None,
-        metadata={
-            "name": "verticalDatum",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_length: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalLength",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     visual_prominence: Optional[VisualProminenceType] = field(
@@ -14979,22 +11957,14 @@ class SiloTankType(StructureObjectType):
         metadata={
             "name": "visualProminence",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-        },
-    )
-    vertical_accuracy: Optional[float] = field(
-        default=None,
-        metadata={
-            "name": "verticalAccuracy",
-            "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
         },
     )
     geometry: list["SiloTankType.Geometry"] = field(
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -15033,14 +12003,14 @@ class SoundingDatumType(AbstractFeatureType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     vertical_datum: Optional[VerticalDatumType] = field(
         default=None,
         metadata={
             "name": "verticalDatum",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -15048,7 +12018,7 @@ class SoundingDatumType(AbstractFeatureType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -15082,14 +12052,14 @@ class VerticalDatumOfDataType(AbstractFeatureType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     vertical_datum: Optional[VerticalDatumType] = field(
         default=None,
         metadata={
             "name": "verticalDatum",
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
@@ -15097,7 +12067,7 @@ class VerticalDatumOfDataType(AbstractFeatureType):
         default_factory=list,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "min_occurs": 1,
         },
     )
@@ -15118,13 +12088,13 @@ class VerticalDatumOfDataType(AbstractFeatureType):
 @dataclass
 class DataCoverage(DataCoverageType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class Landmark(LandmarkType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
@@ -15135,87 +12105,73 @@ class LighthouseType(LandmarkType):
     """
 
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class LocalDirectionOfBuoyage(LocalDirectionOfBuoyageType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class NavigationalSystemOfMarks(NavigationalSystemOfMarksType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class OffshorePlatform(OffshorePlatformType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
-
-
-@dataclass
-class QualityOfNonBathymetricData(QualityOfNonBathymetricDataType):
-    class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class SiloTank(SiloTankType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class SoundingDatum(SoundingDatumType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class VerticalDatumOfData(VerticalDatumOfDataType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class Lighthouse(LighthouseType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
 
 @dataclass
 class ThisDatasetType(DatasetType):
     class Meta:
-        target_namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        target_namespace = "http://www.iho.int/S-125/gml/cs0/1.0"
 
     members: Optional["ThisDatasetType.Members"] = field(
         default=None,
         metadata={
             "type": "Element",
-            "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+            "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             "required": True,
         },
     )
 
     @dataclass
     class Members(AbstractFeatureMemberType):
-        ato_nfixing_method: list[AtoNfixingMethodType] = field(
-            default_factory=list,
-            metadata={
-                "name": "AtoNFixingMethod",
-                "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            },
-        )
         aton_status_information: list[AtonStatusInformationType] = field(
             default_factory=list,
             metadata={
                 "name": "AtonStatusInformation",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         positioning_information: list[PositioningInformationType] = field(
@@ -15223,7 +12179,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "PositioningInformation",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         spatial_quality: list[SpatialQualityType] = field(
@@ -15231,7 +12187,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "SpatialQuality",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         aids_to_navigation: list[AidsToNavigationType] = field(
@@ -15239,7 +12195,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "AidsToNavigation",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         structure_object: list[StructureObjectType] = field(
@@ -15247,7 +12203,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "StructureObject",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         equipment: list[EquipmentType] = field(
@@ -15255,15 +12211,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "Equipment",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            },
-        )
-        electronic_aton: list[ElectronicAtonType] = field(
-            default_factory=list,
-            metadata={
-                "name": "ElectronicAton",
-                "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         generic_beacon: list[GenericBeaconType] = field(
@@ -15271,7 +12219,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "GenericBeacon",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         generic_buoy: list[GenericBuoyType] = field(
@@ -15279,7 +12227,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "GenericBuoy",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         generic_light: list[GenericLightType] = field(
@@ -15287,7 +12235,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "GenericLight",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         landmark: list[LandmarkType] = field(
@@ -15295,7 +12243,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "Landmark",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         lateral_beacon: list[LateralBeaconType] = field(
@@ -15303,7 +12251,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "LateralBeacon",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         lateral_buoy: list[LateralBuoyType] = field(
@@ -15311,7 +12259,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "LateralBuoy",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         navigation_line: list[NavigationLineType] = field(
@@ -15319,7 +12267,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "NavigationLine",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         recommended_track: list[RecommendedTrackType] = field(
@@ -15327,7 +12275,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "RecommendedTrack",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         light_sectored: list[LightSectoredType] = field(
@@ -15335,7 +12283,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "LightSectored",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         light_all_around: list[LightAllAroundType] = field(
@@ -15343,7 +12291,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "LightAllAround",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         light_air_obstruction: list[LightAirObstructionType] = field(
@@ -15351,7 +12299,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "LightAirObstruction",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         light_fog_detector: list[LightFogDetectorType] = field(
@@ -15359,7 +12307,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "LightFogDetector",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         radar_reflector: list[RadarReflectorType] = field(
@@ -15367,7 +12315,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "RadarReflector",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         fog_signal: list[FogSignalType] = field(
@@ -15375,17 +12323,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "FogSignal",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            },
-        )
-        environment_observation_equipment: list[
-            EnvironmentObservationEquipmentType
-        ] = field(
-            default_factory=list,
-            metadata={
-                "name": "EnvironmentObservationEquipment",
-                "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         radio_station: list[RadioStationType] = field(
@@ -15393,7 +12331,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "RadioStation",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         daymark: list[DaymarkType] = field(
@@ -15401,7 +12339,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "Daymark",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         retroreflector: list[RetroreflectorType] = field(
@@ -15409,7 +12347,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "Retroreflector",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         radar_transponder_beacon: list[RadarTransponderBeaconType] = field(
@@ -15417,7 +12355,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "RadarTransponderBeacon",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         virtual_aisaid_to_navigation: list[VirtualAisaidToNavigationType] = (
@@ -15426,7 +12364,7 @@ class ThisDatasetType(DatasetType):
                 metadata={
                     "name": "VirtualAISAidToNavigation",
                     "type": "Element",
-                    "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                    "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
                 },
             )
         )
@@ -15436,7 +12374,7 @@ class ThisDatasetType(DatasetType):
                 metadata={
                     "name": "PhysicalAISAidToNavigation",
                     "type": "Element",
-                    "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                    "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
                 },
             )
         )
@@ -15447,15 +12385,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "SyntheticAISAidToNavigation",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            },
-        )
-        power_source: list[PowerSourceType] = field(
-            default_factory=list,
-            metadata={
-                "name": "PowerSource",
-                "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         isolated_danger_beacon: list[IsolatedDangerBeaconType] = field(
@@ -15463,7 +12393,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "IsolatedDangerBeacon",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         cardinal_beacon: list[CardinalBeaconType] = field(
@@ -15471,7 +12401,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "CardinalBeacon",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         isolated_danger_buoy: list[IsolatedDangerBuoyType] = field(
@@ -15479,7 +12409,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "IsolatedDangerBuoy",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         cardinal_buoy: list[CardinalBuoyType] = field(
@@ -15487,7 +12417,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "CardinalBuoy",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         installation_buoy: list[InstallationBuoyType] = field(
@@ -15495,7 +12425,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "InstallationBuoy",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         mooring_buoy: list[MooringBuoyType] = field(
@@ -15503,7 +12433,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "MooringBuoy",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         emergency_wreck_marking_buoy: list[EmergencyWreckMarkingBuoyType] = (
@@ -15512,7 +12442,7 @@ class ThisDatasetType(DatasetType):
                 metadata={
                     "name": "EmergencyWreckMarkingBuoy",
                     "type": "Element",
-                    "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                    "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
                 },
             )
         )
@@ -15521,7 +12451,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "Lighthouse",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         light_float: list[LightFloatType] = field(
@@ -15529,7 +12459,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "LightFloat",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         light_vessel: list[LightVesselType] = field(
@@ -15537,7 +12467,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "LightVessel",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         offshore_platform: list[OffshorePlatformType] = field(
@@ -15545,7 +12475,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "OffshorePlatform",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         silo_tank: list[SiloTankType] = field(
@@ -15553,7 +12483,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "SiloTank",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         pile: list[PileType] = field(
@@ -15561,7 +12491,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "Pile",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         building: list[BuildingType] = field(
@@ -15569,7 +12499,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "Building",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         bridge: list[BridgeType] = field(
@@ -15577,55 +12507,23 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "Bridge",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
-        sinker_anchor: list[SinkerAnchorType] = field(
-            default_factory=list,
-            metadata={
-                "name": "SinkerAnchor",
-                "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            },
-        )
-        mooring_shackle: list[MooringShackleType] = field(
+        mooring_shackle: list[MooringBuoyType] = field(
             default_factory=list,
             metadata={
                 "name": "MooringShackle",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
-        cable_submarine: list[CableSubmarineType] = field(
-            default_factory=list,
-            metadata={
-                "name": "CableSubmarine",
-                "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            },
-        )
-        swivel: list[SwivelType] = field(
-            default_factory=list,
-            metadata={
-                "name": "Swivel",
-                "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            },
-        )
-        bridle: list[BridleType] = field(
+        bridle: list[BridgeType] = field(
             default_factory=list,
             metadata={
                 "name": "Bridle",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            },
-        )
-        counter_weight: list[CounterWeightType] = field(
-            default_factory=list,
-            metadata={
-                "name": "CounterWeight",
-                "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         topmark: list[TopmarkType] = field(
@@ -15633,7 +12531,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "Topmark",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         safe_water_beacon: list[SafeWaterBeaconType] = field(
@@ -15641,7 +12539,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "SafeWaterBeacon",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         special_purpose_general_beacon: list[
@@ -15651,7 +12549,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "SpecialPurposeGeneralBeacon",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         safe_water_buoy: list[SafeWaterBuoyType] = field(
@@ -15659,7 +12557,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "SafeWaterBuoy",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         special_purpose_general_buoy: list[SpecialPurposeGeneralBuoyType] = (
@@ -15668,7 +12566,7 @@ class ThisDatasetType(DatasetType):
                 metadata={
                     "name": "SpecialPurposeGeneralBuoy",
                     "type": "Element",
-                    "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                    "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
                 },
             )
         )
@@ -15677,7 +12575,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "DangerousFeature",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         aton_aggregation: list[AtonAggregationType] = field(
@@ -15685,7 +12583,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "AtonAggregation",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         aton_association: list[AtonAssociationType] = field(
@@ -15693,17 +12591,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "AtonAssociation",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
-            },
-        )
-        quality_of_non_bathymetric_data: list[
-            QualityOfNonBathymetricDataType
-        ] = field(
-            default_factory=list,
-            metadata={
-                "name": "QualityOfNonBathymetricData",
-                "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         data_coverage: list[DataCoverageType] = field(
@@ -15711,7 +12599,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "DataCoverage",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         local_direction_of_buoyage: list[LocalDirectionOfBuoyageType] = field(
@@ -15719,7 +12607,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "LocalDirectionOfBuoyage",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         navigational_system_of_marks: list[NavigationalSystemOfMarksType] = (
@@ -15728,7 +12616,7 @@ class ThisDatasetType(DatasetType):
                 metadata={
                     "name": "NavigationalSystemOfMarks",
                     "type": "Element",
-                    "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                    "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
                 },
             )
         )
@@ -15737,7 +12625,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "SoundingDatum",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
         vertical_datum_of_data: list[VerticalDatumOfDataType] = field(
@@ -15745,7 +12633,7 @@ class ThisDatasetType(DatasetType):
             metadata={
                 "name": "VerticalDatumOfData",
                 "type": "Element",
-                "namespace": "http://www.iho.int/S-201/gml/cs0/2.0",
+                "namespace": "http://www.iho.int/S-125/gml/cs0/1.0",
             },
         )
 
@@ -15753,4 +12641,4 @@ class ThisDatasetType(DatasetType):
 @dataclass
 class Dataset(ThisDatasetType):
     class Meta:
-        namespace = "http://www.iho.int/S-201/gml/cs0/2.0"
+        namespace = "http://www.iho.int/S-125/gml/cs0/1.0"

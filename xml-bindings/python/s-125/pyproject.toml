@@ -16,8 +16,8 @@ requires = [
 build-backend = "pdm.backend"
 
 [project]
-name = "s201-xml-bindings"
-version = "0.0.4"
+name = "s125-xml-bindings"
+version = "0.0.1"
 authors = [
   { name="Nikolaos Vastardis", email="Nikolaos.Vastardis@gla-rad.org" },
 ]
