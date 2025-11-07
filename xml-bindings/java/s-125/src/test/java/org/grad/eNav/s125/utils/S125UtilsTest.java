@@ -101,6 +101,7 @@ class S125UtilsTest {
         //                      DATASET MEMBERS SECTION                       //
         //====================================================================//
         this.vaton = new VirtualAISAidToNavigationImpl();
+        vaton.setAtoNNumber("uk.aton.corkhole");
         vaton.setId("ID001");
         vaton.setBoundedBy(this.generateBoundingShape(new double[]{51.8916667, 1.4233333}));
         FeatureNameType featureNameType1 = new FeatureNameTypeImpl();
