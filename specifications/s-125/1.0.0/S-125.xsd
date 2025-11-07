@@ -4951,6 +4951,33 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
+    <xs:complexType name="rhythmOfLightType">
+        <xs:annotation>
+            <xs:documentation>The sequence of times occupied by intervals of light/sound and eclipse/silence for all light characteristics or sound signals.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="lightCharacteristic" type="lightCharacteristicType" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The distinct character, such as fixed, flashing, or occulting, which is given to each light to avoid confusion with neighbouring ones.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="signalGroup" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The number of signals, the combination of signals or the morse character(s) within one period of full sequence.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="signalPeriod" type="xs:double" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The time occupied by an entire cycle of intervals of light and eclipse.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="signalSequence" type="signalSequenceType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The sequence of times occupied by intervals of light and eclipse for all light characteristics.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
     <xs:complexType name="sectorCharacteristicsType">
         <xs:annotation>
             <xs:documentation>Describes the characteristics of a light sector.</xs:documentation>
@@ -7258,7 +7285,6 @@
             <xs:documentation>group of informtion, feature and meta objects, all GML members</xs:documentation>
         </xs:annotation>
         <xs:choice>
-            <xs:element name="AtoNFixingMethod" type="AtoNFixingMethodType"/>
             <xs:element name="AtonStatusInformation" type="AtonStatusInformationType"/>
             <xs:element name="PositioningInformation" type="PositioningInformationType"/>
             <xs:element name="SpatialQuality" type="SpatialQualityType"/>

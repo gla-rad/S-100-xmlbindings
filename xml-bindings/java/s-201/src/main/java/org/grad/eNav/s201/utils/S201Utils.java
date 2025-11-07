@@ -358,21 +358,21 @@ public class S201Utils {
      * subclass each time. These are then inserted into lists for each
      * of S-201 the Abstract Feature geometry type.
      *
-     * @param abstractFeatureClass the Abstract Feature class
+     * @param aidsToNavigationType the Abstract Feature class
      * @param values the list of S100 spatial attribute values to be populated
      * @return the geometry list populated for the specific S-201 Abstract Feature
      */
-    public static List<?> generateS201AbstractFeatureGeometriesList(Class<? extends AbstractFeatureType> abstractFeatureClass, List<S100SpatialAttributeType> values) {
+    public static List<?> generateS201AidsToNavigationTypeGeometriesList(Class<? extends AidsToNavigationType> aidsToNavigationType, List<S100SpatialAttributeType> values) {
         // Sanity Checks
-        if(abstractFeatureClass == null || values == null) {
+        if(aidsToNavigationType == null || values == null) {
             return Collections.emptyList();
         }
 
         // Create a new custom AtoN geometry object to insert to the list
-        final Class<?> geometryClass = Optional.of(abstractFeatureClass)
+        final Class<?> geometryClass = Optional.of(aidsToNavigationType)
                 .map(clazz -> getS201AbstractFeatureDeclaredClass("GeometryImpl", clazz))
                 .orElseThrow(() -> new IllegalArgumentException(
-                        String.format("The %s S-201 Abstract Feature type does not specify a geometry", abstractFeatureClass.getSimpleName())
+                        String.format("The %s S-201 Abstract Feature type does not specify a geometry", aidsToNavigationType.getSimpleName())
                 ));
 
         // Now we need to instantiate and populate the geometry objects based

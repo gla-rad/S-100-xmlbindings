@@ -240,8 +240,6 @@ public class S125Utils {
             switch (member) {
                 case SpatialQualityImpl spatialUncertainty ->
                         members.getSpatialQuality().add(spatialUncertainty);
-                case AtoNFixingMethodImpl atoNFixingMethod ->
-                        members.getAtoNFixingMethod().add(atoNFixingMethod);
                 case PositioningInformationImpl positioningInformation ->
                         members.getPositioningInformation().add(positioningInformation);
                 case AtonStatusInformationImpl atoNStatusInformation ->

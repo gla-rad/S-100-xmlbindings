@@ -46,7 +46,6 @@
                 <ns4:language>fra</ns4:language>
                 <ns4:name>Test AtoN pour Cork Hole</ns4:name>
             </ns4:featureName>
-            <ns4:AtoNNumber>uk.aton.corkhole</ns4:AtoNNumber>
             <ns4:fixedDateRange>
                 <ns4:dateEnd>
                     <ns4:date>2099-01-01</ns4:date>
@@ -57,6 +56,7 @@
             </ns4:fixedDateRange>
             <ns4:SeasonalActionRequired>none</ns4:SeasonalActionRequired>
             <ns4:Statuspart ns3:href="ID001" ns3:role="association" ns3:arcrole="urn:IALA:S125:roles:association"/>
+            <ns4:AtoNNumber>uk.aton.corkhole</ns4:AtoNNumber>
             <ns4:mMSICode>992359598</ns4:mMSICode>
             <ns4:status>Confirmed</ns4:status>
             <ns4:virtualAISAidToNavigationType>Special Purpose</ns4:virtualAISAidToNavigationType>
