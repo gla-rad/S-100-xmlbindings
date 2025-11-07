@@ -396,31 +396,31 @@ class S201UtilsTest {
 
     /**
      * Test that if invalid or null inputs are provided, the generation method
-     * for the S-201 Aids to Navigation geometries list will return an empty
+     * for the S-201 Abstract Feature geometries list will return an empty
      * list.
      */
     @Test
-    void testGenerateS201AidsToNavigationTypeGeometriesListEmpty() {
+    void testGenerateS201AbstractFeatureGeometriesListEmpty() {
         // Test for empty inputs
-        assertTrue(S201Utils.generateS201AidsToNavigationTypeGeometriesList(null, null).isEmpty());
-        assertTrue(S201Utils.generateS201AidsToNavigationTypeGeometriesList(VirtualAISAidToNavigation.class, null).isEmpty());
-        assertTrue(S201Utils.generateS201AidsToNavigationTypeGeometriesList(null, Collections.emptyList()).isEmpty());
+        assertTrue(S201Utils.generateS201AbstractFeatureGeometriesList(null, null).isEmpty());
+        assertTrue(S201Utils.generateS201AbstractFeatureGeometriesList(VirtualAISAidToNavigation.class, null).isEmpty());
+        assertTrue(S201Utils.generateS201AbstractFeatureGeometriesList(null, Collections.emptyList()).isEmpty());
     }
 
     /**
      * Test that based on a provided list of S100SpatialAttributeType objects
-     * and given a specific S-201 Aids to Navigation feature, we can generate
-     * the geometry object required for it correctly.
+     * and given a specific S-201 Abstract Feature, we can generate the
+     * geometry object required for it correctly.
      */
     @Test
-    void testGenerateS201AidsToNavigationTypeGeometriesList() {
+    void testGenerateS201AbstractFeatureGeometriesList() {
         // Get a list of spatial attribute types
         final List<S100SpatialAttributeType> values = this.vaton.getGeometries().stream()
                 .map(VirtualAISAidToNavigation.Geometry::getPointProperty)
                 .collect(Collectors.toList());
 
         // Test for a valid input
-        List<?> atonGeometriesList = S201Utils.generateS201AidsToNavigationTypeGeometriesList(VirtualAISAidToNavigationImpl.class, values);
+        List<?> atonGeometriesList = S201Utils.generateS201AbstractFeatureGeometriesList(VirtualAISAidToNavigationImpl.class, values);
         assertNotNull(atonGeometriesList);
         assertEquals(values.size(), atonGeometriesList.size());
         for(int i=0; i<atonGeometriesList.size(); i++) {
@@ -431,19 +431,19 @@ class S201UtilsTest {
 
     /**
      * Test that based on a provided list of S100SpatialAttributeType objects
-     * and given a specific S-201 Aids to Navigation feature, we can generate
-     * the geometry object required for it correctly. In this case however, the
+     * and given a specific S-201 Abstract Feature, we can generate the
+     * geometry object required for it correctly. In this case however, the
      * provided class does not define a custom Geometry but its parent does.
      */
     @Test
-    void testGenerateS201AidsToNavigationTypeGeometriesListFromParent() {
+    void testGenerateS201AbstractFeatureGeometriesListFromParent() {
         // Get a list of spatial attribute types
         final List<S100SpatialAttributeType> values = this.vaton.getGeometries().stream()
                 .map(VirtualAISAidToNavigation.Geometry::getPointProperty)
                 .collect(Collectors.toList());
 
         // Test for a valid input that extends a parent with a geometry
-        List<?> atonGeometriesList = S201Utils.generateS201AidsToNavigationTypeGeometriesList(LighthouseImpl.class, values);
+        List<?> atonGeometriesList = S201Utils.generateS201AbstractFeatureGeometriesList(LighthouseImpl.class, values);
         assertNotNull(atonGeometriesList);
         assertEquals(values.size(), atonGeometriesList.size());
         for(int i=0; i<atonGeometriesList.size(); i++) {

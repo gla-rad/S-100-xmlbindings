@@ -115,7 +115,6 @@ class S125UtilsTest {
         vaton.getFeatureNames().add(featureNameType1);
         vaton.getFeatureNames().add(featureNameType2);
         vaton.setIDCode("urn:mrn:grad:aton:test:corkhole");
-        vaton.setEstimatedRangeOfTransmission(20.0);
         vaton.setMMSICode("992359598");
         final S100TruncatedDate s100TruncatedDateStart = new S100TruncatedDateImpl();
         s100TruncatedDateStart.setDate(LocalDate.parse("2001-01-01", dateFormat));
@@ -287,7 +286,6 @@ class S125UtilsTest {
         assertEquals(datasetMember.getFeatureNames().getFirst().getName(), resultMember.getFeatureNames().getFirst().getName());
         assertEquals(datasetMember.getFeatureNames().getFirst().getLanguage(), resultMember.getFeatureNames().getFirst().getLanguage());
         assertEquals(datasetMember.getFeatureNames().getFirst().isDisplayName(), resultMember.getFeatureNames().getFirst().isDisplayName());
-        assertEquals(datasetMember.getEstimatedRangeOfTransmission(), resultMember.getEstimatedRangeOfTransmission());
         assertEquals(datasetMember.getMMSICode(), resultMember.getMMSICode());
         assertNotNull(resultMember.getStatuses());
         assertEquals(datasetMember.getStatuses().size(), resultMember.getStatuses().size());

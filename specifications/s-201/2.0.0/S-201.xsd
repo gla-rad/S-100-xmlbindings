@@ -5737,17 +5737,17 @@
                             <xs:documentation/>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="shackleToBuoyconnected" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
+                    <xs:element name="shackleToBuoyConnected" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="buoyhangs" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+                    <xs:element name="buoyHangs" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="buoyattached" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+                    <xs:element name="buoyaAttached" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
@@ -6710,7 +6710,7 @@
         <xs:complexContent>
             <xs:extension base="ElectronicAtonType">
                 <xs:sequence>
-                    <xs:element name="CategoryOfSyntheticAISAidtoNavigation" type="CategoryOfSyntheticAISAidtoNavigationType" minOccurs="1" maxOccurs="1">
+                    <xs:element name="categoryOfSyntheticAISAidtoNavigation" type="CategoryOfSyntheticAISAidtoNavigationType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation>-</xs:documentation>
                         </xs:annotation>
@@ -7352,6 +7352,13 @@
         <xs:complexContent>
             <xs:extension base="StructureObjectType">
                 <xs:sequence>
+                    <xs:element name="geometry" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:choice>
+                                <xs:element ref="S100:pointProperty"/>
+                            </xs:choice>
+                        </xs:complexType>
+                    </xs:element>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -7384,7 +7391,7 @@
                             <xs:documentation>-</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="shackleToAnchorconnected" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
+                    <xs:element name="shackleToAnchorConnected" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
@@ -7433,7 +7440,7 @@
                             <xs:documentation/>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="bridleattached" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+                    <xs:element name="shackleToCableConnectedTo" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
@@ -7487,7 +7494,7 @@
                             <xs:documentation/>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="shackleToCableconnected" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
+                    <xs:element name="shackleToCableConnected" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
@@ -7526,17 +7533,17 @@
                             <xs:documentation>-</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="swivelholds" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
+                    <xs:element name="swivelHolds" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="swivelattached" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+                    <xs:element name="swivelAttached" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="shackleToSwivelconnected" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
+                    <xs:element name="shackleToSwivelConnected" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
@@ -7570,22 +7577,22 @@
                             <xs:documentation>-</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="bridleholds" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
+                    <xs:element name="bridleHolds" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="bridlehangs" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+                    <xs:element name="bridleHangs" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="shackleToBridleconnected" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
+                    <xs:element name="shackleToBridleConnected" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="bridleattached" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+                    <xs:element name="bridleAttached" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
@@ -7783,6 +7790,11 @@
         <xs:complexContent>
             <xs:extension base="S100:AbstractFeatureType">
                 <xs:sequence>
+                    <xs:element name="interoperabilityIdentifier" type="xs:anyURI" minOccurs="0" maxOccurs="1">
+                        <xs:annotation>
+                            <xs:documentation>	A common unique identifier for entities which describe a single real-world feature, and which is used to identify instances of the feature in end-user systems where the feature may be included in multiple data product types.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
                     <xs:element name="information" type="informationType" minOccurs="0" maxOccurs="unbounded">
                         <xs:annotation>
                             <xs:documentation>Textual information about the feature. The information may be provided as a string of text or as a file name of a single external text file that contains the text.</xs:documentation>

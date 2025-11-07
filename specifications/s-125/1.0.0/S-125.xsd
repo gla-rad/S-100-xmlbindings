@@ -897,32 +897,32 @@
     </xs:simpleType>
     <xs:simpleType name="ShackleTypeType">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="forelock shackles ">
+            <xs:enumeration value="forelock shackles">
                 <xs:annotation>
                     <xs:documentation>-</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="clenching shackles ">
+            <xs:enumeration value="clenching shackles">
                 <xs:annotation>
                     <xs:documentation>-</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="bolt shackles ">
+            <xs:enumeration value="bolt shackles">
                 <xs:annotation>
                     <xs:documentation>-</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="screw pin shackles ">
+            <xs:enumeration value="screw pin shackles">
                 <xs:annotation>
                     <xs:documentation>-</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="kenter shackle ">
+            <xs:enumeration value="kenter shackle">
                 <xs:annotation>
                     <xs:documentation>-</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="quick release link ">
+            <xs:enumeration value="quick release link">
                 <xs:annotation>
                     <xs:documentation>-</xs:documentation>
                 </xs:annotation>
@@ -1374,22 +1374,22 @@
     </xs:simpleType>
     <xs:simpleType name="CategoryOfPowerSourceType">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="battery ">
+            <xs:enumeration value="battery">
                 <xs:annotation>
                     <xs:documentation>-</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="generator ">
+            <xs:enumeration value="generator">
                 <xs:annotation>
                     <xs:documentation>-</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="solar panel ">
+            <xs:enumeration value="solar panel">
                 <xs:annotation>
                     <xs:documentation>-</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="electrical service ">
+            <xs:enumeration value="electrical service">
                 <xs:annotation>
                     <xs:documentation>-</xs:documentation>
                 </xs:annotation>
@@ -4765,17 +4765,17 @@
     </xs:simpleType>
     <xs:simpleType name="CategoryOfAggregationType">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="leading line ">
+            <xs:enumeration value="leading line">
                 <xs:annotation>
                     <xs:documentation>-</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="measured distance ">
+            <xs:enumeration value="measured distance">
                 <xs:annotation>
                     <xs:documentation>-</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="range system ">
+            <xs:enumeration value="range system">
                 <xs:annotation>
                     <xs:documentation>-</xs:documentation>
                 </xs:annotation>
@@ -4785,38 +4785,6 @@
     <!-- ========================================================================================== -->
     <!-- types and elements for the complex attribute types definition                              -->
     <!-- ========================================================================================== -->
-    <xs:complexType name="contactAddressType">
-        <xs:annotation>
-            <xs:documentation>Direction or superscription of a letter, package, etc., specifying the name of the place to which it is directed, and optionally a contact person or organisation who should receive it.</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:element name="deliveryPoint" type="xs:string" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>Details of where post can be delivered such as the apartment, name and/or number of a street, building or PO Box.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="cityName" type="xs:string" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>The name of a town or city.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="administrativeDivision" type="xs:string" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>A generic term for an administrative region within a country at a level below that of the sovereign state.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="countryName" type="xs:string" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>The name of a nation.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="postalCode" type="xs:string" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>Known in various countries as a postcode, or ZIP code, the postal code is a series of letters and/or digits that identifies each postal delivery area.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-        </xs:sequence>
-    </xs:complexType>
     <xs:complexType name="directionalCharacterType">
         <xs:annotation>
             <xs:documentation>A directional light is a light illuminating a sector of very narrow angle and intended to mark a direction to follow.</xs:documentation>
@@ -4983,33 +4951,6 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="rhythmOfLightType">
-        <xs:annotation>
-            <xs:documentation>The sequence of times occupied by intervals of light/sound and eclipse/silence for all light characteristics or sound signals.</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:element name="lightCharacteristic" type="lightCharacteristicType" minOccurs="1" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>The distinct character, such as fixed, flashing, or occulting, which is given to each light to avoid confusion with neighbouring ones.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="signalGroup" type="xs:string" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>The number of signals, the combination of signals or the morse character(s) within one period of full sequence.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="signalPeriod" type="xs:double" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>The time occupied by an entire cycle of intervals of light and eclipse.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="signalSequence" type="signalSequenceType" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>The sequence of times occupied by intervals of light and eclipse for all light characteristics.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-        </xs:sequence>
-    </xs:complexType>
     <xs:complexType name="sectorCharacteristicsType">
         <xs:annotation>
             <xs:documentation>Describes the characteristics of a light sector.</xs:documentation>
@@ -5162,28 +5103,6 @@
             <xs:element name="verticalUncertainty" type="verticalUncertaintyType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>The best estimate of the vertical accuracy of depths, heights, vertical distances and vertical clearances.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-        </xs:sequence>
-    </xs:complexType>
-    <xs:complexType name="CableDimensionsType">
-        <xs:annotation>
-            <xs:documentation>The dimensions of a cable to give its length and diameter.</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:element name="cableLength" type="xs:double" minOccurs="1" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>Total length of a cable.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="heightLengthUnits" type="heightLengthUnitsType" minOccurs="1" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>Units of measure of waterway distances. (IHO Registry)</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="diameter" type="xs:double" minOccurs="1" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>-</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
@@ -5345,23 +5264,6 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="textualDescriptionType">
-        <xs:annotation>
-            <xs:documentation>Encodes the file name of a single external text file that contains the text in a defined language, which provides additional textual information that cannot be provided using other allowable attributes for the feature.</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:element name="fileReference" type="xs:string" minOccurs="1" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>The file name of an externally referenced text file.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="language" type="xs:string" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>The method of human communication, either spoken or written, consisting of the use of words in a structured and conventional way.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-        </xs:sequence>
-    </xs:complexType>
     <xs:complexType name="verticalUncertaintyType">
         <xs:annotation>
             <xs:documentation>The best estimate of the vertical accuracy of depths, heights, vertical distances and vertical clearances.</xs:documentation>
@@ -5389,38 +5291,6 @@
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="S100:AbstractInformationType"/>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:element name="AtoNFixingMethod" type="AtoNFixingMethodType"/>
-    <xs:complexType name="AtoNFixingMethodType">
-        <xs:annotation>
-            <xs:documentation>Method used for fixing the position of an aid to navigation.</xs:documentation>
-        </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="InformationTypeType">
-                <xs:sequence>
-                    <xs:element name="referencePoint" type="xs:string" minOccurs="0" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>-</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="horizontalDatum" type="horizontalDatumType" minOccurs="0" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>Horizontal reference surface or the reference coordinate system used for geodetic control in the calculation of coordinates of points on the earth.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="sourceDate" type="xs:date" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>The production date of the source; for example the date of measurement.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="positioningProcedure" type="xs:string" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>-</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
         </xs:complexContent>
     </xs:complexType>
     <xs:element name="AtonStatusInformation" type="AtonStatusInformationType"/>
@@ -5537,11 +5407,6 @@
                             <xs:documentation>Indicates whether a pictorial representation of the feature is available.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="AtoNNumber" type="xs:anyURI" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>Identifier from a list of Aids to Navigation publication, such as List of Lights.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
                     <xs:element name="installationDate" type="xs:date" minOccurs="0" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation>The date when an item was installed.</xs:documentation>
@@ -5604,6 +5469,33 @@
                     <xs:element name="parent" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation/>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="ElectronicAton" type="ElectronicAtonType"/>
+    <xs:complexType name="ElectronicAtonType" abstract="true">
+        <xs:annotation>
+            <xs:documentation>TBD</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="AidsToNavigationType">
+                <xs:sequence>
+                    <xs:element name="AtoNNumber" type="xs:anyURI" minOccurs="0" maxOccurs="1">
+                        <xs:annotation>
+                            <xs:documentation>Identifier from a list of Aids to Navigation publication, such as List of Lights.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="mMSICode" type="xs:string" minOccurs="1" maxOccurs="1">
+                        <xs:annotation>
+                            <xs:documentation>The Maritime Mobile Service Identity (MMSI) Code is formed of a series of nine digits which are transmitted over the radio path in order to uniquely identify ship stations, ship earth stations,coast stations, coast earth stations, and group calls. These identities are formed in such a way that the identity or part thereof can be used by telephone and telex subscribers connected to the general telecommunications network principally to call ships automatically.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="status" type="statusType" minOccurs="0" maxOccurs="unbounded">
+                        <xs:annotation>
+                            <xs:documentation>The condition of an object at a given instant in time.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
                 </xs:sequence>
@@ -6464,29 +6356,14 @@
             <xs:documentation>An Automatic Identification System (AIS) message 21 transmitted from an AIS station to simulate on navigation systems an Aid to Navigation which does not physically exist.</xs:documentation>
         </xs:annotation>
         <xs:complexContent>
-            <xs:extension base="AidsToNavigationType">
+            <xs:extension base="ElectronicAtonType">
                 <xs:sequence>
-                    <xs:element name="estimatedRangeOfTransmission" type="xs:double" minOccurs="0" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>The estimated range of a non-optical electromagnetic transmission.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="mMSICode" type="xs:string" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>The Maritime Mobile Service Identity (MMSI) Code is formed of a series of nine digits which are transmitted over the radio path in order to uniquely identify ship stations, ship earth stations,coast stations, coast earth stations, and group calls. These identities are formed in such a way that the identity or part thereof can be used by telephone and telex subscribers connected to the general telecommunications network principally to call ships automatically.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="status" type="statusType" minOccurs="0" maxOccurs="unbounded">
-                        <xs:annotation>
-                            <xs:documentation>The condition of an object at a given instant in time.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
                     <xs:element name="virtualAISAidToNavigationType" type="virtualAISAidToNavigationTypeType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation>A purpose of a virtual AIS Aid to Navigation.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="broadcasts" type="gml:ReferenceType" minOccurs="1" maxOccurs="unbounded">
+                    <xs:element name="virtualAISbroadcasts" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
@@ -6508,34 +6385,14 @@
             <xs:documentation>An Automatic Identification System (AIS) message 21 transmitted from a physical Aid to Navigation, or transmitted from an AIS station for an Aid to Navigation which physically exists.</xs:documentation>
         </xs:annotation>
         <xs:complexContent>
-            <xs:extension base="AidsToNavigationType">
+            <xs:extension base="ElectronicAtonType">
                 <xs:sequence>
-                    <xs:element name="CategoryOfPhysicalAISAidToNavigation" type="CategoryOfPhysicalAISAidToNavigationType" minOccurs="1" maxOccurs="1">
+                    <xs:element name="categoryOfPhysicalAISAidToNavigation" type="CategoryOfPhysicalAISAidToNavigationType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
-                            <xs:documentation>-</xs:documentation>
+                            <xs:documentation>A classification of AIS AtoNs that correspond to an actual, physical Aid to Navigation at a real-world location.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="estimatedRangeOfTransmission" type="xs:double" minOccurs="0" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>The estimated range of a non-optical electromagnetic transmission.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="mMSICode" type="xs:string" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>The Maritime Mobile Service Identity (MMSI) Code is formed of a series of nine digits which are transmitted over the radio path in order to uniquely identify ship stations, ship earth stations,coast stations, coast earth stations, and group calls. These identities are formed in such a way that the identity or part thereof can be used by telephone and telex subscribers connected to the general telecommunications network principally to call ships automatically.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="status" type="statusType" minOccurs="0" maxOccurs="unbounded">
-                        <xs:annotation>
-                            <xs:documentation>The condition of an object at a given instant in time.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="virtualAISAidToNavigationType" type="virtualAISAidToNavigationTypeType" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>A purpose of a virtual AIS Aid to Navigation.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="broadcasts" type="gml:ReferenceType" minOccurs="1" maxOccurs="unbounded">
+                    <xs:element name="physicalAISbroadcasts" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
@@ -6557,26 +6414,11 @@
             <xs:documentation>-</xs:documentation>
         </xs:annotation>
         <xs:complexContent>
-            <xs:extension base="AidsToNavigationType">
+            <xs:extension base="ElectronicAtonType">
                 <xs:sequence>
-                    <xs:element name="CategoryOfSyntheticAISAidtoNavigation" type="CategoryOfSyntheticAISAidtoNavigationType" minOccurs="1" maxOccurs="1">
+                    <xs:element name="categoryOfSyntheticAISAidtoNavigation" type="CategoryOfSyntheticAISAidtoNavigationType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation>-</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="estimatedRangeOfTransmission" type="xs:double" minOccurs="0" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>The estimated range of a non-optical electromagnetic transmission.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="mMSICode" type="xs:string" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation>The Maritime Mobile Service Identity (MMSI) Code is formed of a series of nine digits which are transmitted over the radio path in order to uniquely identify ship stations, ship earth stations,coast stations, coast earth stations, and group calls. These identities are formed in such a way that the identity or part thereof can be used by telephone and telex subscribers connected to the general telecommunications network principally to call ships automatically.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="status" type="statusType" minOccurs="0" maxOccurs="unbounded">
-                        <xs:annotation>
-                            <xs:documentation>The condition of an object at a given instant in time.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
                     <xs:element name="virtualAISAidToNavigationType" type="virtualAISAidToNavigationTypeType" minOccurs="1" maxOccurs="1">
@@ -6584,7 +6426,7 @@
                             <xs:documentation>A purpose of a virtual AIS Aid to Navigation.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="broadcasts" type="gml:ReferenceType" minOccurs="1" maxOccurs="unbounded">
+                    <xs:element name="syntheticAISbroadcasts" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
                         <xs:annotation>
                             <xs:documentation/>
                         </xs:annotation>
@@ -7062,6 +6904,13 @@
         <xs:complexContent>
             <xs:extension base="StructureObjectType">
                 <xs:sequence>
+                    <xs:element name="geometry" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:choice>
+                                <xs:element ref="S100:pointProperty"/>
+                            </xs:choice>
+                        </xs:complexType>
+                    </xs:element>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>

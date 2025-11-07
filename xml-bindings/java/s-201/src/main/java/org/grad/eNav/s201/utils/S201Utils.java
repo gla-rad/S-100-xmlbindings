@@ -17,6 +17,7 @@
 package org.grad.eNav.s201.utils;
 
 import _int.iho.s_201.gml.cs0._2.*;
+import _int.iho.s_201.s_100.gml.base._5_2.AbstractFeatureType;
 import _int.iho.s_201.s_100.gml.base._5_2.S100SpatialAttributeType;
 import _int.iho.s_201.s_100.gml.base._5_2.impl.CurvePropertyImpl;
 import _int.iho.s_201.s_100.gml.base._5_2.impl.PointPropertyImpl;
@@ -351,27 +352,27 @@ public class S201Utils {
 
     /**
      * This is a helper function to alleviate the complicated situation of
-     * updating the geometry of an S-201 Aids to Navigation structure. These
+     * updating the geometry of an S-201 Abstract Feature structure. These
      * are generated based on the S-201 XSD schema and can have a number
      * of geometries that require packaging inside a specific Geometry
      * subclass each time. These are then inserted into lists for each
-     * of S-201 the Aids to Navigation types.
+     * of S-201 the Abstract Feature geometry type.
      *
-     * @param aidsToNavigationTypeClass the Aids to Navigation Type feature class
+     * @param abstractFeatureClass the Abstract Feature class
      * @param values the list of S100 spatial attribute values to be populated
-     * @return the geometry list populated for the specific S-201 Aids to Navigation Type
+     * @return the geometry list populated for the specific S-201 Abstract Feature
      */
-    public static List<?> generateS201AidsToNavigationTypeGeometriesList(Class<? extends AidsToNavigationType> aidsToNavigationTypeClass, List<S100SpatialAttributeType> values) {
+    public static List<?> generateS201AbstractFeatureGeometriesList(Class<? extends AbstractFeatureType> abstractFeatureClass, List<S100SpatialAttributeType> values) {
         // Sanity Checks
-        if(aidsToNavigationTypeClass == null || values == null) {
+        if(abstractFeatureClass == null || values == null) {
             return Collections.emptyList();
         }
 
         // Create a new custom AtoN geometry object to insert to the list
-        final Class<?> geometryClass = Optional.of(aidsToNavigationTypeClass)
-                .map(clazz -> getS201AidsToNavigationDeclaredClass("GeometryImpl", clazz))
+        final Class<?> geometryClass = Optional.of(abstractFeatureClass)
+                .map(clazz -> getS201AbstractFeatureDeclaredClass("GeometryImpl", clazz))
                 .orElseThrow(() -> new IllegalArgumentException(
-                        String.format("The %s S-201 Aids to Navigation type does not specify a geometry", aidsToNavigationTypeClass.getSimpleName())
+                        String.format("The %s S-201 Abstract Feature type does not specify a geometry", abstractFeatureClass.getSimpleName())
                 ));
 
         // Now we need to instantiate and populate the geometry objects based
@@ -516,18 +517,18 @@ public class S201Utils {
     }
 
     /**
-     * In many cases the AidsToNavigationType does not itself have a geometries
+     * In many cases the AbstractFeatureType does not itself have a geometries
      * field but this belongs to a superclass. Therefore, it is difficult to
      * detect that purely with reflections so a manual iterative way is
      * employed instead.Notice that the geometry field is titled geometries
      * since it contains a list of geometries.
      *
      * @param className The required declared class name
-     * @param aidsToNavigationTypeClass The Aids to Navigation Type class
+     * @param abstractFeatureTypeClass The Abstract FeatureType Type class
      * @return The detected geometries field
      */
-    public static Class getS201AidsToNavigationDeclaredClass(String className, Class<? extends AidsToNavigationType> aidsToNavigationTypeClass) {
-        Class<?> clazz = aidsToNavigationTypeClass;
+    public static Class<?> getS201AbstractFeatureDeclaredClass(String className, Class<? extends AbstractFeatureType> abstractFeatureTypeClass) {
+        Class<?> clazz = abstractFeatureTypeClass;
         Class<?> requiredClass;
 
         // Try iteratively to find where the geometries field is

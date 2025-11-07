@@ -157,7 +157,6 @@ public class S125Utils {
         // Otherwise combine all member data
         return Stream.of(
                 members.getSpatialQuality(),
-                members.getAtoNFixingMethod(),
                 members.getPositioningInformation(),
                 members.getAtonStatusInformation(),
                 members.getSpecialPurposeGeneralBeacon(),
