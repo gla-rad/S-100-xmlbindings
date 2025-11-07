@@ -5644,19 +5644,14 @@
                             <xs:documentation>The value of the vertical distance to the highest point of the object, measured from a specified vertical datum.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="status" type="statusType" minOccurs="0" maxOccurs="unbounded">
-                        <xs:annotation>
-                            <xs:documentation>The condition of an object at a given instant in time.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
                     <xs:element name="verticalDatum" type="verticalDatumType" minOccurs="0" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation>The reference level used for expressing the vertical measurements of points on the earth&#39;s surface. Also called datum level, reference plane, levelling datum, datum for sounding reduction, datum for heights.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="verticalLength" type="xs:double" minOccurs="0" maxOccurs="1">
+                    <xs:element name="status" type="statusType" minOccurs="0" maxOccurs="unbounded">
                         <xs:annotation>
-                            <xs:documentation>The total vertical length of a feature.</xs:documentation>
+                            <xs:documentation>The condition of an object at a given instant in time.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
                     <xs:element name="effectiveIntensity" type="xs:double" minOccurs="0" maxOccurs="1">
@@ -5667,6 +5662,11 @@
                     <xs:element name="peakIntensity" type="xs:double" minOccurs="0" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation>The maximum luminous intensity of a light during its flash cycle.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="rhythmOfLight" type="rhythmOfLightType" minOccurs="1" maxOccurs="1">
+                        <xs:annotation>
+                            <xs:documentation>The sequence of times occupied by intervals of light/sound and eclipse/silence for all light characteristics or sound signals.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
                 </xs:sequence>
@@ -6597,16 +6597,16 @@
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="LandmarkType">
-<!--                <xs:sequence>-->
-<!--                    <xs:element name="geometry" maxOccurs="unbounded">-->
-<!--                        <xs:complexType>-->
-<!--                            <xs:choice>-->
-<!--                                <xs:element ref="S100:pointProperty"/>-->
-<!--                                <xs:element ref="S100:surfaceProperty"/>-->
-<!--                            </xs:choice>-->
-<!--                        </xs:complexType>-->
-<!--                    </xs:element>-->
-<!--                </xs:sequence>-->
+                <!--                <xs:sequence>-->
+                <!--                    <xs:element name="geometry" maxOccurs="unbounded">-->
+                <!--                        <xs:complexType>-->
+                <!--                            <xs:choice>-->
+                <!--                                <xs:element ref="S100:pointProperty"/>-->
+                <!--                                <xs:element ref="S100:surfaceProperty"/>-->
+                <!--                            </xs:choice>-->
+                <!--                        </xs:complexType>-->
+                <!--                    </xs:element>-->
+                <!--                </xs:sequence>-->
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -7258,61 +7258,63 @@
             <xs:documentation>group of informtion, feature and meta objects, all GML members</xs:documentation>
         </xs:annotation>
         <xs:choice>
-            <xs:element name="AtonStatusInformation"/>
-            <xs:element name="PositioningInformation"/>
-            <xs:element name="SpatialQuality"/>
-            <xs:element name="AidsToNavigation"/>
-            <xs:element name="StructureObject"/>
-            <xs:element name="Equipment"/>
-            <xs:element name="GenericBeacon"/>
-            <xs:element name="GenericBuoy"/>
-            <xs:element name="GenericLight"/>
-            <xs:element name="Landmark"/>
-            <xs:element name="LateralBeacon"/>
-            <xs:element name="LateralBuoy"/>
-            <xs:element name="NavigationLine"/>
-            <xs:element name="RecommendedTrack"/>
-            <xs:element name="LightSectored"/>
-            <xs:element name="LightAllAround"/>
-            <xs:element name="LightAirObstruction"/>
-            <xs:element name="LightFogDetector"/>
-            <xs:element name="RadarReflector"/>
-            <xs:element name="FogSignal"/>
-            <xs:element name="RadioStation"/>
-            <xs:element name="Daymark"/>
-            <xs:element name="Retroreflector"/>
-            <xs:element name="RadarTransponderBeacon"/>
-            <xs:element name="VirtualAISAidToNavigation"/>
-            <xs:element name="PhysicalAISAidToNavigation"/>
-            <xs:element name="SyntheticAISAidToNavigation"/>
-            <xs:element name="IsolatedDangerBeacon"/>
-            <xs:element name="CardinalBeacon"/>
-            <xs:element name="IsolatedDangerBuoy"/>
-            <xs:element name="CardinalBuoy"/>
-            <xs:element name="InstallationBuoy"/>
-            <xs:element name="MooringBuoy"/>
-            <xs:element name="EmergencyWreckMarkingBuoy"/>
-            <xs:element name="Lighthouse"/>
-            <xs:element name="LightFloat"/>
-            <xs:element name="LightVessel"/>
-            <xs:element name="OffshorePlatform"/>
-            <xs:element name="SiloTank"/>
-            <xs:element name="Pile"/>
-            <xs:element name="Building"/>
-            <xs:element name="Bridge"/>
-            <xs:element name="Topmark"/>
-            <xs:element name="SafeWaterBeacon"/>
-            <xs:element name="SpecialPurposeGeneralBeacon"/>
-            <xs:element name="SafeWaterBuoy"/>
-            <xs:element name="SpecialPurposeGeneralBuoy"/>
-            <xs:element name="DangerousFeature"/>
-            <xs:element name="AtonAggregation"/>
-            <xs:element name="AtonAssociation"/>
-            <xs:element name="DataCoverage"/>
-            <xs:element name="LocalDirectionOfBuoyage"/>
-            <xs:element name="NavigationalSystemOfMarks"/>
-            <xs:element name="SoundingDatum"/>
-            <xs:element name="VerticalDatumOfData"/>
+            <xs:element name="AtonStatusInformation" type="AtonStatusInformationType"/>
+            <xs:element name="PositioningInformation" type="PositioningInformationType"/>
+            <xs:element name="SpatialQuality" type="SpatialQualityType"/>
+            <xs:element name="AidsToNavigation" type="AidsToNavigationType"/>
+            <xs:element name="StructureObject" type="StructureObjectType"/>
+            <xs:element name="Equipment" type="EquipmentType"/>
+            <xs:element name="GenericBeacon" type="GenericBeaconType"/>
+            <xs:element name="GenericBuoy" type="GenericBuoyType"/>
+            <xs:element name="GenericLight" type="GenericLightType"/>
+            <xs:element name="Landmark" type="LandmarkType"/>
+            <xs:element name="LateralBeacon" type="LateralBeaconType"/>
+            <xs:element name="LateralBuoy" type="LateralBuoyType"/>
+            <xs:element name="NavigationLine" type="NavigationLineType"/>
+            <xs:element name="RecommendedTrack" type="RecommendedTrackType"/>
+            <xs:element name="LightSectored" type="LightSectoredType"/>
+            <xs:element name="LightAllAround" type="LightAllAroundType"/>
+            <xs:element name="LightAirObstruction" type="LightAirObstructionType"/>
+            <xs:element name="LightFogDetector" type="LightFogDetectorType"/>
+            <xs:element name="RadarReflector" type="RadarReflectorType"/>
+            <xs:element name="FogSignal" type="FogSignalType"/>
+            <xs:element name="RadioStation" type="RadioStationType"/>
+            <xs:element name="Daymark" type="DaymarkType"/>
+            <xs:element name="Retroreflector" type="RetroreflectorType"/>
+            <xs:element name="RadarTransponderBeacon" type="RadarTransponderBeaconType"/>
+            <xs:element name="VirtualAISAidToNavigation" type="VirtualAISAidToNavigationType"/>
+            <xs:element name="PhysicalAISAidToNavigation" type="PhysicalAISAidToNavigationType"/>
+            <xs:element name="SyntheticAISAidToNavigation" type="SyntheticAISAidToNavigationType"/>
+            <xs:element name="IsolatedDangerBeacon" type="IsolatedDangerBeaconType"/>
+            <xs:element name="CardinalBeacon" type="CardinalBeaconType"/>
+            <xs:element name="IsolatedDangerBuoy" type="IsolatedDangerBuoyType"/>
+            <xs:element name="CardinalBuoy" type="CardinalBuoyType"/>
+            <xs:element name="InstallationBuoy" type="InstallationBuoyType"/>
+            <xs:element name="MooringBuoy" type="MooringBuoyType"/>
+            <xs:element name="EmergencyWreckMarkingBuoy" type="EmergencyWreckMarkingBuoyType"/>
+            <xs:element name="Lighthouse" type="LighthouseType"/>
+            <xs:element name="LightFloat" type="LightFloatType"/>
+            <xs:element name="LightVessel" type="LightVesselType"/>
+            <xs:element name="OffshorePlatform" type="OffshorePlatformType"/>
+            <xs:element name="SiloTank" type="SiloTankType"/>
+            <xs:element name="Pile" type="PileType"/>
+            <xs:element name="Building" type="BuildingType"/>
+            <xs:element name="Bridge" type="BridgeType"/>
+            <xs:element name="MooringShackle" type="MooringBuoyType"/>
+            <xs:element name="Bridle" type="BridgeType"/>
+            <xs:element name="Topmark" type="TopmarkType"/>
+            <xs:element name="SafeWaterBeacon" type="SafeWaterBeaconType"/>
+            <xs:element name="SpecialPurposeGeneralBeacon" type="SpecialPurposeGeneralBeaconType"/>
+            <xs:element name="SafeWaterBuoy" type="SafeWaterBuoyType"/>
+            <xs:element name="SpecialPurposeGeneralBuoy" type="SpecialPurposeGeneralBuoyType"/>
+            <xs:element name="DangerousFeature" type="DangerousFeatureType"/>
+            <xs:element name="AtonAggregation" type="AtonAggregationType"/>
+            <xs:element name="AtonAssociation" type="AtonAssociationType"/>
+            <xs:element name="DataCoverage" type="DataCoverageType"/>
+            <xs:element name="LocalDirectionOfBuoyage" type="LocalDirectionOfBuoyageType"/>
+            <xs:element name="NavigationalSystemOfMarks" type="NavigationalSystemOfMarksType"/>
+            <xs:element name="SoundingDatum" type="SoundingDatumType"/>
+            <xs:element name="VerticalDatumOfData" type="VerticalDatumOfDataType"/>
         </xs:choice>
     </xs:group>
     <xs:complexType name="ThisDatasetType">

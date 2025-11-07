@@ -244,105 +244,105 @@ public class S201Utils {
         for(T member : memberEntries) {
             switch (member) {
                 case SpatialQualityImpl spatialUncertainty ->
-                        members.getSpatialQuality().add(member);
+                        members.getSpatialQuality().add(spatialUncertainty);
                 case AtoNFixingMethodImpl atoNFixingMethod ->
-                        members.getAtoNFixingMethod().add(member);
+                        members.getAtoNFixingMethod().add(atoNFixingMethod);
                 case PositioningInformationImpl positioningInformation ->
-                        members.getPositioningInformation().add(member);
+                        members.getPositioningInformation().add(positioningInformation);
                 case AtonStatusInformationImpl atoNStatusInformation ->
-                        members.getAtonStatusInformation().add(member);
+                        members.getAtonStatusInformation().add(atoNStatusInformation);
                 case SpecialPurposeGeneralBeaconImpl specialPurposeGeneralBeacon ->
-                        members.getSpecialPurposeGeneralBeacon().add(member);
+                        members.getSpecialPurposeGeneralBeacon().add(specialPurposeGeneralBeacon);
                 case LateralBeaconImpl lateralBeacon ->
-                        members.getLateralBeacon().add(member);
+                        members.getLateralBeacon().add(lateralBeacon);
                 case CardinalBeaconImpl cardinalBeacon ->
-                        members.getCardinalBeacon().add(member);
+                        members.getCardinalBeacon().add(cardinalBeacon);
                 case IsolatedDangerBeaconImpl isolatedDangerBeacon ->
-                        members.getIsolatedDangerBeacon().add(member);
+                        members.getIsolatedDangerBeacon().add(isolatedDangerBeacon);
                 case SafeWaterBeaconImpl safeWaterBeacon ->
-                        members.getSafeWaterBeacon().add(member);
+                        members.getSafeWaterBeacon().add(safeWaterBeacon);
                 case InstallationBuoyImpl installationBuoy ->
-                        members.getInstallationBuoy().add(member);
+                        members.getInstallationBuoy().add(installationBuoy);
                 case LateralBuoyImpl lateralBuoy ->
-                        members.getLateralBuoy().add(member);
+                        members.getLateralBuoy().add(lateralBuoy);
                 case CardinalBuoyImpl cardinalBuoy ->
-                        members.getCardinalBuoy().add(member);
+                        members.getCardinalBuoy().add(cardinalBuoy);
                 case SafeWaterBuoyImpl safeWaterBuoy ->
-                        members.getSafeWaterBuoy().add(member);
+                        members.getSafeWaterBuoy().add(safeWaterBuoy);
                 case IsolatedDangerBuoyImpl isolatedDangerBuoy ->
-                        members.getIsolatedDangerBuoy().add(member);
+                        members.getIsolatedDangerBuoy().add(isolatedDangerBuoy);
                 case SpecialPurposeGeneralBuoyImpl specialPurposeGeneralBuoy ->
-                        members.getSpecialPurposeGeneralBuoy().add(member);
+                        members.getSpecialPurposeGeneralBuoy().add(specialPurposeGeneralBuoy);
                 case OffshorePlatformImpl offshorePlatform ->
-                        members.getOffshorePlatform().add(member);
+                        members.getOffshorePlatform().add(offshorePlatform);
                 case LightVesselImpl lightVessel ->
-                        members.getLightVessel().add(member);
+                        members.getLightVessel().add(lightVessel);
                 case PileImpl pile ->
-                        members.getPile().add(member);
+                        members.getPile().add(pile);
                 case SiloTankImpl siloTank ->
-                        members.getSiloTank().add(member);
+                        members.getSiloTank().add(siloTank);
                 case LighthouseImpl lighthouse ->
-                        members.getLighthouse().add(member);
+                        members.getLighthouse().add(lighthouse);
                 case LandmarkTypeImpl landmarkType ->
-                        members.getLandmark().add(member);
+                        members.getLandmark().add(landmarkType);
                 case LightFloatImpl lightFloat ->
-                        members.getLightFloat().add(member);
+                        members.getLightFloat().add(lightFloat);
                 case TopmarkImpl topmark ->
-                        members.getTopmark().add(member);
+                        members.getTopmark().add(topmark);
                 case LightAllAroundImpl lightAllAround ->
-                        members.getLightAllAround().add(member);
+                        members.getLightAllAround().add(lightAllAround);
                 case LightSectoredImpl lightSectored ->
-                        members.getLightSectored().add(member);
+                        members.getLightSectored().add(lightSectored);
                 case LightAirObstructionImpl lightAirObstruction ->
-                        members.getLightAirObstruction().add(member);
+                        members.getLightAirObstruction().add(lightAirObstruction);
                 case LightFogDetectorImpl lightFogDetector ->
-                        members.getLightFogDetector().add(member);
+                        members.getLightFogDetector().add(lightFogDetector);
                 case FogSignalImpl fogSignal ->
-                        members.getFogSignal().add(member);
+                        members.getFogSignal().add(fogSignal);
                 case RadarReflectorImpl radarReflector ->
-                        members.getRadarReflector().add(member);
+                        members.getRadarReflector().add(radarReflector);
                 case RetroreflectorImpl retroReflector ->
-                        members.getRetroreflector().add(member);
+                        members.getRetroreflector().add(retroReflector);
                 case DaymarkImpl daymark ->
-                        members.getDaymark().add(member);
+                        members.getDaymark().add(daymark);
                 case RadarTransponderBeaconImpl radarTransponderBeacon ->
-                        members.getRadarTransponderBeacon().add(member);
+                        members.getRadarTransponderBeacon().add(radarTransponderBeacon);
                 case RecommendedTrackImpl recommendedTrack ->
-                        members.getRecommendedTrack().add(member);
+                        members.getRecommendedTrack().add(recommendedTrack);
                 case NavigationLineImpl navigationLine ->
-                        members.getNavigationLine().add(member);
+                        members.getNavigationLine().add(navigationLine);
                 case AtonAggregationImpl atonAggregation ->
-                        members.getAtonAggregation().add(member);
+                        members.getAtonAggregation().add(atonAggregation);
                 case AtonAssociationImpl atonAssociation ->
-                        members.getAtonAssociation().add(member);
+                        members.getAtonAssociation().add(atonAssociation);
                 case DataCoverageImpl dataCoverage ->
-                        members.getDataCoverage().add(member);
+                        members.getDataCoverage().add(dataCoverage);
                 case LocalDirectionOfBuoyageImpl localDirectionOfBuoyage ->
-                        members.getLocalDirectionOfBuoyage().add(member);
+                        members.getLocalDirectionOfBuoyage().add(localDirectionOfBuoyage);
                 case NavigationalSystemOfMarksImpl navigationalSystemOfMarks ->
-                        members.getNavigationalSystemOfMarks().add(member);
+                        members.getNavigationalSystemOfMarks().add(navigationalSystemOfMarks);
                 case QualityOfNonBathymetricDataImpl qualityOfNonBathymetricData ->
-                        members.getQualityOfNonBathymetricData().add(member);
+                        members.getQualityOfNonBathymetricData().add(qualityOfNonBathymetricData);
                 case SoundingDatumImpl soundingDatum ->
-                        members.getSoundingDatum().add(member);
+                        members.getSoundingDatum().add(soundingDatum);
                 case VerticalDatumOfDataImpl verticalDatum ->
-                        members.getVerticalDatumOfData().add(member);
+                        members.getVerticalDatumOfData().add(verticalDatum);
                 case EmergencyWreckMarkingBuoyImpl emergencyWreckMarkingBuoy ->
-                        members.getEmergencyWreckMarkingBuoy().add(member);
+                        members.getEmergencyWreckMarkingBuoy().add(emergencyWreckMarkingBuoy);
                 case PhysicalAISAidToNavigationImpl physicalAISAidToNavigation ->
-                        members.getPhysicalAISAidToNavigation().add(member);
+                        members.getPhysicalAISAidToNavigation().add(physicalAISAidToNavigation);
                 case VirtualAISAidToNavigationImpl virtualAISAidToNavigation ->
-                        members.getVirtualAISAidToNavigation().add(member);
+                        members.getVirtualAISAidToNavigation().add(virtualAISAidToNavigation);
                 case SyntheticAISAidToNavigationImpl syntheticAISAidToNavigation ->
-                        members.getSyntheticAISAidToNavigation().add(member);
+                        members.getSyntheticAISAidToNavigation().add(syntheticAISAidToNavigation);
                 case MooringShackleImpl mooringShackle ->
-                        members.getMooringShackle().add(member);
+                        members.getMooringShackle().add(mooringShackle);
                 case RadioStationImpl radioStation ->
-                        members.getRadioStation().add(member);
+                        members.getRadioStation().add(radioStation);
                 case PowerSourceImpl powerSource ->
-                        members.getPowerSource().add(member);
+                        members.getPowerSource().add(powerSource);
                 case null, default ->
-                        members.getAidsToNavigation().add(member);
+                        members.getAidsToNavigation().add((AidsToNavigationType)member);
             }
         }
 
