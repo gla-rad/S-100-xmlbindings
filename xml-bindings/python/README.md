@@ -36,4 +36,4 @@ xsdata generate [SCHEMA FILE] --sturcture-style single-package [OUTPUT PACKAGE N
 ## License
 
 Distributed under the MIT No Attribution (MIT-0) License. See
-[LICENSE](../../../LICENSE) for more information.
+[LICENSE](../../LICENSE) for more information.
