@@ -74,7 +74,10 @@ python -m twine upload -r pypi dist/*
 ```
 
 ## License
-Distributed under the Apache License. See LICENSE.md for more information.
+
+Distributed under the MIT No Attribution (MIT-0) License. See
+[LICENSE](../../../LICENSE) for more information.
 
 ## Contact
+
 Nikolaos Vastardis - Nikolaos.Vastardis@gla-rad.org
