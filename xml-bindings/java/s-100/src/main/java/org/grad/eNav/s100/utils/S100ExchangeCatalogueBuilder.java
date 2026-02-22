@@ -396,7 +396,7 @@ public class S100ExchangeCatalogueBuilder {
                 final S100SECertificateType certificateType = new S100SECertificateType();
                 certificateType.setId(certificateEntry.getKey());
                 certificateType.setIssuer(certificateEntry.getValue().getIssuerX500Principal().getName());
-                certificateType.setValue(S100ExchangeSetUtils.getPemFromCert(certificateEntry.getValue()));
+                certificateType.setValue(certificateEntry.getValue().getEncoded());
                 s100SECertificateContainerType.getCertificates().add(certificateType);
             }
         }
