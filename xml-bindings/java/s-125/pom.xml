@@ -217,7 +217,7 @@
         <dependency>
             <groupId>org.grad.eNav</groupId>
             <artifactId>S100Catalogue</artifactId>
-            <version>0.5.22</version>
+            <version>0.5.25</version>
         </dependency>
 
     </dependencies>
