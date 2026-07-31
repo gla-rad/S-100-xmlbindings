@@ -6348,7 +6348,7 @@
                             <xs:documentation>The extreme distance at which an feature can be seen or a signal detected.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="signalSequence" type="signalSequenceType" minOccurs="0" maxOccurs="1">
+                    <xs:element name="signalSequence" type="signalSequenceType" minOccurs="0" maxOccurs="10">
                         <xs:annotation>
                             <xs:documentation>The sequence of times occupied by intervals of light and eclipse for all light characteristics.</xs:documentation>
                         </xs:annotation>

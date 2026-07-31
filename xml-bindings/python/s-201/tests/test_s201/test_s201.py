@@ -28,23 +28,26 @@ def s201_msg_xml():
 @pytest.fixture
 def bounding_shape():
     bounding_shape = BoundingShapeType()
-    bounding_shape.envelope = EnvelopeType()
+    bounding_shape.envelope = EnvelopeType(
+        lower_corner=[51.8916667, 1.4233333],
+        upper_corner=[51.8916667, 1.4233333]
+    )
     bounding_shape.envelope.srs_name = 'EPSG:4326'
     bounding_shape.envelope.srs_dimension = '1'
-    bounding_shape.envelope.lower_corner = [51.8916667, 1.4233333]
-    bounding_shape.envelope.upper_corner = [51.8916667, 1.4233333]
 
     yield bounding_shape
 
 
 @pytest.fixture
 def virtual_ais_aton(bounding_shape):
-    virtual_ais_aton = VirtualAisaidToNavigation()
+    virtual_ais_aton = VirtualAisaidToNavigation(
+        id='ID001',
+        m_msicode='992359598',
+        virtual_aisaid_to_navigation_type=VirtualAisaidToNavigationTypeType.SPECIAL_PURPOSE
+    )
     virtual_ais_aton.bounded_by = bounding_shape
-    virtual_ais_aton.id = 'ID001'
     virtual_ais_aton.i_dcode = 'urn:mrn:grad:aton:test:corkhole'
     virtual_ais_aton.seasonal_action_required = ['none']
-    virtual_ais_aton.m_msicode = '992359598'
     virtual_ais_aton.source = 'CHT'
     virtual_ais_aton.source_date = XmlDate(2000, 1, 1)
     virtual_ais_aton.pictorial_representation = 'N/A'
@@ -52,16 +55,14 @@ def virtual_ais_aton(bounding_shape):
     virtual_ais_aton.inspection_frequency = 'yearly'
     virtual_ais_aton.inspection_requirements = 'IALA'
     virtual_ais_aton.a_to_nmaintenance_record = 'urn:mrn:grad:aton:test:corkhole:maintenance:x001'
-    virtual_ais_aton.virtual_aisaid_to_navigation_type = VirtualAisaidToNavigationTypeType.SPECIAL_PURPOSE
     virtual_ais_aton.status = [StatusType.CONFIRMED]
     virtual_ais_aton.virtual_aisbroadcasts = []
     
     # Setup the feature name
     virtual_ais_aton.feature_name = []
-    feature_name = FeatureNameType()
+    feature_name = FeatureNameType(name='Test AtoN for Cork Hole')
     feature_name.display_name = 1
     feature_name.language = Lang("English").pt3
-    feature_name.name = 'Test AtoN for Cork Hole'
     virtual_ais_aton.feature_name.append(feature_name)
 
     # Setup the date range
@@ -75,13 +76,11 @@ def virtual_ais_aton(bounding_shape):
     # Setup the geometry
     geometry = VirtualAisaidToNavigationType.Geometry()
     geometry.point_property = PointProperty2()
-    point = Point2()
     pos = Pos()
-    pos.id = 'AtoNPoint'
     pos.srs_name = 'EPSG:4326'
     pos.srs_dimension = 1
     pos.value = [51.8916667, 1.4233333]
-    point.pos = pos
+    point = Point2(id='AtoNPoint', pos=pos)
     geometry.point_property.point = point
     virtual_ais_aton.geometry = [geometry]
 
@@ -90,9 +89,10 @@ def virtual_ais_aton(bounding_shape):
 
 @pytest.fixture
 def aton_status_information():
-    aton_status_information = AtonStatusInformation()
-    aton_status_information.id = 'ID002'
-    aton_status_information.change_details = ChangeDetailsType()
+    aton_status_information = AtonStatusInformation(
+        id='ID002',
+        change_details=ChangeDetailsType()
+    )
     aton_status_information.change_details.electronic_aton_change = ElectronicAtonChangeType.AIS_TRANSMITTER_OPERATING_PROPERLY
     aton_status_information.change_types =  ChangeTypesType.ADVANCED_NOTICE_OF_CHANGES 
 
@@ -101,29 +101,22 @@ def aton_status_information():
 
 @pytest.fixture
 def s201_dataset(bounding_shape, virtual_ais_aton, aton_status_information):
-    # Create a new dataset
-    s201_dataset = Dataset()
-
-    # Initialise the dataset
-    s201_dataset.id = "CorkHoleTestDataset"
-    s201_dataset.bounded_by = bounding_shape    
-
     # Add the dataset identification information
-    dataset_identification_type = DataSetIdentificationType()
+    dataset_identification_type = DataSetIdentificationType(
+        product_identifier='S-201',
+        product_edition='0.0.1',
+        application_profile='test',
+        dataset_file_identifier='junit',
+        dataset_title='S-201 Cork Hole Test Dataset',
+        dataset_reference_date=XmlDate(2001, 1, 1),
+        dataset_purpose=DatasetPurposeType.BASE,
+        update_number=2
+    )
     dataset_identification_type.encoding_specification = 'S-100 Part 10b'
     dataset_identification_type.encoding_specification_edition = '1.0'
-    dataset_identification_type.product_identifier = 'S-201'
-    dataset_identification_type.product_edition = '0.0.1'
-    dataset_identification_type.application_profile = 'test'
-    dataset_identification_type.dataset_file_identifier = 'junit'
-    dataset_identification_type.dataset_title = 'S-201 Cork Hole Test Dataset'
-    dataset_identification_type.dataset_reference_date = XmlDate(2001, 1, 1)
     dataset_identification_type.dataset_language = Lang("English").pt3
     dataset_identification_type.dataset_abstract = 'Test dataset for unit testing'
     dataset_identification_type.dataset_topic_category = [MdTopicCategoryCode.OCEANS]
-    dataset_identification_type.dataset_purpose = DatasetPurposeType.BASE
-    dataset_identification_type.update_number = 2
-    s201_dataset.dataset_identification_information = dataset_identification_type
 
     # Link the aton and its status
     virtual_ais_aton.statuspart = ReferenceType()
@@ -132,14 +125,21 @@ def s201_dataset(bounding_shape, virtual_ais_aton, aton_status_information):
     virtual_ais_aton.statuspart.arcrole = "urn:IALA:S201:roles:association"
 
     # Add the dataset members - A single Virtual AIS Aid to Navigation and its status
-    s201_dataset.members = ThisDatasetType.Members()
-    s201_dataset.members.virtual_aisaid_to_navigation = [
+    members = ThisDatasetType.Members()
+    members.virtual_aisaid_to_navigation = [
         virtual_ais_aton
     ]
-    s201_dataset.members.aton_status_information = [
+    members.aton_status_information = [
         aton_status_information
     ]
 
+    # Create and initialise a new dataset
+    s201_dataset = Dataset(
+        id="CorkHoleTestDataset",
+        dataset_identification_information=dataset_identification_type,
+        members=members
+    )
+    s201_dataset.bounded_by = bounding_shape
 
     # And return the dataset
     yield s201_dataset

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Config xmlns="http://pypi.org/project/xsdata" version="25.7">
+<Config xmlns="http://pypi.org/project/xsdata" version="26.2">
   <Output maxLineLength="79" genericCollections="false" unionType="false">
     <Package>generated</Package>
-    <Format repr="true" eq="true" order="false" unsafeHash="false" frozen="false" slots="false" kwOnly="false">dataclasses</Format>
+    <Format repr="true" eq="true" order="false" unsafeHash="false" frozen="false" slots="false">dataclasses</Format>
     <Structure>single-package</Structure>
     <DocstringStyle>reStructuredText</DocstringStyle>
     <RelativeImports>false</RelativeImports>

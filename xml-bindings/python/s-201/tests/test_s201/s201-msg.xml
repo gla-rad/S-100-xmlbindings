@@ -63,7 +63,7 @@
             <ns0:virtualAISAidToNavigationType>Special Purpose</ns0:virtualAISAidToNavigationType>
             <ns0:geometry>
                 <ns2:pointProperty xmlns:ns2="http://www.iho.int/s100gml/5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple">
-                    <ns2:Point>
+                    <ns2:Point ns1:id="AtoNPoint">
                         <ns1:pos srsName="EPSG:4326" srsDimension="1">51.8916667 1.4233333</ns1:pos>
                     </ns2:Point>
                 </ns2:pointProperty>

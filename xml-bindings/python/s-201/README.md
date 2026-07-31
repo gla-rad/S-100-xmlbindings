@@ -28,8 +28,15 @@ PRODUCTION*** environment.
 First you need to install all the required packages using pip:
 
 ```bash
-pip install xsdata xsdata[cli] iso639-lang pytest
+pip install "xsdata[cli]==26.2" iso639-lang pytest
 ```
+
+Note that the **xsdata** version is pinned on purpose. From version 26.1 onwards
+the *kw-only* option was removed and xsdata *always* generates keyword-only
+dataclasses, where the schema-mandatory
+elements and attributes have no default value and must therefore be provided to
+the constructor. Generating with a different version will produce classes with
+an incompatible constructor signature. Python 3.10 or newer is required.
 
 To generate the package you can run the **xsdata** generation command using the
 config provided in the repo.
